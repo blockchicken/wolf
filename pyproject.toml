@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "showdown-ai"
+version = "0.1.0"
+description = "Python framework for headless Pokemon Showdown doubles simulations and log-to-state parsing"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["showdown_ai*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
