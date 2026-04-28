@@ -6,8 +6,17 @@ from .engine import BattleResult, ShowdownBattleRunner
 from .logs import BattleLog, ParsedEvent, load_showdown_log_json, split_perspective_logs
 from .state import PerspectiveState, StateTracker
 from .headless_scraper import scrape_battles, scrape_battles_async, HeadlessScraper, ScraperConfig
+from .training_data import (
+    TrainingExample,
+    TrainingDatasetBuilder,
+    ActionType,
+    Action,
+    create_dataset_from_logs,
+)
 
 __all__ = [
+    "Action",
+    "ActionType",
     "Agent",
     "BattleResult",
     "BattleLog",
@@ -18,6 +27,9 @@ __all__ = [
     "ScraperConfig",
     "ShowdownBattleRunner",
     "StateTracker",
+    "TrainingDatasetBuilder",
+    "TrainingExample",
+    "create_dataset_from_logs",
     "download_battle_log",
     "download_format_logs",
     "get_battle_list",

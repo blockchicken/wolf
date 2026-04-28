@@ -41,7 +41,7 @@ def parse_protocol(log_blob: str) -> tuple[ParsedEvent, ...]:
 
 
 def load_showdown_log_json(path: str | Path) -> BattleLog:
-    payload = json.loads(Path(path).read_text())
+    payload = json.loads(Path(path).read_text(encoding='utf-8', errors='replace'))
     players = tuple(payload.get("players", []))
     if len(players) != 2:
         # Fallback for uncommon payload shapes.

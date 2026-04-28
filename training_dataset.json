@@ -1,0 +1,3527 @@
+[
+  {
+    "player_side": "p1",
+    "turn": 4,
+    "my_active_pokemon": "Corviknight",
+    "my_active_hp_percent": 0.79,
+    "opponent_active_pokemon": "Ceruledge",
+    "opponent_active_hp_percent": 0.63,
+    "my_team": [
+      [
+        "Incineroar",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Milotic",
+        1.0
+      ],
+      [
+        "Gardevoir",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Rotom-Wash",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Ceruledge",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Pikachu",
+        1.0
+      ],
+      [
+        "Archaludon",
+        1.0
+      ],
+      [
+        "Slowbro-Galar",
+        1.0
+      ],
+      [
+        "Dragonite",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Tailwind"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "switch",
+        "target": "Incineroar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Garchomp"
+      },
+      {
+        "action_type": "switch",
+        "target": "Milotic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gardevoir"
+      },
+      {
+        "action_type": "switch",
+        "target": "Rotom-Wash"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Tailwind"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 6,
+    "my_active_pokemon": "Gardevoir",
+    "my_active_hp_percent": 0.46,
+    "opponent_active_pokemon": "Ceruledge",
+    "opponent_active_hp_percent": 0.63,
+    "my_team": [
+      [
+        "Incineroar",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Milotic",
+        1.0
+      ],
+      [
+        "Gardevoir",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Rotom-Wash",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Ceruledge",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Pikachu",
+        1.0
+      ],
+      [
+        "Archaludon",
+        1.0
+      ],
+      [
+        "Slowbro-Galar",
+        1.0
+      ],
+      [
+        "Dragonite",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Hyper Voice"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Hyper Voice"
+      },
+      {
+        "action_type": "switch",
+        "target": "Incineroar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Garchomp"
+      },
+      {
+        "action_type": "switch",
+        "target": "Milotic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Corviknight"
+      },
+      {
+        "action_type": "switch",
+        "target": "Rotom-Wash"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Hyper Voice"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 7,
+    "my_active_pokemon": "Gardevoir",
+    "my_active_hp_percent": 0.5,
+    "opponent_active_pokemon": "Charizard",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Incineroar",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Milotic",
+        1.0
+      ],
+      [
+        "Gardevoir",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Rotom-Wash",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Ceruledge",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Pikachu",
+        1.0
+      ],
+      [
+        "Archaludon",
+        1.0
+      ],
+      [
+        "Slowbro-Galar",
+        1.0
+      ],
+      [
+        "Dragonite",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Hyper Voice"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Hyper Voice"
+      },
+      {
+        "action_type": "switch",
+        "target": "Incineroar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Garchomp"
+      },
+      {
+        "action_type": "switch",
+        "target": "Milotic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Corviknight"
+      },
+      {
+        "action_type": "switch",
+        "target": "Rotom-Wash"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Hyper Voice"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 8,
+    "my_active_pokemon": "Corviknight",
+    "my_active_hp_percent": 0.8,
+    "opponent_active_pokemon": "Charizard",
+    "opponent_active_hp_percent": 0.07,
+    "my_team": [
+      [
+        "Incineroar",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Milotic",
+        1.0
+      ],
+      [
+        "Gardevoir",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Rotom-Wash",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Ceruledge",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Pikachu",
+        1.0
+      ],
+      [
+        "Archaludon",
+        1.0
+      ],
+      [
+        "Slowbro-Galar",
+        1.0
+      ],
+      [
+        "Dragonite",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Body Press",
+      "Tailwind"
+    ],
+    "opponent_known_moves": [
+      "Solar Beam"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Body Press"
+      },
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "switch",
+        "target": "Incineroar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Garchomp"
+      },
+      {
+        "action_type": "switch",
+        "target": "Milotic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Rotom-Wash"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Body Press"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 7,
+    "my_active_pokemon": "Charizard",
+    "my_active_hp_percent": 0.26,
+    "opponent_active_pokemon": "Gardevoir",
+    "opponent_active_hp_percent": 0.5,
+    "my_team": [
+      [
+        "Ceruledge",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Pikachu",
+        1.0
+      ],
+      [
+        "Archaludon",
+        1.0
+      ],
+      [
+        "Slowbro-Galar",
+        1.0
+      ],
+      [
+        "Dragonite",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Incineroar",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Milotic",
+        1.0
+      ],
+      [
+        "Gardevoir",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Rotom-Wash",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Solar Beam"
+    ],
+    "opponent_known_moves": [
+      "Hyper Voice"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Solar Beam"
+      },
+      {
+        "action_type": "switch",
+        "target": "Ceruledge"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pikachu"
+      },
+      {
+        "action_type": "switch",
+        "target": "Archaludon"
+      },
+      {
+        "action_type": "switch",
+        "target": "Slowbro-Galar"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Solar Beam"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 2,
+    "my_active_pokemon": "Basculegion",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Whimsicott",
+    "opponent_active_hp_percent": 0.5,
+    "my_team": [
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Whimsicott",
+        1.0
+      ],
+      [
+        "Tsareena",
+        1.0
+      ],
+      [
+        "Floette-Eternal",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Zoroark-Hisui",
+        1.0
+      ],
+      [
+        "Aegislash",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Wave Crash"
+    ],
+    "opponent_known_moves": [
+      "Icy Wind"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Wave Crash"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sneasler"
+      },
+      {
+        "action_type": "switch",
+        "target": "Charizard"
+      },
+      {
+        "action_type": "switch",
+        "target": "Kingambit"
+      },
+      {
+        "action_type": "switch",
+        "target": "Aerodactyl"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Wave Crash"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 3,
+    "my_active_pokemon": "Basculegion",
+    "my_active_hp_percent": 0.5,
+    "opponent_active_pokemon": "Floette-Eternal",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Whimsicott",
+        1.0
+      ],
+      [
+        "Tsareena",
+        1.0
+      ],
+      [
+        "Floette-Eternal",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Zoroark-Hisui",
+        1.0
+      ],
+      [
+        "Aegislash",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Wave Crash",
+      "Last Respects"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Wave Crash"
+      },
+      {
+        "action_type": "move",
+        "target": "Last Respects"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sneasler"
+      },
+      {
+        "action_type": "switch",
+        "target": "Charizard"
+      },
+      {
+        "action_type": "switch",
+        "target": "Kingambit"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Last Respects"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 4,
+    "my_active_pokemon": "Kingambit",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Arcanine-Hisui",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Whimsicott",
+        1.0
+      ],
+      [
+        "Tsareena",
+        1.0
+      ],
+      [
+        "Floette-Eternal",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Zoroark-Hisui",
+        1.0
+      ],
+      [
+        "Aegislash",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Sucker Punch"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Sucker Punch"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sneasler"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Charizard"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Sucker Punch"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 5,
+    "my_active_pokemon": "Kingambit",
+    "my_active_hp_percent": 0.5,
+    "opponent_active_pokemon": "Arcanine-Hisui",
+    "opponent_active_hp_percent": 0.36,
+    "my_team": [
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Whimsicott",
+        1.0
+      ],
+      [
+        "Tsareena",
+        1.0
+      ],
+      [
+        "Floette-Eternal",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Zoroark-Hisui",
+        1.0
+      ],
+      [
+        "Aegislash",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Sucker Punch"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Sucker Punch"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sneasler"
+      },
+      {
+        "action_type": "switch",
+        "target": "Charizard"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Sucker Punch"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 1,
+    "my_active_pokemon": "Whimsicott",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Excadrill",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Whimsicott",
+        1.0
+      ],
+      [
+        "Tsareena",
+        1.0
+      ],
+      [
+        "Floette-Eternal",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Zoroark-Hisui",
+        1.0
+      ],
+      [
+        "Aegislash",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Icy Wind"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Icy Wind"
+      },
+      {
+        "action_type": "switch",
+        "target": "Tsareena"
+      },
+      {
+        "action_type": "switch",
+        "target": "Floette-Eternal"
+      },
+      {
+        "action_type": "switch",
+        "target": "Arcanine-Hisui"
+      },
+      {
+        "action_type": "switch",
+        "target": "Zoroark-Hisui"
+      },
+      {
+        "action_type": "switch",
+        "target": "Aegislash"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Icy Wind"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 6,
+    "my_active_pokemon": "Kingambit",
+    "my_active_hp_percent": 0.5,
+    "opponent_active_pokemon": "Alakazam",
+    "opponent_active_hp_percent": 0.5,
+    "my_team": [
+      [
+        "Gyarados",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Meowscarada",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Gallade",
+        1.0
+      ],
+      [
+        "Meowstic",
+        1.0
+      ],
+      [
+        "Torkoal",
+        1.0
+      ],
+      [
+        "Hatterene",
+        1.0
+      ],
+      [
+        "Alakazam",
+        1.0
+      ],
+      [
+        "Aurorus",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Kowtow Cleave"
+    ],
+    "opponent_known_moves": [
+      "Protect",
+      "Speed Swap"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Kowtow Cleave"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sneasler"
+      },
+      {
+        "action_type": "switch",
+        "target": "Arcanine-Hisui"
+      },
+      {
+        "action_type": "switch",
+        "target": "Meowscarada"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Kowtow Cleave"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 1,
+    "my_active_pokemon": "Torkoal",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Sableye",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Gallade",
+        1.0
+      ],
+      [
+        "Meowstic",
+        1.0
+      ],
+      [
+        "Torkoal",
+        1.0
+      ],
+      [
+        "Hatterene",
+        1.0
+      ],
+      [
+        "Alakazam",
+        1.0
+      ],
+      [
+        "Aurorus",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Gyarados",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Meowscarada",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Eruption"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Eruption"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gallade"
+      },
+      {
+        "action_type": "switch",
+        "target": "Meowstic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Hatterene"
+      },
+      {
+        "action_type": "switch",
+        "target": "Alakazam"
+      },
+      {
+        "action_type": "switch",
+        "target": "Aurorus"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Eruption"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 2,
+    "my_active_pokemon": "Torkoal",
+    "my_active_hp_percent": 0.59,
+    "opponent_active_pokemon": "Arcanine-Hisui",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Gallade",
+        1.0
+      ],
+      [
+        "Meowstic",
+        1.0
+      ],
+      [
+        "Torkoal",
+        1.0
+      ],
+      [
+        "Hatterene",
+        1.0
+      ],
+      [
+        "Alakazam",
+        1.0
+      ],
+      [
+        "Aurorus",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Gyarados",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Meowscarada",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Weather Ball",
+      "Eruption"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Weather Ball"
+      },
+      {
+        "action_type": "move",
+        "target": "Eruption"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gallade"
+      },
+      {
+        "action_type": "switch",
+        "target": "Meowstic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Hatterene"
+      },
+      {
+        "action_type": "switch",
+        "target": "Alakazam"
+      },
+      {
+        "action_type": "switch",
+        "target": "Aurorus"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Weather Ball"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 4,
+    "my_active_pokemon": "Meowstic",
+    "my_active_hp_percent": 0.01,
+    "opponent_active_pokemon": "Arcanine-Hisui",
+    "opponent_active_hp_percent": 0.01,
+    "my_team": [
+      [
+        "Gallade",
+        1.0
+      ],
+      [
+        "Meowstic",
+        1.0
+      ],
+      [
+        "Torkoal",
+        1.0
+      ],
+      [
+        "Hatterene",
+        1.0
+      ],
+      [
+        "Alakazam",
+        1.0
+      ],
+      [
+        "Aurorus",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Gyarados",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Meowscarada",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Psychic Terrain"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Psychic Terrain"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gallade"
+      },
+      {
+        "action_type": "switch",
+        "target": "Torkoal"
+      },
+      {
+        "action_type": "switch",
+        "target": "Hatterene"
+      },
+      {
+        "action_type": "switch",
+        "target": "Alakazam"
+      },
+      {
+        "action_type": "switch",
+        "target": "Aurorus"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Psychic Terrain"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 5,
+    "my_active_pokemon": "Alakazam",
+    "my_active_hp_percent": 0.3,
+    "opponent_active_pokemon": "Arcanine-Hisui",
+    "opponent_active_hp_percent": 0.01,
+    "my_team": [
+      [
+        "Gallade",
+        1.0
+      ],
+      [
+        "Meowstic",
+        1.0
+      ],
+      [
+        "Torkoal",
+        1.0
+      ],
+      [
+        "Hatterene",
+        1.0
+      ],
+      [
+        "Alakazam",
+        1.0
+      ],
+      [
+        "Aurorus",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Gyarados",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Arcanine-Hisui",
+        1.0
+      ],
+      [
+        "Meowscarada",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Protect",
+      "Speed Swap"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Protect"
+      },
+      {
+        "action_type": "move",
+        "target": "Speed Swap"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gallade"
+      },
+      {
+        "action_type": "switch",
+        "target": "Hatterene"
+      },
+      {
+        "action_type": "switch",
+        "target": "Aurorus"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Speed Swap"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 1,
+    "my_active_pokemon": "Clefable",
+    "my_active_hp_percent": 0.45,
+    "opponent_active_pokemon": "Charizard",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Gengar",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Kommo-o",
+        1.0
+      ],
+      [
+        "Clefable",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Tyranitar",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Lopunny",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Moonblast"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Moonblast"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gengar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sableye"
+      },
+      {
+        "action_type": "switch",
+        "target": "Kommo-o"
+      },
+      {
+        "action_type": "switch",
+        "target": "Corviknight"
+      },
+      {
+        "action_type": "switch",
+        "target": "Tyranitar"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Moonblast"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 3,
+    "my_active_pokemon": "Tyranitar",
+    "my_active_hp_percent": 0.53,
+    "opponent_active_pokemon": "Charizard",
+    "opponent_active_hp_percent": 0.94,
+    "my_team": [
+      [
+        "Gengar",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Kommo-o",
+        1.0
+      ],
+      [
+        "Clefable",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Tyranitar",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Lopunny",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Rock Slide"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Rock Slide"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gengar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sableye"
+      },
+      {
+        "action_type": "switch",
+        "target": "Kommo-o"
+      },
+      {
+        "action_type": "switch",
+        "target": "Clefable"
+      },
+      {
+        "action_type": "switch",
+        "target": "Corviknight"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Rock Slide"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 4,
+    "my_active_pokemon": "Tyranitar",
+    "my_active_hp_percent": 0.53,
+    "opponent_active_pokemon": "Charizard",
+    "opponent_active_hp_percent": 0.88,
+    "my_team": [
+      [
+        "Gengar",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Kommo-o",
+        1.0
+      ],
+      [
+        "Clefable",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Tyranitar",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Lopunny",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Rock Slide"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Rock Slide"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gengar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sableye"
+      },
+      {
+        "action_type": "switch",
+        "target": "Kommo-o"
+      },
+      {
+        "action_type": "switch",
+        "target": "Clefable"
+      },
+      {
+        "action_type": "switch",
+        "target": "Corviknight"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Rock Slide"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 5,
+    "my_active_pokemon": "Tyranitar",
+    "my_active_hp_percent": 0.43,
+    "opponent_active_pokemon": "Garchomp",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Gengar",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Kommo-o",
+        1.0
+      ],
+      [
+        "Clefable",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Tyranitar",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Lopunny",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Rock Slide"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Rock Slide"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gengar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sableye"
+      },
+      {
+        "action_type": "switch",
+        "target": "Kommo-o"
+      },
+      {
+        "action_type": "switch",
+        "target": "Clefable"
+      },
+      {
+        "action_type": "switch",
+        "target": "Corviknight"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Rock Slide"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 6,
+    "my_active_pokemon": "Tyranitar",
+    "my_active_hp_percent": 0.5,
+    "opponent_active_pokemon": "Basculegion",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Gengar",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Kommo-o",
+        1.0
+      ],
+      [
+        "Clefable",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Tyranitar",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Lopunny",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Rock Slide"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Rock Slide"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gengar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sableye"
+      },
+      {
+        "action_type": "switch",
+        "target": "Kommo-o"
+      },
+      {
+        "action_type": "switch",
+        "target": "Corviknight"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Rock Slide"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 7,
+    "my_active_pokemon": "Kommo-o",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Basculegion",
+    "opponent_active_hp_percent": 0.62,
+    "my_team": [
+      [
+        "Gengar",
+        1.0
+      ],
+      [
+        "Sableye",
+        1.0
+      ],
+      [
+        "Kommo-o",
+        1.0
+      ],
+      [
+        "Clefable",
+        1.0
+      ],
+      [
+        "Corviknight",
+        1.0
+      ],
+      [
+        "Tyranitar",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Lopunny",
+        1.0
+      ],
+      [
+        "Aerodactyl",
+        1.0
+      ],
+      [
+        "Kingambit",
+        1.0
+      ],
+      [
+        "Garchomp",
+        1.0
+      ],
+      [
+        "Charizard",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Protect"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Protect"
+      },
+      {
+        "action_type": "switch",
+        "target": "Gengar"
+      },
+      {
+        "action_type": "switch",
+        "target": "Sableye"
+      },
+      {
+        "action_type": "switch",
+        "target": "Corviknight"
+      },
+      {
+        "action_type": "switch",
+        "target": "Tyranitar"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Protect"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 1,
+    "my_active_pokemon": "Sharpedo",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Sneasler",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Protect"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Protect"
+      },
+      {
+        "action_type": "switch",
+        "target": "Blastoise"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pelipper"
+      },
+      {
+        "action_type": "switch",
+        "target": "Beartic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Chesnaught"
+      },
+      {
+        "action_type": "switch",
+        "target": "Serperior"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Protect"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 2,
+    "my_active_pokemon": "Sharpedo",
+    "my_active_hp_percent": 0.87,
+    "opponent_active_pokemon": "Sneasler",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Protect",
+      "Psychic Fangs"
+    ],
+    "opponent_known_moves": [
+      "Fake Out"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Protect"
+      },
+      {
+        "action_type": "move",
+        "target": "Psychic Fangs"
+      },
+      {
+        "action_type": "switch",
+        "target": "Blastoise"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pelipper"
+      },
+      {
+        "action_type": "switch",
+        "target": "Beartic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Chesnaught"
+      },
+      {
+        "action_type": "switch",
+        "target": "Serperior"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Psychic Fangs"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 3,
+    "my_active_pokemon": "Sharpedo",
+    "my_active_hp_percent": 0.42,
+    "opponent_active_pokemon": "Maushold",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Protect",
+      "Crunch",
+      "Psychic Fangs"
+    ],
+    "opponent_known_moves": [
+      "Follow Me"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Protect"
+      },
+      {
+        "action_type": "move",
+        "target": "Crunch"
+      },
+      {
+        "action_type": "move",
+        "target": "Psychic Fangs"
+      },
+      {
+        "action_type": "switch",
+        "target": "Blastoise"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pelipper"
+      },
+      {
+        "action_type": "switch",
+        "target": "Beartic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Chesnaught"
+      },
+      {
+        "action_type": "switch",
+        "target": "Serperior"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Crunch"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 4,
+    "my_active_pokemon": "Blastoise",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Pelipper",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Shell Smash"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Shell Smash"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pelipper"
+      },
+      {
+        "action_type": "switch",
+        "target": "Beartic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Chesnaught"
+      },
+      {
+        "action_type": "switch",
+        "target": "Serperior"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Shell Smash"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 5,
+    "my_active_pokemon": "Blastoise",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Pelipper",
+    "opponent_active_hp_percent": 0.29,
+    "my_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Shell Smash",
+      "Hydro Pump"
+    ],
+    "opponent_known_moves": [
+      "Tailwind"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Shell Smash"
+      },
+      {
+        "action_type": "move",
+        "target": "Hydro Pump"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pelipper"
+      },
+      {
+        "action_type": "switch",
+        "target": "Beartic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Chesnaught"
+      },
+      {
+        "action_type": "switch",
+        "target": "Serperior"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Hydro Pump"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 7,
+    "my_active_pokemon": "Chesnaught",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Pelipper",
+    "opponent_active_hp_percent": 0.35,
+    "my_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Spiky Shield"
+    ],
+    "opponent_known_moves": [
+      "Tailwind",
+      "Hurricane"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Spiky Shield"
+      },
+      {
+        "action_type": "switch",
+        "target": "Blastoise"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pelipper"
+      },
+      {
+        "action_type": "switch",
+        "target": "Beartic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Serperior"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Spiky Shield"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 8,
+    "my_active_pokemon": "Pelipper",
+    "my_active_hp_percent": 0.5,
+    "opponent_active_pokemon": "Pelipper",
+    "opponent_active_hp_percent": 0.35,
+    "my_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Weather Ball",
+      "Tailwind",
+      "Hurricane"
+    ],
+    "opponent_known_moves": [
+      "Tailwind",
+      "Hurricane"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Weather Ball"
+      },
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "move",
+        "target": "Hurricane"
+      },
+      {
+        "action_type": "switch",
+        "target": "Beartic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Serperior"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Tailwind"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p1",
+    "turn": 9,
+    "my_active_pokemon": "Pelipper",
+    "my_active_hp_percent": 0.49,
+    "opponent_active_pokemon": "Pelipper",
+    "opponent_active_hp_percent": 0.35,
+    "my_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Weather Ball",
+      "Tailwind",
+      "Hurricane"
+    ],
+    "opponent_known_moves": [
+      "Tailwind",
+      "Hurricane"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Weather Ball"
+      },
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "move",
+        "target": "Hurricane"
+      },
+      {
+        "action_type": "switch",
+        "target": "Beartic"
+      },
+      {
+        "action_type": "switch",
+        "target": "Serperior"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Weather Ball"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 1,
+    "my_active_pokemon": "Sneasler",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Sharpedo",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Fake Out"
+    ],
+    "opponent_known_moves": [
+      "Protect"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Fake Out"
+      },
+      {
+        "action_type": "switch",
+        "target": "Skarmory"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Excadrill"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pelipper"
+      },
+      {
+        "action_type": "switch",
+        "target": "Maushold"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Fake Out"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 3,
+    "my_active_pokemon": "Maushold",
+    "my_active_hp_percent": 1.0,
+    "opponent_active_pokemon": "Sharpedo",
+    "opponent_active_hp_percent": 0.42,
+    "my_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Follow Me"
+    ],
+    "opponent_known_moves": [
+      "Protect",
+      "Psychic Fangs"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Follow Me"
+      },
+      {
+        "action_type": "switch",
+        "target": "Skarmory"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Excadrill"
+      },
+      {
+        "action_type": "switch",
+        "target": "Pelipper"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Follow Me"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 4,
+    "my_active_pokemon": "Pelipper",
+    "my_active_hp_percent": 0.29,
+    "opponent_active_pokemon": "Blastoise",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Tailwind"
+    ],
+    "opponent_known_moves": [
+      "Shell Smash"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "switch",
+        "target": "Skarmory"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Excadrill"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Tailwind"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 5,
+    "my_active_pokemon": "Pelipper",
+    "my_active_hp_percent": 0.29,
+    "opponent_active_pokemon": "Blastoise",
+    "opponent_active_hp_percent": 0.59,
+    "my_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Tailwind",
+      "Hurricane"
+    ],
+    "opponent_known_moves": [
+      "Shell Smash",
+      "Hydro Pump"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "move",
+        "target": "Hurricane"
+      },
+      {
+        "action_type": "switch",
+        "target": "Skarmory"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Excadrill"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Hurricane"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 6,
+    "my_active_pokemon": "Pelipper",
+    "my_active_hp_percent": 0.35,
+    "opponent_active_pokemon": "Chesnaught",
+    "opponent_active_hp_percent": 1.0,
+    "my_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Tailwind",
+      "Hurricane"
+    ],
+    "opponent_known_moves": [],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "move",
+        "target": "Hurricane"
+      },
+      {
+        "action_type": "switch",
+        "target": "Skarmory"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Excadrill"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Hurricane"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 7,
+    "my_active_pokemon": "Pelipper",
+    "my_active_hp_percent": 0.35,
+    "opponent_active_pokemon": "Chesnaught",
+    "opponent_active_hp_percent": 0.5,
+    "my_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Tailwind",
+      "Hurricane"
+    ],
+    "opponent_known_moves": [
+      "Spiky Shield"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "move",
+        "target": "Hurricane"
+      },
+      {
+        "action_type": "switch",
+        "target": "Skarmory"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Excadrill"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Hurricane"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 8,
+    "my_active_pokemon": "Pelipper",
+    "my_active_hp_percent": 0.35,
+    "opponent_active_pokemon": "Pelipper",
+    "opponent_active_hp_percent": 0.87,
+    "my_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Tailwind",
+      "Hurricane"
+    ],
+    "opponent_known_moves": [
+      "Weather Ball",
+      "Tailwind",
+      "Hurricane"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "move",
+        "target": "Hurricane"
+      },
+      {
+        "action_type": "switch",
+        "target": "Skarmory"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Excadrill"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Hurricane"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  },
+  {
+    "player_side": "p2",
+    "turn": 9,
+    "my_active_pokemon": "Pelipper",
+    "my_active_hp_percent": 0.5,
+    "opponent_active_pokemon": "Pelipper",
+    "opponent_active_hp_percent": 0.49,
+    "my_team": [
+      [
+        "Skarmory",
+        1.0
+      ],
+      [
+        "Basculegion",
+        1.0
+      ],
+      [
+        "Excadrill",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Sneasler",
+        1.0
+      ],
+      [
+        "Maushold",
+        1.0
+      ]
+    ],
+    "opponent_team": [
+      [
+        "Sharpedo",
+        1.0
+      ],
+      [
+        "Blastoise",
+        1.0
+      ],
+      [
+        "Pelipper",
+        1.0
+      ],
+      [
+        "Beartic",
+        1.0
+      ],
+      [
+        "Chesnaught",
+        1.0
+      ],
+      [
+        "Serperior",
+        1.0
+      ]
+    ],
+    "my_known_moves": [
+      "Tailwind",
+      "Hurricane"
+    ],
+    "opponent_known_moves": [
+      "Weather Ball",
+      "Tailwind",
+      "Hurricane"
+    ],
+    "available_actions": [
+      {
+        "action_type": "move",
+        "target": "Tailwind"
+      },
+      {
+        "action_type": "move",
+        "target": "Hurricane"
+      },
+      {
+        "action_type": "switch",
+        "target": "Basculegion"
+      },
+      {
+        "action_type": "switch",
+        "target": "Excadrill"
+      }
+    ],
+    "taken_action": {
+      "action_type": "move",
+      "target": "Hurricane"
+    },
+    "outcome": "loss",
+    "outcome_weight": 0.5
+  }
+]
