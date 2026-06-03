@@ -112,11 +112,28 @@ class TrainingDatasetBuilder:
         """
         examples = []
         
-        # Determine winner for outcome weighting
+        # Determine winner for outcome weighting. Showdown's |win| uses the
+        # player's display name, not the side string 'p1'/'p2'. Map the name
+        # back to the corresponding side if possible.
         winner = None
         for event in log.events:
             if event.kind == "win" and event.args:
-                winner = event.args[0]
+                winner_name = event.args[0]
+                # If BattleLog has players, map name -> side
+                try:
+                    p1_name, p2_name = log.players
+                except Exception:
+                    p1_name = p2_name = None
+
+                if p1_name and winner_name == p1_name:
+                    winner = "p1"
+                elif p2_name and winner_name == p2_name:
+                    winner = "p2"
+                elif winner_name in ("p1", "p2"):
+                    # In some logs the side string might already be present.
+                    winner = winner_name
+                else:
+                    winner = None
                 break
         
         # Extract all moves and switches, organized by turn and player

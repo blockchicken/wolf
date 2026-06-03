@@ -46,25 +46,36 @@ p1_timeline = p1_tracker.consume_all(views["p1"])
 print(p1_timeline[-1].winner)
 ```
 
-## Run one headless battle
+## Run Headless AI Battles
 
 ```python
-from showdown_ai import ShowdownBattleRunner, RandomLegalAgent
+from showdown_ai.battle_runner import BattleRunner, RandomDecisionHandler
 
-runner = ShowdownBattleRunner(pokemon_showdown_repo="/path/to/pokemon-showdown")
-result = runner.run_single_battle(
-    team_p1="PACKED_TEAM_STRING_1",
-    team_p2="PACKED_TEAM_STRING_2",
-    agent_p1=RandomLegalAgent(),
-    agent_p2=RandomLegalAgent(),
-    seed=7,
-    formatid="gen9vgc2024regg",
+# Initialize runner pointing to pokemon-showdown checkout
+runner = BattleRunner(
+    showdown_path="/path/to/pokemon-showdown",
+    format_id="gen9vgc2024regg",
+    seed=(1234, 5678, 9012, 3456),  # optional
 )
-print(result.winner, result.turns)
+
+# Run a battle with two AI players
+result, _ = runner.run_battle(
+    team_p1=packed_team_1,
+    team_p2=packed_team_2,
+    p1_handler=RandomDecisionHandler(),
+    p2_handler=RandomDecisionHandler(),
+    p1_name="Alice",
+    p2_name="Bob",
+)
+
+print(f"Winner: {result.winner}")  # "p1", "p2", or None for tie
+print(f"Turns: {result.turns}")
 ```
 
-### Notes
+**Key features:**
+- AI decisions made from imperfect information (own team fully known, opponent team partially)
+- Battle runs headlessly in subprocess—no GUI needed
+- Easy to integrate trained models (implement `DecisionHandler` interface)
+- Optional training data collection (request/action pairs per turn)
 
-- The Node worker expects a built Showdown checkout (`dist/sim` present).
-- Policies act on each side's private `|request|` stream, so decisions are made from imperfect information.
-- Perspective splitting keeps public battle protocol events and drops spectator/chat noise.
+See [HEADLESS_BATTLE_RUNNER.md](HEADLESS_BATTLE_RUNNER.md) for complete integration guide.

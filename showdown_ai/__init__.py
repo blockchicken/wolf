@@ -13,6 +13,12 @@ from .training_data import (
     Action,
     create_dataset_from_logs,
 )
+from .battle_runner import (
+    BattleRunner,
+    DecisionHandler,
+    RandomDecisionHandler,
+    BattleState,
+)
 
 __all__ = [
     "Action",
@@ -20,9 +26,13 @@ __all__ = [
     "Agent",
     "BattleResult",
     "BattleLog",
+    "BattleRunner",
+    "BattleState",
+    "DecisionHandler",
     "HeadlessScraper",
     "ParsedEvent",
     "PerspectiveState",
+    "RandomDecisionHandler",
     "RandomLegalAgent",
     "ScraperConfig",
     "ShowdownBattleRunner",
