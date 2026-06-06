@@ -1,0 +1,253 @@
+=== BATTLE START: Team1 vs Team2 | format: gen9championsvgc2026regma ===
+
+update
+|t:|1780722046
+|gametype|doubles
+|player|p1|Team1||
+|player|p2|Team2||
+|gen|9
+|tier|[Gen 9 Champions] VGC 2026 Reg M-A
+|rule|Species Clause: Limit one of each PokÃ©mon
+|rule|Item Clause: Limit 1 of each item
+|clearpoke
+|poke|p1|Incineroar, M|
+|poke|p1|Garchomp, F|
+|poke|p1|Milotic, M|
+|poke|p1|Gardevoir, M|
+|poke|p1|Corviknight, M|
+|poke|p1|Rotom-Wash|
+|poke|p2|Charizard, F|
+|poke|p2|Pikachu, M|
+|poke|p2|Alakazam, M|
+|poke|p2|Machamp, F|
+|poke|p2|Lapras, M|
+|poke|p2|Raichu, M|
+|teampreview|4
+|uhtml|otsrequest|<button name="send" value="/acceptopenteamsheets" class="button" style="margin-right: 10px;"><strong>Accept Open Team Sheets</strong></button><button name="send" value="/rejectopenteamsheets" class="button" style="margin-top: 10px"><strong>Deny Open Team Sheets</strong></button>
+|uhtml|otsrequest|<button name="send" value="/acceptopenteamsheets" class="button" style="margin-right: 10px;"><strong>Accept Open Team Sheets</strong></button><button name="send" value="/rejectopenteamsheets" class="button" style="margin-top: 10px"><strong>Deny Open Team Sheets</strong></button>
+sideupdate
+p1
+|request|{"teamPreview":true,"maxChosenTeamSize":4,"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"202/202","active":true,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"185/185","active":true,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false},{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":false,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":false,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false},{"ident":"p1: Corviknight","details":"Corviknight, M","condition":"205/205","active":false,"stats":{"atk":107,"def":172,"spa":65,"spd":107,"spe":87},"moves":["roost","tailwind","bodypress","steelbeam"],"baseAbility":"pressure","item":"corviknite","pokeball":"pokeball","ability":"pressure","commanding":false,"reviving":false},{"ident":"p1: Rotom","details":"Rotom-Wash","condition":"157/157","active":false,"stats":{"atk":76,"def":127,"spa":137,"spd":159,"spe":108},"moves":["hydropump","voltswitch","thunderbolt","willowisp"],"baseAbility":"levitate","item":"rotomite","pokeball":"pokeball","ability":"levitate","commanding":false,"reviving":false}]}}
+# DECISION >p1 team 1,2,3,4
+sideupdate
+p2
+|request|{"teamPreview":true,"maxChosenTeamSize":4,"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard, F","condition":"153/153","active":true,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"110/110","active":true,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"130/130","active":false,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Machamp","details":"Machamp, F","condition":"197/197","active":false,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false},{"ident":"p2: Lapras","details":"Lapras, M","condition":"237/237","active":false,"stats":{"atk":94,"def":100,"spa":107,"spd":161,"spe":80},"moves":["surf","icebeam","earthquake","freezedry"],"baseAbility":"waterabsorb","item":"laprasite","pokeball":"pokeball","ability":"waterabsorb","commanding":false,"reviving":false},{"ident":"p2: Raichu","details":"Raichu, M","condition":"135/135","active":false,"stats":{"atk":99,"def":75,"spa":112,"spd":132,"spe":178},"moves":["thunderbolt","focusblast","nastyplot","voltswitch"],"baseAbility":"static","item":"raichuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false}]}}
+# DECISION >p2 team 1,2,3,4
+update
+|
+|t:|1780722047
+|teamsize|p1|4
+|teamsize|p2|4
+|start
+|uhtmlchange|otsrequest|
+|uhtmlchange|otsrequest|
+|switch|p1a: Incineroar|Incineroar, M|202/202
+|switch|p1b: Garchomp|Garchomp, F|185/185
+|switch|p2a: Charizard|Charizard, F|153/153
+|switch|p2b: Pikachu|Pikachu, M|110/110
+|-ability|p1a: Incineroar|Intimidate|boost
+|-unboost|p2a: Charizard|atk|1
+|-unboost|p2b: Pikachu|atk|1
+|turn|1
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Fake Out","id":"fakeout","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Darkest Lariat","id":"darkestlariat","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Close Combat","id":"closecombat","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Flare Blitz","id":"flareblitz","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Stone Edge","id":"stoneedge","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Earthquake","id":"earthquake","pp":12,"maxpp":12,"target":"allAdjacent","disabled":false},{"move":"Outrage","id":"outrage","pp":12,"maxpp":12,"target":"randomNormal","disabled":false},{"move":"Fire Fang","id":"firefang","pp":16,"maxpp":16,"target":"normal","disabled":false}],"canMegaEvo":true}],"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"202/202","active":true,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"185/185","active":true,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false},{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":false,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":false,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false}]}}
+# DECISION >p1 move 1 1, move 3
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Air Cutter","id":"aircutter","pp":20,"maxpp":20,"target":"allAdjacentFoes","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Roost","id":"roost","pp":8,"maxpp":8,"target":"self","disabled":false}],"canMegaEvo":true},{"moves":[{"move":"Thunderbolt","id":"thunderbolt","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Quick Attack","id":"quickattack","pp":20,"maxpp":20,"target":"normal","disabled":false},{"move":"Wild Charge","id":"wildcharge","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Volt Switch","id":"voltswitch","pp":20,"maxpp":20,"target":"normal","disabled":false}]}],"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard, F","condition":"153/153","active":true,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"110/110","active":true,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"130/130","active":false,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Machamp","details":"Machamp, F","condition":"197/197","active":false,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false}]}}
+# DECISION >p2 move 4, move 4 1
+update
+|
+|t:|1780722047
+|move|p1a: Incineroar|Fake Out|p2a: Charizard
+|-damage|p2a: Charizard|107/153
+|move|p1b: Garchomp|Outrage|p2b: Pikachu
+|-damage|p2b: Pikachu|0 fnt
+|-status|p1b: Garchomp|par|[from] ability: Static|[of] p2b: Pikachu
+|faint|p2b: Pikachu
+|cant|p2a: Charizard|flinch
+|
+|upkeep
+sideupdate
+p1
+|request|{"wait":true,"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"202/202","active":true,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"185/185 par","active":true,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false},{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":false,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":false,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false}]}}
+# p1 is waiting (no action needed)
+sideupdate
+p2
+|request|{"forceSwitch":[false,true],"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard, F","condition":"107/153","active":true,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"0 fnt","active":true,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"130/130","active":false,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Machamp","details":"Machamp, F","condition":"197/197","active":false,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false}]},"noCancel":true}
+# DECISION >p2 switch 3
+update
+|
+|t:|1780722047
+|switch|p2b: Alakazam|Alakazam, M|130/130
+|turn|2
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Fake Out","id":"fakeout","pp":11,"maxpp":12,"target":"normal","disabled":true},{"move":"Darkest Lariat","id":"darkestlariat","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Close Combat","id":"closecombat","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Flare Blitz","id":"flareblitz","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"202/202","active":true,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"185/185 par","active":true,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false},{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":false,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":false,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false}]}}
+# DECISION >p1 move 1 1, move 1
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Flamethrower","id":"flamethrower","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Air Cutter","id":"aircutter","pp":20,"maxpp":20,"target":"allAdjacentFoes","disabled":false},{"move":"Dragon Claw","id":"dragonclaw","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Roost","id":"roost","pp":8,"maxpp":8,"target":"self","disabled":false}],"canMegaEvo":true},{"moves":[{"move":"Psychic","id":"psychic","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Focus Blast","id":"focusblast","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":12,"maxpp":12,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard, F","condition":"107/153","active":true,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"130/130","active":true,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"0 fnt","active":false,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Machamp","details":"Machamp, F","condition":"197/197","active":false,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false}]}}
+# DECISION >p2 move 2, move 2 1
+sideupdate
+p1
+|error|[Unavailable choice] Can't move: Incineroar's Fake Out is disabled
+# ERROR — retrying for p1
+# RETRY >p1 move 3 1, move 1
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Fake Out","id":"fakeout","pp":11,"maxpp":12,"target":"normal","disabled":true,"disabledSource":""},{"move":"Darkest Lariat","id":"darkestlariat","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Close Combat","id":"closecombat","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Flare Blitz","id":"flareblitz","pp":16,"maxpp":16,"target":"normal","disabled":false}]},{"moves":[{"move":"Outrage","id":"outrage"}],"trapped":true}],"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"202/202","active":true,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"185/185 par","active":true,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false},{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":false,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":false,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false}]},"update":true}
+# DECISION >p1 move 3 2, move 1
+sideupdate
+p1
+|error|[Invalid choice] Can't move: You need a switch response
+# ERROR — retrying for p1
+# RETRY >p1 move 1 1, move 1
+update
+|
+|t:|1780722047
+|move|p2b: Alakazam|Focus Blast|p1a: Incineroar
+|-supereffective|p1a: Incineroar|1
+|-damage|p1a: Incineroar|28/202
+|move|p2a: Charizard|Air Cutter|p1a: Incineroar|[spread] p1a
+|-miss|p2a: Charizard|p1b: Garchomp
+|-damage|p1a: Incineroar|0 fnt
+|faint|p1a: Incineroar
+|move|p1b: Garchomp|Outrage|p2a: Charizard|[from] lockedmove
+|-damage|p2a: Charizard|0 fnt
+|faint|p2a: Charizard
+|-start|p1b: Garchomp|confusion|[fatigue]
+|
+|upkeep
+sideupdate
+p1
+|request|{"forceSwitch":[true,false],"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"0 fnt","active":true,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"185/185 par","active":true,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false},{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":false,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":false,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false}]}}
+# DECISION >p1 switch 3
+sideupdate
+p2
+|request|{"forceSwitch":[true,false],"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Charizard","details":"Charizard, F","condition":"0 fnt","active":true,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"130/130","active":true,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"0 fnt","active":false,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Machamp","details":"Machamp, F","condition":"197/197","active":false,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false}]}}
+# DECISION >p2 switch 4
+sideupdate
+p1
+|error|[Invalid choice] Can't move: You need a switch response
+# ERROR — retrying for p1
+# RETRY >p1 switch 3
+update
+|
+|t:|1780722047
+|switch|p2a: Machamp|Machamp, F|197/197
+|switch|p1a: Milotic|Milotic, M|202/202
+|turn|3
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Recover","id":"recover","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Muddy Water","id":"muddywater","pp":12,"maxpp":12,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Stone Edge","id":"stoneedge","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Earthquake","id":"earthquake","pp":12,"maxpp":12,"target":"allAdjacent","disabled":false},{"move":"Outrage","id":"outrage","pp":11,"maxpp":12,"target":"randomNormal","disabled":false},{"move":"Fire Fang","id":"firefang","pp":16,"maxpp":16,"target":"normal","disabled":false}],"canMegaEvo":true}],"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":true,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"185/185 par","active":true,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false},{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"0 fnt","active":false,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":false,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false}]}}
+# DECISION >p1 move 2 2, move 2
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Dynamic Punch","id":"dynamicpunch","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Bullet Punch","id":"bulletpunch","pp":20,"maxpp":20,"target":"normal","disabled":false},{"move":"Close Combat","id":"closecombat","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Psychic","id":"psychic","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Focus Blast","id":"focusblast","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":12,"maxpp":12,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Machamp","details":"Machamp, F","condition":"197/197","active":true,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"130/130","active":true,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"0 fnt","active":false,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Charizard","details":"Charizard, F","condition":"0 fnt","active":false,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false}]}}
+# DECISION >p2 move 3 2, move 1 2
+sideupdate
+p1
+|error|[Invalid choice] Can't switch: You can't switch to a fainted PokÃ©mon
+# ERROR — retrying for p1
+# RETRY >p1 move 4, move 3
+update
+|
+|t:|1780722047
+|move|p2a: Machamp|Bullet Punch|p1b: Garchomp
+|-damage|p1b: Garchomp|132/185 par
+|-damage|p2a: Machamp|173/197|[from] ability: Rough Skin|[of] p1b: Garchomp
+|move|p2b: Alakazam|Psychic|p1b: Garchomp
+|-damage|p1b: Garchomp|0 fnt
+|faint|p1b: Garchomp
+|move|p1a: Milotic|Ice Beam|p2b: Alakazam
+|-damage|p2b: Alakazam|72/130
+|
+|upkeep
+sideupdate
+p1
+|request|{"forceSwitch":[false,true],"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":true,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"0 fnt","active":true,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false},{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"0 fnt","active":false,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":false,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false}]},"noCancel":true}
+# DECISION >p1 switch 4
+sideupdate
+p2
+|request|{"wait":true,"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Machamp","details":"Machamp, F","condition":"173/197","active":true,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"72/130","active":true,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"0 fnt","active":false,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Charizard","details":"Charizard, F","condition":"0 fnt","active":false,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false}]}}
+# p2 is waiting (no action needed)
+sideupdate
+p1
+|error|[Invalid choice] Can't move: You need a switch response
+# ERROR — retrying for p1
+# RETRY >p1 switch 4
+update
+|
+|t:|1780722047
+|switch|p1b: Gardevoir|Gardevoir, M|143/143
+|-ability|p1b: Gardevoir|Guts|Trace|[from] ability: Trace|[of] p2a: Machamp
+|turn|4
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Recover","id":"recover","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":11,"maxpp":12,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Muddy Water","id":"muddywater","pp":12,"maxpp":12,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Psychic","id":"psychic","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Hyper Voice","id":"hypervoice","pp":12,"maxpp":12,"target":"allAdjacentFoes","disabled":false},{"move":"Focus Blast","id":"focusblast","pp":8,"maxpp":8,"target":"normal","disabled":false}],"canMegaEvo":true}],"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":true,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"143/143","active":true,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false},{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"0 fnt","active":false,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"0 fnt","active":false,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false}]}}
+# DECISION >p1 move 4, move 3
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Dynamic Punch","id":"dynamicpunch","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Bullet Punch","id":"bulletpunch","pp":19,"maxpp":20,"target":"normal","disabled":false},{"move":"Close Combat","id":"closecombat","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Psychic","id":"psychic","pp":11,"maxpp":12,"target":"normal","disabled":false},{"move":"Focus Blast","id":"focusblast","pp":7,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":12,"maxpp":12,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Machamp","details":"Machamp, F","condition":"173/197","active":true,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"72/130","active":true,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"0 fnt","active":false,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Charizard","details":"Charizard, F","condition":"0 fnt","active":false,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false}]}}
+# DECISION >p2 move 2 2, move 2 2
+sideupdate
+p1
+|error|[Invalid choice] Can't switch: You can't switch to a fainted PokÃ©mon
+# ERROR — retrying for p1
+# RETRY >p1 move 3, move 2 1
+update
+|
+|t:|1780722047
+|move|p2b: Alakazam|Focus Blast|p1b: Gardevoir
+|-resisted|p1b: Gardevoir|2
+|-damage|p1b: Gardevoir|117/143
+|-unboost|p1b: Gardevoir|spd|1
+|move|p1b: Gardevoir|Hyper Voice|p2a: Machamp|[spread] p2a,p2b
+|-damage|p2a: Machamp|104/197
+|-damage|p2b: Alakazam|21/130
+|move|p1a: Milotic|Muddy Water|p2a: Machamp|[spread] p2b
+|-miss|p1a: Milotic|p2a: Machamp
+|-damage|p2b: Alakazam|0 fnt
+|faint|p2b: Alakazam
+|move|p2a: Machamp|Heavy Slam|p1b: Gardevoir
+|-supereffective|p1b: Gardevoir|1
+|-damage|p1b: Gardevoir|0 fnt
+|faint|p1b: Gardevoir
+|
+|upkeep
+|turn|5
+sideupdate
+p1
+|request|{"active":[{"moves":[{"move":"Recover","id":"recover","pp":8,"maxpp":8,"target":"self","disabled":false},{"move":"Ice Beam","id":"icebeam","pp":11,"maxpp":12,"target":"normal","disabled":false},{"move":"Surf","id":"surf","pp":16,"maxpp":16,"target":"allAdjacent","disabled":false},{"move":"Muddy Water","id":"muddywater","pp":11,"maxpp":12,"target":"allAdjacentFoes","disabled":false}]},{"moves":[{"move":"Psychic","id":"psychic","pp":12,"maxpp":12,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Hyper Voice","id":"hypervoice","pp":11,"maxpp":12,"target":"allAdjacentFoes","disabled":false},{"move":"Focus Blast","id":"focusblast","pp":8,"maxpp":8,"target":"normal","disabled":false}],"canMegaEvo":true}],"side":{"name":"Team1","id":"p1","pokemon":[{"ident":"p1: Milotic","details":"Milotic, M","condition":"202/202","active":true,"stats":{"atk":72,"def":99,"spa":122,"spd":194,"spe":101},"moves":["recover","icebeam","surf","muddywater"],"baseAbility":"competitive","item":"milotite","pokeball":"pokeball","ability":"competitive","commanding":false,"reviving":false},{"ident":"p1: Gardevoir","details":"Gardevoir, M","condition":"0 fnt","active":true,"stats":{"atk":76,"def":85,"spa":145,"spd":137,"spe":145},"moves":["psychic","shadowball","hypervoice","focusblast"],"baseAbility":"trace","item":"gardevoirite","pokeball":"pokeball","ability":"trace","commanding":false,"reviving":false},{"ident":"p1: Incineroar","details":"Incineroar, M","condition":"0 fnt","active":false,"stats":{"atk":135,"def":112,"spa":90,"spd":156,"spe":80},"moves":["fakeout","darkestlariat","closecombat","flareblitz"],"baseAbility":"intimidate","item":"incinerite","pokeball":"pokeball","ability":"intimidate","commanding":false,"reviving":false},{"ident":"p1: Garchomp","details":"Garchomp, F","condition":"0 fnt","active":false,"stats":{"atk":182,"def":115,"spa":90,"spd":105,"spe":169},"moves":["stoneedge","earthquake","outrage","firefang"],"baseAbility":"roughskin","item":"garchompite","pokeball":"pokeball","ability":"roughskin","commanding":false,"reviving":false}]}}
+# DECISION >p1 move 3, move 1 1
+sideupdate
+p2
+|request|{"active":[{"moves":[{"move":"Dynamic Punch","id":"dynamicpunch","pp":8,"maxpp":8,"target":"normal","disabled":false},{"move":"Heavy Slam","id":"heavyslam","pp":11,"maxpp":12,"target":"normal","disabled":false},{"move":"Bullet Punch","id":"bulletpunch","pp":19,"maxpp":20,"target":"normal","disabled":false},{"move":"Close Combat","id":"closecombat","pp":8,"maxpp":8,"target":"normal","disabled":false}]},{"moves":[{"move":"Psychic","id":"psychic","pp":11,"maxpp":12,"target":"normal","disabled":false},{"move":"Focus Blast","id":"focusblast","pp":6,"maxpp":8,"target":"normal","disabled":false},{"move":"Shadow Ball","id":"shadowball","pp":16,"maxpp":16,"target":"normal","disabled":false},{"move":"Dazzling Gleam","id":"dazzlinggleam","pp":12,"maxpp":12,"target":"allAdjacentFoes","disabled":false}]}],"side":{"name":"Team2","id":"p2","pokemon":[{"ident":"p2: Machamp","details":"Machamp, F","condition":"104/197","active":true,"stats":{"atk":200,"def":100,"spa":76,"spd":107,"spe":75},"moves":["dynamicpunch","heavyslam","bulletpunch","closecombat"],"baseAbility":"guts","item":"machampite","pokeball":"pokeball","ability":"guts","commanding":false,"reviving":false},{"ident":"p2: Alakazam","details":"Alakazam, M","condition":"0 fnt","active":true,"stats":{"atk":63,"def":65,"spa":157,"spd":147,"spe":189},"moves":["psychic","focusblast","shadowball","dazzlinggleam"],"baseAbility":"magicguard","item":"alakazamite","pokeball":"pokeball","ability":"magicguard","commanding":false,"reviving":false},{"ident":"p2: Pikachu","details":"Pikachu, M","condition":"0 fnt","active":false,"stats":{"atk":67,"def":60,"spa":72,"spd":102,"spe":156},"moves":["thunderbolt","quickattack","wildcharge","voltswitch"],"baseAbility":"static","item":"pikachuite","pokeball":"pokeball","ability":"static","commanding":false,"reviving":false},{"ident":"p2: Charizard","details":"Charizard, F","condition":"0 fnt","active":false,"stats":{"atk":93,"def":98,"spa":131,"spd":137,"spe":167},"moves":["flamethrower","aircutter","dragonclaw","roost"],"baseAbility":"blaze","item":"charizarditey","pokeball":"pokeball","ability":"blaze","commanding":false,"reviving":false}]}}
+# DECISION >p2 move 4 1, move 2 2
+sideupdate
+p1
+|error|[Invalid choice] Can't move: You sent more choices than unfainted PokÃ©mon.
+# ERROR — retrying for p1
+# RETRY >p1 move 3
+sideupdate
+p1
+|error|[Invalid choice] Can't move: You sent more choices than unfainted PokÃ©mon.
+# ERROR — retrying for p1
+# RETRY >p1 move 4, move 1 2
+sideupdate
+p2
+|error|[Invalid choice] Can't move: You sent more choices than unfainted PokÃ©mon.
+# ERROR — retrying for p2
+# RETRY >p2 move 4 1
+update
+|
+|t:|1780722047
+|move|p1a: Milotic|Surf|p2a: Machamp
+|-damage|p2a: Machamp|0 fnt
+|faint|p2a: Machamp
+|
+|win|Team1
+
+=== WINNER: Team1 after 5 turns ===

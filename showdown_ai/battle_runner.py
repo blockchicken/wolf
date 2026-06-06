@@ -306,6 +306,7 @@ class BattleRunner:
         p2_name: str = "p2",
         max_turns: int = 1000,
         collect_training_data: bool = False,
+        log_file: Optional[str] = None,
     ) -> Tuple[BattleResult, Optional[list]]:
         """Run a complete battle.
 
@@ -318,6 +319,9 @@ class BattleRunner:
             p2_name: Display name for player 2
             max_turns: Maximum turns before timeout
             collect_training_data: If True, return list of (request, action) pairs
+            log_file: Optional path to write a full battle transcript (raw protocol +
+                      decisions). Useful for debugging. Pass a filename like
+                      "battle_001.log" or an absolute path.
 
         Returns:
             Tuple of (BattleResult, training_data_pairs or None)
@@ -325,12 +329,18 @@ class BattleRunner:
         self.battle_state = BattleState(p1_name=p1_name, p2_name=p2_name, is_doubles=self.is_doubles)
         training_data = [] if collect_training_data else None
 
+        log_fh = open(log_file, "w", encoding="utf-8") if log_file else None
+
+        def _log(line: str) -> None:
+            if log_fh:
+                log_fh.write(line + "\n")
+                log_fh.flush()
+
         try:
             # Start subprocess
-            # On Windows, the pokemon-showdown script needs to be run with node explicitly
             showdown_script = self.showdown_path / "pokemon-showdown"
             cmd = ["node", str(showdown_script), "simulate-battle"]
-            
+
             self.process = subprocess.Popen(
                 cmd,
                 stdin=subprocess.PIPE,
@@ -345,11 +355,11 @@ class BattleRunner:
             norm_p2 = self._normalize_packed_team(team_p2)
 
             # Send battle start
-            start_cmd = {
-                "formatid": self.format_id,
-            }
+            start_cmd = {"formatid": self.format_id}
             if self.seed:
                 start_cmd["seed"] = list(self.seed)
+
+            _log(f"=== BATTLE START: {p1_name} vs {p2_name} | format: {self.format_id} ===\n")
 
             self.process.stdin.write(f">start {json.dumps(start_cmd)}\n")
             self.process.stdin.write(
@@ -380,6 +390,19 @@ class BattleRunner:
                     if not line:
                         continue
 
+                    # |split|SIDE precedes two lines with the same event from
+                    # different perspectives: first is the accurate (private) view,
+                    # second is the opponent's approximate view (e.g. HP as %).
+                    # Consume both but only log the accurate (first) line.
+                    if line.startswith("|split|"):
+                        accurate = self.process.stdout.readline().rstrip("\n\r")
+                        _log(accurate)
+                        self.process.stdout.readline()  # discard opponent's view
+                        continue
+
+                    # Log every raw line from the simulator
+                    _log(line)
+
                     if line.startswith("|turn|"):
                         try:
                             turns = int(line.split("|turn|")[1])
@@ -391,18 +414,17 @@ class BattleRunner:
                         if not side_line:
                             break
                         side = side_line.strip()
+                        _log(side_line.rstrip("\n\r"))
 
                         request_line = self.process.stdout.readline()
                         if not request_line:
                             break
                         request_line = request_line.strip()
+                        _log(request_line)
 
                         if request_line.startswith("|error|"):
-                            # Showdown rejected our last choice and is waiting for a
-                            # new valid response — it does NOT resend the request.
-                            # Apply targeted fixes based on the error message, then retry
-                            # with the cached last request for this side.
                             logger.warning(f"Retrying after error: {request_line}")
+                            _log(f"# ERROR — retrying for {side}")
                             cached = last_requests.get(side)
                             last_action = last_actions.get(side, "pass")
                             if cached and side in handlers:
@@ -414,6 +436,7 @@ class BattleRunner:
                                         cached, side, self.battle_state
                                     )
                                 last_actions[side] = action
+                                _log(f"# RETRY >{side} {action}")
                                 self.process.stdin.write(f">{side} {action}\n")
                                 self.process.stdin.flush()
                             continue
@@ -437,11 +460,10 @@ class BattleRunner:
                         if side not in handlers:
                             continue
 
-                        # wait=true means this side has no decision to make
                         if request.get("wait"):
+                            _log(f"# {side} is waiting (no action needed)")
                             continue
 
-                        # Cache so we can retry immediately if Showdown rejects the choice
                         last_requests[side] = request
 
                         if turns >= max_turns:
@@ -459,15 +481,18 @@ class BattleRunner:
                             training_data.append((side, request, action))
 
                         last_actions[side] = action
+                        _log(f"# DECISION >{side} {action}")
                         self.process.stdin.write(f">{side} {action}\n")
                         self.process.stdin.flush()
 
                     elif line.startswith("|win|"):
                         winner = line.split("|win|")[1].strip()
+                        _log(f"\n=== WINNER: {winner} after {turns} turns ===")
                         break
 
                     elif line.startswith("|tie|"):
                         winner = None
+                        _log(f"\n=== TIE after {turns} turns ===")
                         break
 
                 except Exception as e:
@@ -483,6 +508,8 @@ class BattleRunner:
             raise
 
         finally:
+            if log_fh:
+                log_fh.close()
             if self.process:
                 self.process.terminate()
                 try:

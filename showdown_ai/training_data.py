@@ -1,480 +1,298 @@
-"""Training dataset creation from parsed battle logs - REWRITTEN for JSON format.
+"""Training data extraction from downloaded VGC doubles battle logs.
 
-This module builds outcome-weighted training examples from showdown battle logs,
-preparing data for imitation learning models.
+Design
+------
+Each JSON log from Showdown is processed into *two* sets of TurnExamples —
+one from p1's perspective, one from p2's — doubling the effective dataset
+size without requiring additional battles.
+
+A TurnExample captures:
+  - The full observable battle state at the START of a turn (before moves resolve)
+  - The joint action taken by that side's two active slots during the turn
+  - The battle outcome (win / loss / tie) for outcome-weighted training
+
+Information asymmetry is enforced at feature time, not event time.  Both
+perspectives consume the same public event stream (all HP as %, all revealed
+moves), but when building model inputs from a p1 example the p2 slots are
+treated as "opponent" (with only revealed moves), and vice-versa.
 """
 
-from dataclasses import dataclass, asdict
-from typing import Optional, List, Dict, Tuple, Any, Set
+from __future__ import annotations
+
+from dataclasses import dataclass, field, asdict
 from pathlib import Path
-import json
-from enum import Enum
+from typing import Optional, List, Dict, Tuple
 
-from .logs import BattleLog, ParsedEvent, load_showdown_log_json, split_perspective_logs
-from .state import StateTracker, PerspectiveState
+from .logs import BattleLog, ParsedEvent, load_showdown_log_json
+from .state import StateTracker, PerspectiveState, _slot_id, _species
 
 
-class ActionType(Enum):
-    """Type of action a player can take."""
-    MOVE = "move"
-    SWITCH = "switch"
-
+# ---------------------------------------------------------------------------
+# Action types
+# ---------------------------------------------------------------------------
 
 @dataclass
-class Action:
-    """A single decision: either a move or a switch."""
-    action_type: ActionType
-    target: str  # move name or pokemon name
+class SlotAction:
+    """What one active slot decided to do during a turn.
 
+    For 'move': `name` is the move name; `target` is the target slot id (e.g.
+    'p2a') when the target is deterministic from the log, otherwise None.
+
+    For 'switch': `name` is the species switched in.
+    """
+    kind: str           # "move" or "switch"
+    name: str
+    target: Optional[str] = None   # target slot id for targeted moves
+
+
+# ---------------------------------------------------------------------------
+# Training example
+# ---------------------------------------------------------------------------
 
 @dataclass
-class TrainingExample:
-    """Single (state, available_actions, taken_action, outcome) training example."""
-    
-    # State representation (what the player can see)
-    player_side: str  # "p1" or "p2"
+class TurnExample:
+    """One per-turn, per-side training example for VGC doubles.
+
+    `state` is a snapshot taken at the |turn|N marker — i.e. the full
+    observable battle state *before* any moves in turn N execute.
+
+    `actions` maps slot suffix ('a' or 'b') to the SlotAction chosen for that
+    slot this turn.  A slot is absent from the dict if it wasn't active or
+    if its action could not be determined from the log (e.g. it flinched
+    before acting — in that case the player's decision was made but the log
+    only shows |cant|, not what move was intended).
+    """
+    battle_id: str
+    side: str               # "p1" or "p2"
     turn: int
-    
-    # Active pokemon state (what player can observe)
-    my_active_pokemon: Optional[str]  # "pikachu" or similar
-    my_active_hp_percent: float  # 0.0 to 1.0
-    
-    # Opponent state (what player can observe)
-    opponent_active_pokemon: Optional[str]  # Known type/species or "Unknown"
-    opponent_active_hp_percent: float
-    
-    # Pokemon on field
-    my_team: List[Tuple[str, float]]  # [(name, hp%), ...]
-    opponent_team: List[Tuple[str, float]]
-    
-    # Known moves (what we've seen them use)
-    my_known_moves: List[str]
-    opponent_known_moves: List[str]
-    
-    # Available actions at this decision point
-    available_actions: List[Action]
-    
-    # Action actually taken
-    taken_action: Action
-    
-    # Outcome (for weighting)
-    outcome: str  # "win", "loss", "tie"
-    outcome_weight: float  # 1.0 for win, 0.5 for loss, 0.25 for tie
-    
-    def to_dict(self) -> Dict[str, Any]:
-        """Convert to JSON-serializable dict."""
-        return {
-            "player_side": self.player_side,
-            "turn": self.turn,
-            "my_active_pokemon": self.my_active_pokemon,
-            "my_active_hp_percent": self.my_active_hp_percent,
-            "opponent_active_pokemon": self.opponent_active_pokemon,
-            "opponent_active_hp_percent": self.opponent_active_hp_percent,
-            "my_team": self.my_team,
-            "opponent_team": self.opponent_team,
-            "my_known_moves": self.my_known_moves,
-            "opponent_known_moves": self.opponent_known_moves,
-            "available_actions": [
-                {"action_type": a.action_type.value, "target": a.target}
-                for a in self.available_actions
-            ],
-            "taken_action": {
-                "action_type": self.taken_action.action_type.value,
-                "target": self.taken_action.target,
-            },
-            "outcome": self.outcome,
-            "outcome_weight": self.outcome_weight,
-        }
+
+    state: PerspectiveState  # pre-turn observable state
+
+    # slot suffix → action chosen for that slot
+    actions: Dict[str, SlotAction]
+
+    outcome: str            # "win" / "loss" / "tie"
+    outcome_weight: float   # 1.0  /  0.5   /  0.25
 
 
-class TrainingDatasetBuilder:
-    """Build training examples from battle logs.
-    
-    Key insight: In the JSON format, actions are shown as |move| and |switch| events.
-    We need to:
-    1. Track state progression through events
-    2. Identify each decision point (when a player makes an action)
-    3. Build available actions from known pokemon and moves
-    4. Record the action that was actually taken
+# ---------------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------------
+
+def _winner_side(log: BattleLog) -> Optional[str]:
+    """Map the |win| player name back to 'p1' or 'p2'."""
+    for event in log.events:
+        if event.kind == "win" and event.args:
+            name = event.args[0]
+            try:
+                p1_name, p2_name = log.players
+            except Exception:
+                return None
+            if name == p1_name:
+                return "p1"
+            if name == p2_name:
+                return "p2"
+    return None
+
+
+def _outcome(side: str, winner: Optional[str]) -> Tuple[str, float]:
+    if winner is None:
+        return "tie", 0.25
+    return ("win", 1.0) if winner == side else ("loss", 0.5)
+
+
+def _group_turns(
+    events: tuple[ParsedEvent, ...],
+) -> List[Tuple[int, ParsedEvent, List[ParsedEvent]]]:
+    """Split events into (turn_num, turn_event, body_events) triples.
+
+    turn_event is the |turn|N ParsedEvent itself (needed to advance the
+    tracker's turn counter before snapshotting).  body_events are everything
+    that follows until the next |turn| marker.
+
+    Group 0 contains events before the first |turn|, with a synthetic
+    turn_event of None — these are team-preview and initial switch-ins and
+    are consumed to seed the tracker but never produce TurnExamples.
     """
-    
-    def __init__(self):
-        self.examples: List[TrainingExample] = []
-    
-    def parse_log(self, log: BattleLog) -> List[TrainingExample]:
-        """Extract training examples from a single battle log.
-        
-        Args:
-            log: Parsed battle log
-            
-        Returns:
-            List of training examples for both players
-        """
-        examples = []
-        
-        # Determine winner for outcome weighting. Showdown's |win| uses the
-        # player's display name, not the side string 'p1'/'p2'. Map the name
-        # back to the corresponding side if possible.
-        winner = None
-        for event in log.events:
-            if event.kind == "win" and event.args:
-                winner_name = event.args[0]
-                # If BattleLog has players, map name -> side
-                try:
-                    p1_name, p2_name = log.players
-                except Exception:
-                    p1_name = p2_name = None
-
-                if p1_name and winner_name == p1_name:
-                    winner = "p1"
-                elif p2_name and winner_name == p2_name:
-                    winner = "p2"
-                elif winner_name in ("p1", "p2"):
-                    # In some logs the side string might already be present.
-                    winner = winner_name
-                else:
-                    winner = None
-                break
-        
-        # Extract all moves and switches, organized by turn and player
-        turns_data = self._extract_turns_data(log.events)
-        
-        # Process each player's perspective
-        for player_side in ["p1", "p2"]:
-            perspective_examples = self._extract_examples_for_player(
-                side=player_side,
-                log_events=log.events,
-                turns_data=turns_data,
-                winner=winner,
-                battle_id=log.battle_id,
-            )
-            examples.extend(perspective_examples)
-        
-        self.examples.extend(examples)
-        return examples
-    
-    def _extract_turns_data(self, events: Tuple[ParsedEvent, ...]) -> Dict[int, Dict]:
-        """Extract structured data about each turn.
-        
-        Returns:
-            {
-                turn_number: {
-                    "p1": {"move": move_name, "target": target} OR {"switch": pokemon},
-                    "p2": {...},
-                }
-            }
-        """
-        turns = {}
-        current_turn = 0
-        
-        for event in events:
-            if event.kind == "turn" and event.args:
-                current_turn = int(event.args[0])
-                turns[current_turn] = {"p1": None, "p2": None}
-            
-            elif event.kind == "move" and len(event.args) >= 2:
-                actor = event.args[0]  # "p1a: Pikachu" or "p2b: Dragonite"
-                move_name = event.args[1]
-                
-                side = actor[:2]  # "p1" or "p2"
-                if current_turn in turns and side in ["p1", "p2"]:
-                    if turns[current_turn][side] is None:
-                        turns[current_turn][side] = {"action_type": "move", "target": move_name}
-            
-            elif event.kind == "switch" and len(event.args) >= 2:
-                actor = event.args[0]  # "p1a: Pikachu"
-                pokemon_spec = event.args[1]  # "Pikachu, L50" or similar
-                pokemon_name = pokemon_spec.split(',')[0] if ',' in pokemon_spec else pokemon_spec
-                
-                side = actor[:2]  # "p1" or "p2"
-                if current_turn in turns and side in ["p1", "p2"]:
-                    if turns[current_turn][side] is None:
-                        turns[current_turn][side] = {"action_type": "switch", "target": pokemon_name}
-        
-        return turns
-    
-    def _extract_examples_for_player(
-        self,
-        side: str,
-        log_events: Tuple[ParsedEvent, ...],
-        turns_data: Dict[int, Dict],
-        winner: Optional[str],
-        battle_id: str,
-    ) -> List[TrainingExample]:
-        """Extract examples for one player's perspective."""
-        examples = []
-        
-        # Determine outcome for this player
-        if winner is None:
-            outcome = "tie"
-            outcome_weight = 0.25
-        elif winner == side:
-            outcome = "win"
-            outcome_weight = 1.0
+    groups: List[Tuple[int, Optional[ParsedEvent], List[ParsedEvent]]] = [
+        (0, None, [])
+    ]
+    for event in events:
+        if event.kind == "turn" and event.args:
+            groups.append((int(event.args[0]), event, []))
         else:
-            outcome = "loss"
-            outcome_weight = 0.5
-        
-        # Track state as we go through events
-        team_pokemon: List[str] = []  # All pokemon on this player's team
-        opponent_team_pokemon: List[str] = []
-        
-        active_pokemon = {
-            side: None,
-            "opponent": None,
-        }
-        active_hp = {
-            side: 1.0,
-            "opponent": 1.0,
-        }
-        
-        known_moves: Dict[str, Set[str]] = {}  # {pokemon_name: {moves}}
-        opponent_known_moves: Dict[str, Set[str]] = {}
-        fainted: Set[str] = set()  # Fainted pokemon
-        opponent_fainted: Set[str] = set()
-        
-        current_turn = 0
-        
-        # First pass: collect all team pokemon
-        for event in log_events:
-            if event.kind == "poke" and len(event.args) >= 2:
-                poke_side = event.args[0]
-                pokemon_spec = event.args[1]
-                pokemon_name = pokemon_spec.split(',')[0]
-                
-                if poke_side == side:
-                    team_pokemon.append(pokemon_name)
-                else:
-                    opponent_team_pokemon.append(pokemon_name)
-        
-        # Second pass: extract examples for each action taken
-        for i, event in enumerate(log_events):
-            # Track turn number
-            if event.kind == "turn" and event.args:
-                current_turn = int(event.args[0])
-            
-            # Update active pokemon on switch
-            elif event.kind == "switch" and len(event.args) >= 2:
-                actor = event.args[0]
-                actor_side = actor[:2]
-                pokemon_spec = event.args[1]
-                pokemon_name = pokemon_spec.split(',')[0]
-                hp_str = event.args[2] if len(event.args) > 2 else "100/100"
-                hp_frac = self._parse_hp(hp_str)
-                
-                if actor_side == side:
-                    active_pokemon[side] = pokemon_name
-                    active_hp[side] = hp_frac
-                else:
-                    active_pokemon["opponent"] = pokemon_name
-                    active_hp["opponent"] = hp_frac
-            
-            # Update HP on damage
-            elif event.kind == "-damage" and len(event.args) >= 2:
-                actor = event.args[0]
-                actor_side = actor[:2]
-                hp_str = event.args[1] if len(event.args) > 1 else "?/?"
-                hp_frac = self._parse_hp(hp_str)
-                
-                if actor_side == side:
-                    active_hp[side] = hp_frac
-                else:
-                    active_hp["opponent"] = hp_frac
-            
-            # Track fainted pokemon
-            elif event.kind == "faint" and len(event.args) >= 1:
-                actor = event.args[0]
-                actor_side = actor[:2]
-                pokemon_name = actor.split(': ')[1] if ': ' in actor else "Unknown"
-                
-                if actor_side == side:
-                    fainted.add(pokemon_name)
-                else:
-                    opponent_fainted.add(pokemon_name)
-            
-            # Track known moves and create examples
-            elif event.kind == "move" and len(event.args) >= 2:
-                actor = event.args[0]
-                actor_side = actor[:2]
-                move_name = event.args[1]
-                pokemon_name = actor.split(': ')[1] if ': ' in actor else "Unknown"
-                
-                # Track moves
-                if actor_side == side:
-                    if pokemon_name not in known_moves:
-                        known_moves[pokemon_name] = set()
-                    known_moves[pokemon_name].add(move_name)
-                else:
-                    if pokemon_name not in opponent_known_moves:
-                        opponent_known_moves[pokemon_name] = set()
-                    opponent_known_moves[pokemon_name].add(move_name)
-                    continue  # Don't create examples for opponent moves
-                
-                # Create example when our pokemon uses a move
-                if pokemon_name == active_pokemon[side]:
-                    available = self._build_available_actions(
-                        active_pokemon[side],
-                        team_pokemon,
-                        fainted,
-                        known_moves.get(active_pokemon[side], set()),
-                    )
-                    
-                    taken_action = Action(ActionType.MOVE, move_name)
-                    
-                    example = TrainingExample(
-                        player_side=side,
-                        turn=current_turn,
-                        my_active_pokemon=active_pokemon[side],
-                        my_active_hp_percent=active_hp[side],
-                        opponent_active_pokemon=active_pokemon["opponent"],
-                        opponent_active_hp_percent=active_hp["opponent"],
-                        my_team=[(p, 1.0) for p in team_pokemon],
-                        opponent_team=[(p, 1.0) for p in opponent_team_pokemon],
-                        my_known_moves=list(known_moves.get(active_pokemon[side], set())),
-                        opponent_known_moves=list(opponent_known_moves.get(active_pokemon["opponent"] or "", set())),
-                        available_actions=available,
-                        taken_action=taken_action,
-                        outcome=outcome,
-                        outcome_weight=outcome_weight,
-                    )
-                    examples.append(example)
-        
-        return examples
-    
-    def _build_available_actions(
-        self,
-        active_pokemon: Optional[str],
-        team_pokemon: List[str],
-        fainted_pokemon: Set[str],
-        pokemon_moves: Set[str],
-    ) -> List[Action]:
-        """Build available actions based on known state.
-        
-        Args:
-            active_pokemon: Currently active pokemon
-            team_pokemon: All team pokemon
-            fainted_pokemon: Fainted pokemon
-            pokemon_moves: Known moves for active pokemon
-            
-        Returns:
-            List of available actions (moves + switches)
-        """
-        actions = []
-        
-        # Add known moves for active pokemon
-        for move in pokemon_moves:
-            actions.append(Action(ActionType.MOVE, move))
-        
-        # Add available switches (non-fainted, not currently active)
-        for pokemon in team_pokemon:
-            if pokemon != active_pokemon and pokemon not in fainted_pokemon:
-                actions.append(Action(ActionType.SWITCH, pokemon))
-        
-        # If no actions available (shouldn't happen), add a default
-        if not actions and active_pokemon:
-            actions.append(Action(ActionType.MOVE, "Unknown"))
-        
-        return actions
-    
-    def _build_state_snapshot(
-        self,
-        side: str,
-        events: Tuple[ParsedEvent, ...],
-        team_info: Dict[str, Tuple[str, float]],
-        opponent_team_info: Dict[str, Tuple[str, float]],
-        known_moves: Dict[str, Set[str]],
-        opponent_known_moves: Dict[str, Set[str]],
-        current_turn: int,
-    ) -> Dict[str, Any]:
-        """Build a state snapshot from events up to a point."""
-        # Track active pokemon and HP
-        active_pokemon = {
-            side: None,
-            "opponent": None,
-        }
-        active_hp = {
-            side: 1.0,
-            "opponent": 1.0,
-        }
-        
-        # Trace through events to find current state
-        for event in events:
-            if event.kind == "switch" and len(event.args) >= 2:
-                actor_side = event.args[0][:2]
-                pokemon_spec = event.args[1]
-                pokemon_name = pokemon_spec.split(',')[0]
-                hp_str = event.args[2] if len(event.args) > 2 else "100/100"
-                hp_frac = self._parse_hp(hp_str)
-                
-                if actor_side == side:
-                    active_pokemon[side] = pokemon_name
-                    active_hp[side] = hp_frac
-                else:
-                    active_pokemon["opponent"] = pokemon_name
-                    active_hp["opponent"] = hp_frac
-            
-            elif event.kind == "-damage" and len(event.args) >= 2:
-                actor = event.args[0]
-                actor_side = actor[:2]
-                hp_str = event.args[2] if len(event.args) > 2 else "?/?"
-                hp_frac = self._parse_hp(hp_str)
-                
-                if actor_side == side:
-                    active_hp[side] = hp_frac
-                else:
-                    active_hp["opponent"] = hp_frac
-        
-        return {
-            "active": active_pokemon[side],
-            "active_hp": active_hp[side],
-            "opponent_active": active_pokemon["opponent"],
-            "opponent_active_hp": active_hp["opponent"],
-            "team": list(team_info.values()),
-            "opponent_team": list(opponent_team_info.values()),
-            "known_moves": {k: list(v) for k, v in known_moves.items()},
-            "opponent_known_moves": {k: list(v) for k, v in opponent_known_moves.items()},
-        }
-    
-    def _parse_hp(self, hp_str: str) -> float:
-        """Parse HP string like '50/100', '50%', or '?' to fraction 0-1."""
-        if not hp_str or hp_str == "?" or hp_str == "?/?":
-            return 0.5  # Unknown, assume 50%
-        
-        if hp_str.endswith("%"):
-            try:
-                return float(hp_str[:-1]) / 100.0
-            except:
-                return 0.5
-        
-        if "/" in hp_str:
-            try:
-                parts = hp_str.split("/")
-                current = float(parts[0])
-                maximum = float(parts[1])
-                return current / maximum if maximum > 0 else 0.5
-            except:
-                return 0.5
-        
-        return 0.5
+            groups[-1][2].append(event)
+    return groups
 
 
-def create_dataset_from_logs(log_dir: Path | str) -> List[TrainingExample]:
-    """Process all logs in a directory and create a training dataset.
-    
-    Args:
-        log_dir: Directory containing battle JSON files
-        
-    Returns:
-        List of all training examples from all battles
+def _actions_for_side(
+    body_events: List[ParsedEvent],
+    side: str,
+) -> Dict[str, SlotAction]:
+    """Extract the first decisive action each of `side`'s slots took.
+
+    In doubles VGC each slot chooses one action per turn.  We look for the
+    first |move| or voluntary |switch| per slot.
+
+    A |switch| that immediately follows a |move| for the same slot is a
+    pivot-move follow-up (U-turn, Volt Switch, etc.) — we do NOT record it
+    as a separate decision because the decision was already captured by the
+    |move| event.
     """
-    log_dir = Path(log_dir)
-    builder = TrainingDatasetBuilder()
-    
-    for log_file in log_dir.glob("*.json"):
+    my_slots = {f"{side}a", f"{side}b"}
+    actions: Dict[str, SlotAction] = {}
+    slots_that_moved: set[str] = set()
+
+    for event in body_events:
+        if event.kind == "move" and len(event.args) >= 2:
+            slot = _slot_id(event.args[0])
+            if slot not in my_slots or slot in actions:
+                continue
+            # Target slot (for targeted moves) — may be absent for spread/self moves
+            raw_target = event.args[2] if len(event.args) > 2 else None
+            target_slot = (
+                _slot_id(raw_target)
+                if raw_target and ":" in raw_target
+                else None
+            )
+            actions[slot[2]] = SlotAction(  # suffix "a" or "b"
+                kind="move",
+                name=event.args[1],
+                target=target_slot,
+            )
+            slots_that_moved.add(slot)
+
+        elif event.kind == "switch" and len(event.args) >= 2:
+            slot = _slot_id(event.args[0])
+            if slot not in my_slots or slot in actions or slot in slots_that_moved:
+                # Already acted, or this is a pivot follow-up — skip
+                continue
+            actions[slot[2]] = SlotAction(
+                kind="switch",
+                name=_species(event.args[1]),
+            )
+
+    return actions
+
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
+
+def extract_examples(log: BattleLog) -> List[TurnExample]:
+    """Extract per-turn training examples from one battle log.
+
+    Returns two groups of TurnExamples (one per side), so every downloaded
+    log contributes training signal for both the winning and the losing player.
+    """
+    winner = _winner_side(log)
+    examples: List[TurnExample] = []
+    turn_groups = _group_turns(log.events)
+
+    for side in ("p1", "p2"):
+        outcome_str, outcome_w = _outcome(side, winner)
+        tracker = StateTracker(side)
+
+        for turn_num, turn_event, body_events in turn_groups:
+            # Turn 0: pre-battle events (team preview, initial switch-ins).
+            # Consume to seed the tracker; never emit a TurnExample.
+            if turn_event is None:
+                for event in body_events:
+                    tracker.consume(event)
+                continue
+
+            # Advance the tracker's turn counter, THEN snapshot.
+            # This ensures state.turn == turn_num at snapshot time.
+            tracker.consume(turn_event)
+            state_before = tracker.snapshot()
+
+            # Consume the rest of the turn's events to advance HP, status, etc.
+            for event in body_events:
+                tracker.consume(event)
+
+            # Extract what this side decided during the turn
+            my_actions = _actions_for_side(body_events, side)
+
+            # Only emit an example if at least one slot made a decision
+            if not my_actions:
+                continue
+
+            examples.append(TurnExample(
+                battle_id=log.battle_id,
+                side=side,
+                turn=turn_num,
+                state=state_before,
+                actions=my_actions,
+                outcome=outcome_str,
+                outcome_weight=outcome_w,
+            ))
+
+    return examples
+
+
+def extract_examples_from_dir(
+    log_dirs: "str | Path | list[str | Path]",
+    *,
+    recursive: bool = False,
+    verbose: bool = False,
+) -> List[TurnExample]:
+    """Extract TurnExamples from battle log JSON files.
+
+    Parameters
+    ----------
+    log_dirs:
+        A single directory path or a list of directory paths.  Combine rating
+        buckets by passing multiple paths::
+
+            # 1500+ tier only
+            extract_examples_from_dir("logs/1500")
+
+            # 1250+ tier (mid + high)
+            extract_examples_from_dir(["logs/1250", "logs/1500"])
+
+            # all data
+            extract_examples_from_dir("logs", recursive=True)
+
+    recursive:
+        If True, glob ``**/*.json`` so subdirectories (rating buckets) are
+        included automatically.  Ignored when ``log_dirs`` is a list.
+    verbose:
+        Print a line for each excluded or unreadable file.
+    """
+    from .filters import validate_log
+
+    if isinstance(log_dirs, (str, Path)):
+        dirs = [Path(log_dirs)]
+    else:
+        dirs = [Path(d) for d in log_dirs]
+
+    # Collect all JSON paths, deduplicating by absolute path (in case dirs overlap)
+    seen_paths: set[Path] = set()
+    json_paths: List[Path] = []
+    for d in dirs:
+        pattern = "**/*.json" if (recursive and isinstance(log_dirs, (str, Path))) else "*.json"
+        for p in sorted(d.glob(pattern)):
+            abs_p = p.resolve()
+            if abs_p not in seen_paths:
+                seen_paths.add(abs_p)
+                json_paths.append(p)
+
+    all_examples: List[TurnExample] = []
+
+    for path in json_paths:
         try:
-            log = load_showdown_log_json(log_file)
-            examples = builder.parse_log(log)
-        except Exception as e:
-            print(f"Error processing {log_file.name}: {e}")
-    
-    return builder.examples
+            log = load_showdown_log_json(path)
+        except Exception as exc:
+            if verbose:
+                print(f"Parse error {path.name}: {exc}")
+            continue
+
+        valid, reason = validate_log(log)
+        if not valid:
+            if verbose:
+                print(f"Excluded {path.name}: {reason}")
+            continue
+
+        all_examples.extend(extract_examples(log))
+
+    return all_examples
