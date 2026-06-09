@@ -33,6 +33,20 @@ class BattleResult:
 class DecisionHandler(ABC):
     """Abstract base for decision-making strategy."""
 
+    def consume_event(self, line: str) -> None:
+        """Optional hook: receives every raw simulator event line.
+
+        Override in subclasses that maintain their own state tracker
+        (e.g. ModelDecisionHandler).  The default is a no-op.
+        """
+
+    def handle_error(self, error_line: str, last_request: Dict[str, Any], last_action: str) -> None:
+        """Called when Showdown rejects our last action before the retry.
+
+        Handlers that track banned switch slots (Champions 'once per battle'
+        switch rule) should override this to update their internal state.
+        """
+
     @abstractmethod
     def choose_action(
         self,
@@ -59,6 +73,23 @@ class RandomDecisionHandler(DecisionHandler):
     def __init__(self, seed: int = 42):
         import random
         self.rng = random.Random(seed)
+        self._mega_used = False         # True once our side has mega-evolved
+        self._side: Optional[str] = None
+        self._banned_switch_slots: set = set()  # 1-based team slots Showdown rejected
+
+    def consume_event(self, line: str) -> None:
+        # |-mega|p1a: Charizard|Charizardite Y  → our side mega'd; mark it used
+        if "|-mega|" in line and self._side and f"|{self._side}" in line:
+            self._mega_used = True
+
+    def handle_error(self, error_line: str, last_request: Dict[str, Any], last_action: str) -> None:
+        # "The Pokémon in slot 4 can only switch in once" — Champions format rule.
+        # Parse the slot number and ban it so we don't retry the same switch.
+        if "can only switch in once" in error_line:
+            import re
+            m = re.search(r"slot (\d+)", error_line)
+            if m:
+                self._banned_switch_slots.add(int(m.group(1)))
 
     def choose_action(
         self,
@@ -67,6 +98,8 @@ class RandomDecisionHandler(DecisionHandler):
         battle_state: "BattleState",
     ) -> str:
         """Choose a random legal action."""
+        self._side = side
+
         if request.get("wait"):
             return "pass"
 
@@ -105,13 +138,36 @@ class RandomDecisionHandler(DecisionHandler):
             return ", ".join(choices) if choices else "pass"
         else:
             choices = []
+            mega_granted = False       # at most one mega per action command
+            chosen_switches: set = set()  # prevent duplicate switch targets
+
+            # active[i] corresponds to the i-th active: true Pokemon in side.pokemon.
+            # A Pokemon can be active: true but fainted (condition "0 fnt") when it
+            # died mid-turn and hasn't been replaced yet.  Sending choices for that
+            # slot causes "more choices than unfainted Pokémon" errors.
+            side_pokemon = request.get("side", {}).get("pokemon", [])
+            active_pokemon = [p for p in side_pokemon if p.get("active")]
+
             for slot_idx in range(len(active)):
+                # Skip the slot if the corresponding Pokemon has fainted.
+                if slot_idx < len(active_pokemon):
+                    cond = active_pokemon[slot_idx].get("condition", "")
+                    if cond == "0" or cond.startswith("0 "):
+                        continue
+
                 slot_data = active[slot_idx] if slot_idx < len(active) else None
                 # Skip null/empty slots — Pokémon has fainted and not yet replaced.
-                # An empty dict {} or missing "moves" key both indicate no active Pokémon.
                 if not slot_data or not slot_data.get("moves"):
                     continue
-                choice = self._random_move_or_default(request, slot_idx, is_doubles)
+                choice = self._random_move_or_default(request, slot_idx, is_doubles, mega_granted, chosen_switches)
+                if " mega" in choice:
+                    mega_granted = True
+                parts = choice.split()
+                if parts[0] == "switch" and len(parts) >= 2:
+                    try:
+                        chosen_switches.add(int(parts[1]))
+                    except ValueError:
+                        pass
                 choices.append(choice)
             return ", ".join(choices) if choices else "default"
 
@@ -120,24 +176,49 @@ class RandomDecisionHandler(DecisionHandler):
     _NEEDS_TARGET = {"normal", "adjacentFoe", "adjacentAlly", "any"}
 
     def _random_move_or_default(
-        self, request: Dict[str, Any], slot_idx: int, is_doubles: bool = False
+        self,
+        request: Dict[str, Any],
+        slot_idx: int,
+        is_doubles: bool = False,
+        mega_already_granted: bool = False,
+        already_chosen_switches: Optional[set] = None,
     ) -> str:
-        """Choose a random legal move, with target selection for doubles."""
+        """Choose a random legal move, with target selection for doubles.
+
+        Appends 'mega' on the first eligible slot when canMegaEvo is set,
+        subject to one-mega-per-command and one-mega-per-battle constraints.
+        """
         active = request.get("active", [])
         if slot_idx >= len(active):
             return "pass"
 
-        moves = active[slot_idx].get("moves", [])
+        slot_data = active[slot_idx]
+        moves = slot_data.get("moves", [])
         legal_moves = [m for m in moves if not m.get("disabled")]
 
         if not legal_moves:
-            return "pass"
+            # All moves appear disabled in the stale request (e.g. Encore changed
+            # the legal set after the request was sent).  Probe a random move so
+            # successive retries don't always collide on the same rejected choice.
+            all_moves = slot_data.get("moves", [])
+            if not all_moves:
+                return "pass"
+            legal_moves = all_moves  # try any; Showdown will correct us
 
         move = self.rng.choice(legal_moves)
-        move_idx = legal_moves.index(move) + 1
+        # Use position in the FULL moves list (1-based), not position in the filtered
+        # legal_moves subset.  The two differ when some early moves are disabled
+        # (e.g. Protect is move 4 but index 0 in legal_moves, so we'd send "move 1").
+        move_idx = moves.index(move) + 1
+        can_mega = (
+            not self._mega_used
+            and not mega_already_granted
+            and bool(slot_data.get("canMegaEvo"))
+        )
+        mega_suffix = " mega" if can_mega else ""
 
         if not is_doubles:
-            return f"move {move_idx}"
+            return f"move {move_idx}{mega_suffix}"
 
         # In doubles, single-target moves need an explicit target slot.
         # Only add a target when the move explicitly declares it needs one.
@@ -145,22 +226,23 @@ class RandomDecisionHandler(DecisionHandler):
         # auto-targeting moves (randomNormal, allAdjacent, etc.).
         move_target = move.get("target")
         if move_target not in self._NEEDS_TARGET:
-            return f"move {move_idx}"  # spread / self / side move, no target needed
+            return f"move {move_idx}{mega_suffix}"  # spread / self / side move, no target needed
 
         if move_target == "adjacentAlly":
             # Target the other active slot (ally), numbered relative to your side
             ally_slot = 2 if slot_idx == 0 else 1
-            return f"move {move_idx} -{ally_slot}"
+            return f"move {move_idx} -{ally_slot}{mega_suffix}"
         else:
             # Target a random opponent slot (1 or 2)
             target_slot = self.rng.randint(1, 2)
-            return f"move {move_idx} {target_slot}"
+            return f"move {move_idx} {target_slot}{mega_suffix}"
 
     def _random_switch(
         self,
         request: Dict[str, Any],
         slot_idx: int,
         exclude_slots: Optional[set] = None,
+        already_chosen_switches: Optional[set] = None,
     ) -> str:
         """Choose a random available switch target.
 
@@ -176,6 +258,10 @@ class RandomDecisionHandler(DecisionHandler):
                 return False
             if exclude_slots and team_slot_1based in exclude_slots:
                 return False
+            if team_slot_1based in self._banned_switch_slots:
+                return False
+            if already_chosen_switches and team_slot_1based in already_chosen_switches:
+                return False
             cond = p.get("condition", "")
             # Fainted Pokémon have condition "0 fnt"; alive ones are "HP/maxHP [status]"
             return not (cond == "0" or cond.startswith("0 "))
@@ -185,6 +271,17 @@ class RandomDecisionHandler(DecisionHandler):
             for i, p in enumerate(pokemon)
             if _is_available(i + 1, p)
         ]
+
+        if not available:
+            # Last resort: ignore once-per-battle ban if it's the only option,
+            # to avoid an infinite "pass" loop when Showdown requires a switch.
+            available = [
+                (i + 1, p)
+                for i, p in enumerate(pokemon)
+                if not p.get("active")
+                and not (exclude_slots and (i + 1) in exclude_slots)
+                and not (p.get("condition", "") == "0" or p.get("condition", "").startswith("0 "))
+            ]
 
         if available:
             slot, _ = self.rng.choice(available)
@@ -247,6 +344,34 @@ class BattleRunner:
         self.battle_state = BattleState(is_doubles=self.is_doubles)
 
     @staticmethod
+    def _apply_error_to_request(error_line: str, request: Dict[str, Any]) -> None:
+        """Mutate the cached request based on the error so retries pick differently.
+
+        Called before _fix_action and choose_action so the handler sees an
+        updated view of what's actually legal.
+        """
+        import re
+        # "X's Move is disabled" — e.g. "Basculegion's Aqua Jet is disabled".
+        # Mark that move as disabled so choose_action skips it on the next retry.
+        m = re.search(r"'s (.+?) is disabled", error_line, re.IGNORECASE)
+        if m and request:
+            disabled_name = m.group(1).strip().lower()
+            for active_slot in request.get("active", []):
+                for move in active_slot.get("moves", []):
+                    if move.get("move", "").lower() == disabled_name:
+                        move["disabled"] = True
+
+                # If ALL moves in this slot are now disabled, the stale request
+                # no longer reflects the true game state (e.g. Encore changed which
+                # move is legal).  Re-enable all moves except the rejected one so
+                # the handler can probe other options rather than looping on "move 1".
+                slot_moves = active_slot.get("moves", [])
+                if slot_moves and all(mv.get("disabled") for mv in slot_moves):
+                    for mv in slot_moves:
+                        if mv.get("move", "").lower() != disabled_name:
+                            mv["disabled"] = False
+
+    @staticmethod
     def _fix_action(error_line: str, last_action: str) -> str:
         """Attempt a targeted fix for a known Showdown error.
 
@@ -256,11 +381,32 @@ class BattleRunner:
         error_msg = error_line  # e.g. "|error|[Invalid choice] Can't move: ..."
 
         # "more choices than unfainted Pokémon" — we sent 2 choices but only 1
-        # Pokémon is alive.  Drop all but the first choice.
+        # Pokémon is alive.  Drop all but the last non-empty choice; we use the
+        # last rather than the first because the first slot may be the fainted one.
         if "more choices than unfainted" in error_msg:
-            choices = [c.strip() for c in last_action.split(",")]
+            choices = [c.strip() for c in last_action.split(",") if c.strip()]
             if len(choices) > 1:
-                return choices[0]
+                return choices[-1]
+
+        # "can't choose a target for X" — a self-targeting move (e.g. Protect) was
+        # given an explicit slot target.  Strip targets from all move choices.
+        if "can't choose a target for" in error_msg.lower():
+            fixed_parts = []
+            changed = False
+            for part in last_action.split(","):
+                part = part.strip()
+                tokens = part.split()
+                # "move N T" where T is a numeric slot — drop the slot
+                if tokens and tokens[0] == "move" and len(tokens) == 3:
+                    try:
+                        int(tokens[2].lstrip("-"))
+                        part = f"move {tokens[1]}"
+                        changed = True
+                    except ValueError:
+                        pass
+                fixed_parts.append(part)
+            if changed:
+                return ", ".join(fixed_parts)
 
         # "X needs a target" — a single-target move was sent without a slot.
         # Add " 1" (target opponent slot 1) to each un-targeted move choice.
@@ -403,6 +549,10 @@ class BattleRunner:
                     # Log every raw line from the simulator
                     _log(line)
 
+                    # Notify handlers so state-tracking subclasses stay current
+                    for h in handlers.values():
+                        h.consume_event(line)
+
                     if line.startswith("|turn|"):
                         try:
                             turns = int(line.split("|turn|")[1])
@@ -428,6 +578,8 @@ class BattleRunner:
                             cached = last_requests.get(side)
                             last_action = last_actions.get(side, "pass")
                             if cached and side in handlers:
+                                self._apply_error_to_request(request_line, cached)
+                                handlers[side].handle_error(request_line, cached, last_action)
                                 fixed = self._fix_action(request_line, last_action)
                                 if fixed != last_action:
                                     action = fixed

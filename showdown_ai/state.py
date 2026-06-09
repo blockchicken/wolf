@@ -38,6 +38,27 @@ def _species(details: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Constants for derived state
+# ---------------------------------------------------------------------------
+
+# Moves that activate the "used protect" flag.
+_PROTECT_MOVES: frozenset[str] = frozenset({
+    "protect", "detect", "kingsshield", "spikyshield", "banefulbunker",
+    "obstruct", "silktrap", "wideguard", "matblock", "quickguard",
+    "maxguard", "craftyshield",
+})
+
+# Volatile status patterns: canonical name → substrings to match in -start/-end effect strings.
+_VOLATILE_PATTERNS: dict[str, list[str]] = {
+    "confusion":  ["confusion"],
+    "taunt":      ["taunt"],
+    "encore":     ["encore"],
+    "leech_seed": ["leech seed"],
+    "substitute": ["substitute"],
+}
+
+
+# ---------------------------------------------------------------------------
 # State dataclass
 # ---------------------------------------------------------------------------
 
@@ -76,6 +97,28 @@ class PerspectiveState:
     terrain:    Optional[str] = None   # "electricterrain", "grassyterrain", etc.
     trick_room: bool = False
     tailwind:   set[str] = field(default_factory=set)  # sides: {"p1"}, {"p2"}
+
+    # --- New fields ---
+
+    # Stat stage changes per active slot.  slot → {atk: 2, def: -1, …}
+    stat_stages: dict[str, dict[str, int]] = field(default_factory=dict)
+
+    # Volatile status flags per active slot.  slot → {confusion, taunt, …}
+    volatile_status: dict[str, set[str]] = field(default_factory=dict)
+
+    # Per-side hazards/screens.  side → {reflect: 1, spikes: 2, …}
+    side_conditions: dict[str, dict[str, int]] = field(default_factory=dict)
+
+    # Turn on which a Pokemon entered the field (for first-turn detection).
+    # Game-start Pokemon enter at turn 0 (before |turn|1|).
+    entry_turn: dict[str, int] = field(default_factory=dict)  # slot → turn number
+
+    # Which slots used a protecting move last turn / this turn.
+    protect_last_turn: set[str] = field(default_factory=set)
+    protect_this_turn: set[str] = field(default_factory=set)
+
+    # Status for Pokemon on the bench, keyed by species name.
+    bench_status: dict[str, str] = field(default_factory=dict)
 
     winner: Optional[str] = None  # player name from |win| event
 
@@ -154,7 +197,7 @@ class StateTracker:
     # Internal event application
     # ------------------------------------------------------------------
 
-    def _apply(self, event: ParsedEvent) -> None:
+    def _apply(self, event: ParsedEvent) -> None:  # noqa: C901 (complex but systematic)
         s = self._s
         k = event.kind
         a = event.args
@@ -169,16 +212,44 @@ class StateTracker:
                 s.opp_team.append(sp)
 
         elif k == "turn" and a:
+            # Roll protect tracking: what happened last turn is now "last turn".
+            s.protect_last_turn = set(s.protect_this_turn)
+            s.protect_this_turn = set()
             s.turn = int(a[0])
 
         # Switch-ins and phazing (drag / baton pass / etc.)
         elif k in {"switch", "drag"} and len(a) >= 2:
-            slot = _slot_id(a[0])
-            sp   = _species(a[1])
-            hp   = a[2].split()[0] if len(a) > 2 else "100/100"
+            slot   = _slot_id(a[0])
+            sp     = _species(a[1])
+            hp     = a[2].split()[0] if len(a) > 2 else "100/100"
+
+            # Carry outgoing Pokemon's persistent status to bench_status.
+            old_sp = s.active_species.get(slot)
+            if old_sp:
+                old_status = s.active_status.get(slot, "")
+                if old_status:
+                    s.bench_status[old_sp] = old_status
+                else:
+                    s.bench_status.pop(old_sp, None)
+
             s.active_species[slot] = sp
             s.active_hp[slot]      = hp
-            s.active_status.pop(slot, None)   # status resets on switch
+
+            # Restore status from bench (persists through switch).
+            bench_st = s.bench_status.get(sp, "")
+            if bench_st:
+                s.active_status[slot] = bench_st
+            else:
+                s.active_status.pop(slot, None)
+
+            # Clear per-slot volatile state that doesn't persist through switches.
+            s.stat_stages.pop(slot, None)
+            s.volatile_status.pop(slot, None)
+            s.protect_this_turn.discard(slot)
+
+            # Record which turn this Pokemon entered (for first-turn flag).
+            s.entry_turn[slot] = s.turn
+
             s.fainted_slots.discard(slot)
 
         # Forme changes (mega evolution, etc.)
@@ -191,11 +262,14 @@ class StateTracker:
             slot = _slot_id(a[0])
             s.active_species[slot] = _species(a[1])
 
-        # Move used — track revealed moves
+        # Move used — track revealed moves and protecting moves
         elif k == "move" and len(a) >= 2:
             actor = a[0]
             move  = a[1]
             s.revealed_moves.setdefault(actor, set()).add(move)
+            if move.lower().replace(" ", "").replace("-", "") in _PROTECT_MOVES:
+                slot = _slot_id(actor)
+                s.protect_this_turn.add(slot)
 
         # Damage and healing
         elif k == "-damage" and len(a) >= 2:
@@ -206,20 +280,30 @@ class StateTracker:
             slot = _slot_id(a[0])
             s.active_hp[slot] = a[1].split()[0]
 
-        # Status conditions
+        # Non-volatile status conditions
         elif k == "-status" and len(a) >= 2:
-            slot = _slot_id(a[0])
-            s.active_status[slot] = a[1]
+            slot   = _slot_id(a[0])
+            status = a[1]
+            s.active_status[slot] = status
+            sp = s.active_species.get(slot)
+            if sp:
+                s.bench_status[sp] = status
 
         elif k == "-curestatus" and a:
             slot = _slot_id(a[0])
             s.active_status.pop(slot, None)
+            sp = s.active_species.get(slot)
+            if sp:
+                s.bench_status.pop(sp, None)
 
-        # Faints
+        # Faints — clear per-slot volatile state
         elif k == "faint" and a:
             slot = _slot_id(a[0])
             s.fainted_slots.add(slot)
             s.active_hp[slot] = "0 fnt"
+            s.stat_stages.pop(slot, None)
+            s.volatile_status.pop(slot, None)
+            s.protect_this_turn.discard(slot)
 
         # Weather
         elif k == "-weather" and a:
@@ -241,16 +325,107 @@ class StateTracker:
             else:
                 s.terrain = None
 
-        # Side conditions (tailwind, reflect, light screen, …)
+        # Side conditions (tailwind, screens, hazards)
         elif k == "-sidestart" and len(a) >= 2:
-            side_id = a[0].split(":")[0].strip()
-            if "tailwind" in a[1].lower():
+            side_id   = a[0].split(":")[0].strip()
+            cond_raw  = a[1].lower()
+            cond_clean = cond_raw.replace("move: ", "").replace(" ", "")
+            sc = s.side_conditions.setdefault(side_id, {})
+
+            if "tailwind" in cond_clean:
                 s.tailwind.add(side_id)
+            elif "reflect" in cond_clean:
+                sc["reflect"] = 1
+            elif "lightscreen" in cond_clean:
+                sc["lightscreen"] = 1
+            elif "auroraveil" in cond_clean:
+                sc["auroraveil"] = 1
+            elif "stealthrock" in cond_clean:
+                sc["stealthrock"] = 1
+            elif "toxicspikes" in cond_clean:
+                sc["toxicspikes"] = min(2, sc.get("toxicspikes", 0) + 1)
+            elif "spikes" in cond_clean:
+                sc["spikes"] = min(3, sc.get("spikes", 0) + 1)
+            elif "stickyweb" in cond_clean:
+                sc["stickyweb"] = 1
 
         elif k == "-sideend" and len(a) >= 2:
-            side_id = a[0].split(":")[0].strip()
-            if "tailwind" in a[1].lower():
+            side_id   = a[0].split(":")[0].strip()
+            cond_raw  = a[1].lower()
+            cond_clean = cond_raw.replace("move: ", "").replace(" ", "")
+            sc = s.side_conditions.get(side_id, {})
+
+            if "tailwind" in cond_clean:
                 s.tailwind.discard(side_id)
+            elif "reflect" in cond_clean:
+                sc.pop("reflect", None)
+            elif "lightscreen" in cond_clean:
+                sc.pop("lightscreen", None)
+            elif "auroraveil" in cond_clean:
+                sc.pop("auroraveil", None)
+            elif "stealthrock" in cond_clean:
+                sc.pop("stealthrock", None)
+            elif "toxicspikes" in cond_clean:
+                sc.pop("toxicspikes", None)
+            elif "spikes" in cond_clean:
+                sc.pop("spikes", None)
+            elif "stickyweb" in cond_clean:
+                sc.pop("stickyweb", None)
+
+        # Stat boosts
+        elif k == "-boost" and len(a) >= 3:
+            slot   = _slot_id(a[0])
+            stat   = a[1]
+            amount = int(a[2])
+            stages = s.stat_stages.setdefault(slot, {})
+            stages[stat] = max(-6, min(6, stages.get(stat, 0) + amount))
+
+        elif k == "-unboost" and len(a) >= 3:
+            slot   = _slot_id(a[0])
+            stat   = a[1]
+            amount = int(a[2])
+            stages = s.stat_stages.setdefault(slot, {})
+            stages[stat] = max(-6, min(6, stages.get(stat, 0) - amount))
+
+        elif k == "-setboost" and len(a) >= 3:
+            slot   = _slot_id(a[0])
+            stat   = a[1]
+            amount = int(a[2])
+            stages = s.stat_stages.setdefault(slot, {})
+            stages[stat] = max(-6, min(6, amount))
+
+        elif k == "-clearboost" and a:
+            slot = _slot_id(a[0])
+            s.stat_stages.pop(slot, None)
+
+        elif k == "-clearallboost":
+            s.stat_stages.clear()
+
+        elif k == "-invertboost" and a:
+            slot = _slot_id(a[0])
+            stages = s.stat_stages.get(slot)
+            if stages:
+                for stat in stages:
+                    stages[stat] = -stages[stat]
+
+        # Volatile statuses
+        elif k == "-start" and len(a) >= 2:
+            slot   = _slot_id(a[0])
+            effect = a[1].lower()
+            for canonical, patterns in _VOLATILE_PATTERNS.items():
+                if any(p in effect for p in patterns):
+                    s.volatile_status.setdefault(slot, set()).add(canonical)
+                    break
+
+        elif k == "-end" and len(a) >= 2:
+            slot   = _slot_id(a[0])
+            effect = a[1].lower()
+            vs = s.volatile_status.get(slot)
+            if vs:
+                for canonical, patterns in _VOLATILE_PATTERNS.items():
+                    if any(p in effect for p in patterns):
+                        vs.discard(canonical)
+                        break
 
         # Winner
         elif k == "win" and a:
