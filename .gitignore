@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 downloaded_logs/
+data/
+battle_logs/
+checkpoints/
