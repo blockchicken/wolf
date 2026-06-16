@@ -491,7 +491,7 @@ class BattleRunner:
                 cmd,
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,   # discard; PIPE without reader risks deadlock
                 text=True,
                 bufsize=1,
             )
@@ -525,6 +525,7 @@ class BattleRunner:
             # a new response — it does NOT resend the request automatically.
             last_requests: Dict[str, Any] = {}
             last_actions: Dict[str, str] = {}
+            retry_counts: Dict[str, int] = {}   # consecutive errors per side
 
             while True:
                 try:
@@ -573,6 +574,19 @@ class BattleRunner:
                         _log(request_line)
 
                         if request_line.startswith("|error|"):
+                            n_retries = retry_counts.get(side, 0) + 1
+                            retry_counts[side] = n_retries
+                            if n_retries > 20:
+                                # Safety valve: give up and send "move 1" to break
+                                # any infinite loop caused by a handler bug.
+                                logger.error(
+                                    f"Too many consecutive errors for {side} "
+                                    f"({n_retries}); forcing 'move 1'. Last error: {request_line}"
+                                )
+                                self.process.stdin.write(f">{side} move 1\n")
+                                self.process.stdin.flush()
+                                retry_counts[side] = 0
+                                continue
                             logger.warning(f"Retrying after error: {request_line}")
                             _log(f"# ERROR — retrying for {side}")
                             cached = last_requests.get(side)
@@ -617,6 +631,7 @@ class BattleRunner:
                             continue
 
                         last_requests[side] = request
+                        retry_counts[side] = 0   # successful request resets error streak
 
                         if turns >= max_turns:
                             logger.warning(f"Battle exceeded {max_turns} turns, terminating")

@@ -58,6 +58,15 @@ _FIRST_TURN_ONLY_MOVES: frozenset[str] = frozenset({
 # Raichu and their Megas): 55.1% of first turns use Fake Out / First Impression.
 _FIRST_TURN_MOVE_PROB = 0.55
 
+# Field-condition moves that are wasted (or self-cancelling for screens) when
+# already active on my side.  Trick Room is intentionally excluded — re-using
+# it removes the effect, which is sometimes a valid counter to the opponent's TR.
+_REDUNDANT_WHEN_ACTIVE: dict[str, str] = {
+    "reflect":     "Reflect",
+    "lightscreen": "Light Screen",
+    "auroraveil":  "Aurora Veil",
+}
+
 
 def _sf_to_tensors(sf: StateFeatures, device: torch.device) -> dict[str, torch.Tensor]:
     """Convert a StateFeatures struct to a 1-item batch of tensors."""
@@ -203,7 +212,7 @@ class ModelDecisionHandler(DecisionHandler):
             self._mega_used = True
         event = _parse_line(line)
         if event.kind not in {"blank", "text"}:
-            self._tracker.consume(event)
+            self._tracker.apply(event)   # apply in-place; no deepcopy needed here
 
     def handle_error(self, error_line: str, last_request: Dict[str, Any], last_action: str) -> None:
         if "can only switch in once" in error_line:
@@ -245,8 +254,8 @@ class ModelDecisionHandler(DecisionHandler):
 
     def _score_actions(self, request: Dict[str, Any]) -> tuple[torch.Tensor, torch.Tensor]:
         """Run model forward pass.  Returns (logits_a, logits_b) (1, n_actions)."""
-        state = self._tracker.snapshot()
-        sf    = encode_state(state, self.vocab)
+        # Read live state directly — encode_state is read-only so no copy needed.
+        sf = encode_state(self._tracker._s, self.vocab)
         batch = _sf_to_tensors(sf, self.device)
         with torch.no_grad():
             logits_a, logits_b = self.model(**batch)
@@ -268,7 +277,11 @@ class ModelDecisionHandler(DecisionHandler):
                 if not m.get("disabled"):
                     actions.append(("move", m["move"]))
 
-        if include_switches:
+        # Showdown sets trapped/maybeTrapped in active[i] when the Pokemon cannot switch.
+        slot_data = active[slot_idx] if slot_idx < len(active) else {}
+        is_trapped = slot_data.get("trapped") or slot_data.get("maybeTrapped")
+
+        if include_switches and not is_trapped:
             pokemon = request.get("side", {}).get("pokemon", [])
             for team_slot_0, p in enumerate(pokemon):
                 if p.get("active"):
@@ -307,11 +320,24 @@ class ModelDecisionHandler(DecisionHandler):
                 if ft_available and random.random() < _FIRST_TURN_MOVE_PROB:
                     actions = ft_available
 
-            # 70% of the time, strip protecting moves when this slot protected last turn.
-            # Mirrors the game's own ~33% double-protect success rate.
+            # Strip protecting moves when this slot protected last turn,
+            # unless Encore is forcing the move (in which case we must use it).
             if slot_id in st.protect_last_turn:
-                if random.random() >= _DOUBLE_PROTECT_ALLOW_PROB:
+                vs = st.volatile_status.get(slot_id, set())
+                if "encore" not in vs and random.random() >= _DOUBLE_PROTECT_ALLOW_PROB:
                     filtered = [(k, n) for k, n in actions if not (k == "move" and n in _PROTECT_MOVE_NAMES)]
+                    if filtered:
+                        actions = filtered
+
+            # Mask field-condition moves that are already active on my side.
+            my_sc = st.side_conditions.get(self.side, {})
+            if self.side in st.tailwind:
+                filtered = [(k, n) for k, n in actions if not (k == "move" and n == "Tailwind")]
+                if filtered:
+                    actions = filtered
+            for cond_key, move_name in _REDUNDANT_WHEN_ACTIVE.items():
+                if my_sc.get(cond_key):
+                    filtered = [(k, n) for k, n in actions if not (k == "move" and n == move_name)]
                     if filtered:
                         actions = filtered
 

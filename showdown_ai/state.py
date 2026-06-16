@@ -181,8 +181,16 @@ class StateTracker:
 
     # ------------------------------------------------------------------
 
+    def apply(self, event: ParsedEvent) -> None:
+        """Apply one event in-place without snapshotting (fast path for inference)."""
+        self._apply(event)
+
     def consume(self, event: ParsedEvent) -> PerspectiveState:
-        """Apply one event and return a snapshot of the updated state."""
+        """Apply one event and return a snapshot of the updated state.
+
+        Used by the training-data pipeline where every post-event state is needed.
+        For live inference use ``apply()`` instead to avoid the deepcopy overhead.
+        """
         self._apply(event)
         return self.snapshot()
 
