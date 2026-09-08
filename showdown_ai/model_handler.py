@@ -44,10 +44,6 @@ _PROTECT_MOVE_NAMES: frozenset[str] = frozenset({
     "Max Guard", "Crafty Shield",
 })
 
-# Empirically derived from 2,807 high-rated (1500+) battles:
-# real players double-protect only 6.9% of the time.
-_DOUBLE_PROTECT_ALLOW_PROB = 0.07
-
 # Moves that only work on the first turn a Pokemon is on the field.
 _FIRST_TURN_ONLY_MOVES: frozenset[str] = frozenset({
     "Fake Out", "First Impression",
@@ -109,11 +105,13 @@ def _action_to_showdown(
     request: Dict[str, Any],
     is_doubles: bool,
     can_mega: bool = False,
+    opp_protecting: frozenset[int] = frozenset(),
 ) -> str:
     """Convert a (kind, name) model choice into a Showdown action string.
 
     Falls back gracefully when the chosen action isn't found in the request.
     Appends 'mega' only when can_mega=True (caller controls the always-mega policy).
+    opp_protecting: 1-indexed opponent target slots that used Protect last turn.
     """
     mega_suffix = " mega" if can_mega else ""
 
@@ -126,7 +124,14 @@ def _action_to_showdown(
                     pos = i + 1
                     target = m.get("target", "")
                     if is_doubles and target in _NEEDS_TARGET:
-                        return f"move {pos} 1{mega_suffix}"
+                        # Prefer targeting an opponent that isn't protecting.
+                        if 1 not in opp_protecting:
+                            chosen_target = 1
+                        elif 2 not in opp_protecting:
+                            chosen_target = 2
+                        else:
+                            chosen_target = 1  # both protecting; can't avoid
+                        return f"move {pos} {chosen_target}{mega_suffix}"
                     if is_doubles and target == "adjacentAlly":
                         ally = 2 if slot_idx == 0 else 1
                         return f"move {pos} -{ally}{mega_suffix}"
@@ -320,15 +325,6 @@ class ModelDecisionHandler(DecisionHandler):
                 if ft_available and random.random() < _FIRST_TURN_MOVE_PROB:
                     actions = ft_available
 
-            # Strip protecting moves when this slot protected last turn,
-            # unless Encore is forcing the move (in which case we must use it).
-            if slot_id in st.protect_last_turn:
-                vs = st.volatile_status.get(slot_id, set())
-                if "encore" not in vs and random.random() >= _DOUBLE_PROTECT_ALLOW_PROB:
-                    filtered = [(k, n) for k, n in actions if not (k == "move" and n in _PROTECT_MOVE_NAMES)]
-                    if filtered:
-                        actions = filtered
-
             # Mask field-condition moves that are already active on my side.
             my_sc = st.side_conditions.get(self.side, {})
             if self.side in st.tailwind:
@@ -340,6 +336,26 @@ class ModelDecisionHandler(DecisionHandler):
                     filtered = [(k, n) for k, n in actions if not (k == "move" and n == move_name)]
                     if filtered:
                         actions = filtered
+
+            # Never use protect-family moves back-to-back — consecutive protect always fails.
+            if slot_id in st.protect_last_turn:
+                filtered = [(k, n) for k, n in actions if not (k == "move" and n in _PROTECT_MOVE_NAMES)]
+                if filtered:
+                    actions = filtered
+
+            # Don't pick adjacentAlly moves (e.g. Helping Hand) when the ally slot is vacant/fainted.
+            ally_slot_idx = 1 - slot_idx
+            active_pkmn = [p for p in request.get("side", {}).get("pokemon", []) if p.get("active")]
+            if ally_slot_idx < len(active_pkmn):
+                ally_cond = active_pkmn[ally_slot_idx].get("condition", "")
+                ally_dead = ally_cond == "0" or ally_cond.startswith("0 ")
+            else:
+                ally_dead = True
+            if ally_dead and slot_idx < len(active):
+                slot_moves = {m["move"]: m.get("target", "") for m in active[slot_idx].get("moves", [])}
+                filtered = [(k, n) for k, n in actions if not (k == "move" and slot_moves.get(n) == "adjacentAlly")]
+                if filtered:
+                    actions = filtered
 
         return actions
 
@@ -370,6 +386,16 @@ class ModelDecisionHandler(DecisionHandler):
         active     = request.get("active", [])
         logits_a, logits_b = self._score_actions(request)
         heads = [logits_a, logits_b]
+
+        # Which opponent target slots (1-indexed) used Protect last turn?
+        # Slot 1 = opponent's 'a' slot, slot 2 = opponent's 'b' slot.
+        st = self._tracker._s
+        opp_side = "p2" if self.side == "p1" else "p1"
+        opp_protecting: frozenset[int] = frozenset(
+            i + 1
+            for i, suffix in enumerate("ab")
+            if f"{opp_side}{suffix}" in st.protect_last_turn
+        )
 
         # active[i] corresponds to the i-th active: true Pokemon in side.pokemon.
         # A Pokemon can be active: true but fainted (condition "0 fnt") when it
@@ -412,7 +438,7 @@ class ModelDecisionHandler(DecisionHandler):
             )
             if can_mega:
                 mega_granted = True
-            action_str = _action_to_showdown(kind, name, slot_idx, request, is_doubles, can_mega=can_mega)
+            action_str = _action_to_showdown(kind, name, slot_idx, request, is_doubles, can_mega=can_mega, opp_protecting=opp_protecting)
             # Record switch targets so the other slot doesn't pick the same Pokémon
             parts = action_str.split()
             if parts[0] == "switch" and len(parts) >= 2:

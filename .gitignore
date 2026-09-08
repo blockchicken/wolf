@@ -1,6 +1,70 @@
 __pycache__/
 *.pyc
-downloaded_logs/
-data/
+*.pyo
+*.pstats
+.venv/
+.pytest_cache/
+.claude/
+
+# Battle logs and outputs
 battle_logs/
-checkpoints/
+downloaded_logs/
+selfplay_data/
+replays/
+results/
+logs/
+*.log
+output*.txt
+
+# Dev/debug scripts (not part of the published interface)
+debug_*.py
+test_*.py
+tests/
+check_*.py
+compare_*.py
+gen0_test.py
+real_team_test.py
+record_battle.py
+round_robin.py
+run_comparison.py
+run_random.py
+stress_test.py
+trace_state_evolution.py
+verify_pipeline.py
+validate_training_data.py
+build_dataset.py
+analyze_combos.py
+pokepaste_parser.py
+evaluate_vgc_teams.py
+selfplay_data.py
+action_frequency_analysis.py
+generate_ai_logs.py
+deep_dive_2026.py
+train_ppo.py
+train_ppo_shaped.py
+download_with_headless.py
+example_headless_scraper.py
+training_dataset.json
+profile.pstats
+"output log 1.txt"
+
+# Removed module remnants
+showdown_ai/downloader.py
+showdown_ai/headless_scraper.py
+showdown_ai/training_data_old.py
+
+# Old dev docs
+HEADLESS_BATTLE_RUNNER.md
+HEADLESS_SCRAPER_GUIDE.md
+POKEMON_SHOWDOWN_RESEARCH.md
+TRAINING_DATA_PIPELINE.md
+VGC_SUPPORT.md
+
+# Data directory — except metagame JSON (needed to run)
+data/*
+!data/pikalytics/
+
+# Checkpoints — include only the published model (PPO v13)
+checkpoints/*
+!checkpoints/policy_1500_ppo_v13.pt
+!checkpoints/vocab_1500_ppo_v13/

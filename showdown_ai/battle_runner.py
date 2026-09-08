@@ -442,6 +442,59 @@ class BattleRunner:
         lines = [line.strip() for line in team.split('\n') if line.strip()]
         return ']'.join(lines)
 
+    _REPLAY_HTML_TEMPLATE = """\
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{p1} vs. {p2}</title>
+<style>html,body{{margin:0;padding:0;overflow:hidden}}</style>
+</head>
+<body>
+<script type="text/plain" class="battle-log-data">
+{log}
+</script>
+<script src="https://play.pokemonshowdown.com/js/replay-embed.js"></script>
+</body>
+</html>"""
+
+    @staticmethod
+    def _write_replay(
+        path: str | Path,
+        lines: list,
+        p1: str,
+        p2: str,
+        format_id: str,
+    ) -> None:
+        """Write a Showdown replay JSON and a companion .html viewer.
+
+        The .html file can be opened directly in a browser (requires internet
+        to load the Showdown replay embed script).  The .json can be uploaded
+        to replay.pokemonshowdown.com.
+        """
+        import time
+        ts = int(time.time())
+        log = "\n".join([f"|j|☆{p1}", f"|j|☆{p2}"] + lines)
+
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+
+        # JSON (for upload to replay.pokemonshowdown.com)
+        replay = {
+            "id": f"wolf-{ts}",
+            "format": format_id,
+            "p1": p1,
+            "p2": p2,
+            "log": log,
+            "uploadtime": ts,
+        }
+        path.write_text(json.dumps(replay, ensure_ascii=False), encoding="utf-8")
+
+        # HTML viewer — open directly in any browser
+        html_path = path.with_suffix(".html")
+        html = BattleRunner._REPLAY_HTML_TEMPLATE.format(p1=p1, p2=p2, log=log)
+        html_path.write_text(html, encoding="utf-8")
+
     def run_battle(
         self,
         team_p1: str,  # packed team format
@@ -453,6 +506,7 @@ class BattleRunner:
         max_turns: int = 1000,
         collect_training_data: bool = False,
         log_file: Optional[str] = None,
+        replay_path: Optional[str] = None,
     ) -> Tuple[BattleResult, Optional[list]]:
         """Run a complete battle.
 
@@ -466,8 +520,10 @@ class BattleRunner:
             max_turns: Maximum turns before timeout
             collect_training_data: If True, return list of (request, action) pairs
             log_file: Optional path to write a full battle transcript (raw protocol +
-                      decisions). Useful for debugging. Pass a filename like
-                      "battle_001.log" or an absolute path.
+                      decisions). Useful for debugging.
+            replay_path: Optional path to write a Showdown replay JSON (e.g.
+                         "replays/battle.json"). Upload to replay.pokemonshowdown.com
+                         to watch the battle.
 
         Returns:
             Tuple of (BattleResult, training_data_pairs or None)
@@ -476,11 +532,16 @@ class BattleRunner:
         training_data = [] if collect_training_data else None
 
         log_fh = open(log_file, "w", encoding="utf-8") if log_file else None
+        replay_lines: Optional[list] = [] if replay_path else None
 
         def _log(line: str) -> None:
             if log_fh:
                 log_fh.write(line + "\n")
                 log_fh.flush()
+
+        def _replay(line: str) -> None:
+            if replay_lines is not None and line.startswith("|"):
+                replay_lines.append(line)
 
         try:
             # Start subprocess
@@ -544,11 +605,13 @@ class BattleRunner:
                     if line.startswith("|split|"):
                         accurate = self.process.stdout.readline().rstrip("\n\r")
                         _log(accurate)
+                        _replay(accurate)
                         self.process.stdout.readline()  # discard opponent's view
                         continue
 
                     # Log every raw line from the simulator
                     _log(line)
+                    _replay(line)
 
                     # Notify handlers so state-tracking subclasses stay current
                     for h in handlers.values():
@@ -675,6 +738,8 @@ class BattleRunner:
             raise
 
         finally:
+            if replay_path and replay_lines is not None:
+                self._write_replay(replay_path, replay_lines, p1_name, p2_name, self.format_id)
             if log_fh:
                 log_fh.close()
             if self.process:

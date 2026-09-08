@@ -9,9 +9,15 @@ Usage::
 
     python genetic_search.py                                         # 16 teams, 20 gens, 5 rounds, AI
     python genetic_search.py --pop 48 --pop-end 16 --rounds 5 --rounds-end 16
+    python genetic_search.py --gen0-teams 1000 --pop-end 16 --rounds 5 --rounds-end 16
     python genetic_search.py --pop 8 --gens 10 --rounds 3
     python genetic_search.py --handler random
     python genetic_search.py --seed 42 --out results/run1.json
+
+When --gen0-teams is set, a Gen-0 viability cull runs first: N random teams
+each play --gen0-rounds BO3 series against fresh random opponents, and only
+the teams that sweep all rounds become the GA's initial population (--pop is
+ignored in that case — the survivor count becomes the starting population).
 
 At the end the top N teams are printed with fitness, record, and packed strings.
 """
@@ -22,6 +28,7 @@ import argparse
 import copy
 import json
 import math
+import multiprocessing
 import random
 import time
 from dataclasses import dataclass
@@ -43,8 +50,8 @@ from showdown_ai.vocab import BattleVocab
 
 SHOWDOWN_PATH  = Path(r"c:\Users\Arie\pokemon-showdown")
 FORMAT         = "gen9championsvgc2026regma"
-MODEL_PATH     = Path("checkpoints/policy.pt")
-VOCAB_DIR      = Path("checkpoints/vocab")
+MODEL_PATH     = Path("checkpoints/policy_1500_ppo_v13.pt")
+VOCAB_DIR      = Path("checkpoints/vocab_1500_ppo_v13")
 PIKALYTICS_DIR = Path("data/pikalytics")
 
 # Champions SP constraints (0–32 per stat, 66 total)
@@ -63,16 +70,42 @@ _SPA_IDX = 3
 _FORM_SUFFIXES: tuple[str, ...] = tuple(sorted((
     # Mega evolutions
     "-Mega-X", "-Mega-Y", "-Mega",
-    # Regional forms (Ninetales-Alola and Ninetales treated as same species)
+    # Regional forms
     "-Alola", "-Galar", "-Hisui", "-Paldea",
-    # Gender forms (Basculegion-M / -F, Indeedee-M / -F)
+    # Tauros Paldean sub-forms (end in -Combat/-Blaze/-Aqua, not -Paldea)
+    "-Paldea-Combat", "-Paldea-Blaze", "-Paldea-Aqua",
+    # Gender forms (Basculegion-M/F, Indeedee-M/F)
     "-M", "-F",
     # Ogerpon masks
     "-Wellspring", "-Hearthflame", "-Cornerstone",
     # Terapagos
     "-Terastal", "-Stellar",
-    # Misc time/form variants
+    # Time/cycle forms (Lycanroc, Necrozma partial overlap handled by ordering)
     "-Dawn", "-Dusk", "-Midnight", "-Midday",
+    # Rotom appliance formes (all share Dex #479)
+    "-Heat", "-Wash", "-Frost", "-Fan", "-Mow",
+    # Urshifu (Dex #892)
+    "-Rapid-Strike", "-Single-Strike",
+    # Necrozma fusions (must precede "-Dawn" / "-Dusk")
+    "-Dusk-Mane", "-Dawn-Wings", "-Ultra",
+    # Forces of Nature therian formes (Tornadus/Thundurus/Landorus/Enamorus)
+    "-Therian",
+    # Kyurem formes (Dex #646)
+    "-Black", "-White",
+    # Calyrex riders (Dex #898)
+    "-Ice", "-Shadow",
+    # Giratina (Dex #487)
+    "-Origin",
+    # Shaymin (Dex #492)
+    "-Sky",
+    # Palafin (Dex #964)
+    "-Hero",
+    # Toxtricity (Dex #849)
+    "-Low-Key",
+    # Zygarde (Dex #718)
+    "-Complete",
+    # Eiscue (Dex #875)
+    "-Noice",
 ), key=len, reverse=True))
 
 
@@ -160,7 +193,8 @@ def _weighted_sample_no_replace(
     return result
 
 
-_NON_MOVES = frozenset({"Other", "None", "Nothing", ""})
+_PIKALYTICS_PLACEHOLDERS = frozenset({"Other", "None", "Nothing", ""})
+_NON_MOVES = _PIKALYTICS_PLACEHOLDERS  # alias kept for existing move-filtering references
 
 
 def _build_spec(
@@ -175,19 +209,23 @@ def _build_spec(
 
     item, ability = "", ""
     if stat.items:
-        pool = [(it, w) for it, w in stat.items if it not in blocked]
+        pool = [(it, w) for it, w in stat.items
+                if it not in _PIKALYTICS_PLACEHOLDERS and it not in blocked]
         if not pool:
-            pool = list(stat.items)       # fall back if everything is blocked
+            # fall back ignoring only the item-clause block, not placeholders
+            pool = [(it, w) for it, w in stat.items if it not in _PIKALYTICS_PLACEHOLDERS]
         # Mega Stone holders should always receive their Mega Stone if available.
         mega_pool = [(it, w) for it, w in pool if it in _MEGA_STONES]
         if mega_pool:
             item = mega_pool[0][0]
-        else:
+        elif pool:
             names, wts = zip(*pool)
             item = _weighted_pick(list(names), list(wts), rng) or ""
     if stat.abilities:
-        names, wts = zip(*stat.abilities)
-        ability = _weighted_pick(list(names), list(wts), rng) or ""
+        ab_pool = [(ab, w) for ab, w in stat.abilities if ab not in _PIKALYTICS_PLACEHOLDERS]
+        if ab_pool:
+            names, wts = zip(*ab_pool)
+            ability = _weighted_pick(list(names), list(wts), rng) or ""
 
     move_pool = [(m, w) for m, w in stat.moves[:8] if w >= 2.0 and m not in _NON_MOVES]
     if len(move_pool) < 4:
@@ -410,7 +448,8 @@ def _mutate_item(
     stat = metagame.pokemon.get(spec.species)
     if not stat or not stat.items:
         return spec
-    pool = [it for it, _ in stat.items if it != spec.item and it not in used_items]
+    pool = [it for it, _ in stat.items
+            if it not in _PIKALYTICS_PLACEHOLDERS and it != spec.item and it not in used_items]
     if not pool:
         return spec
     spec       = copy.copy(spec)
@@ -610,39 +649,156 @@ def _evaluate_generation(
     for ind in population:
         ind.reset_fitness()
 
-    n            = len(population)
-    total_series = n * n_rounds
-    done         = 0
+    n = len(population)
 
     for i, ind in enumerate(population):
+        team_start = time.time()
         for _ in range(n_rounds):
-            # Generate a fresh random opponent from the current meta
             opp_team   = generate_team(metagame, rng=rng)
             opp_team   = _ensure_item_clause(opp_team, metagame, rng)
             opp_packed = team_to_packed(opp_team)
-
-            t0       = time.time()
             wa, wb, wt = _battle_best_of_3(
                 ind.packed(), opp_packed, runner, make_p1, make_p2
             )
-
             if wa > wb:
                 ind.series_wins   += 1
-                result_str = f"WIN  {wa}-{wb}-{wt}"
             elif wb > wa:
                 ind.series_losses += 1
-                result_str = f"LOSS {wa}-{wb}-{wt}"
             else:
                 ind.series_ties   += 1
-                result_str = f"TIE  {wa}-{wb}-{wt}"
 
-            done += 1
+        record_str = f"{ind.series_wins:>2}W-{ind.series_losses:>2}L-{ind.series_ties:>2}T"
+        print(
+            f"  [{i+1:>2}/{n}] {', '.join(ind.species_list())}  "
+            f"->  {record_str}  fit={ind.fitness:.3f}  ({time.time()-team_start:.0f}s)",
+            flush=True,
+        )
+
+
+# ---------------------------------------------------------------------------
+# Gen-0 viability cull (optional pre-experiment phase, runs in parallel)
+# ---------------------------------------------------------------------------
+
+# Worker-process globals — loaded once per process by _gen0_worker_init().
+_gen0_metagame = None
+_gen0_runner   = None
+_gen0_model    = None
+_gen0_vocab    = None
+_gen0_handler  = None
+
+
+def _gen0_worker_init(handler_kind: str) -> None:
+    """Per-process resource loader for the parallel Gen-0 cull."""
+    global _gen0_metagame, _gen0_runner, _gen0_model, _gen0_vocab, _gen0_handler
+
+    _gen0_metagame = load_metagame(PIKALYTICS_DIR, FORMAT)
+    _gen0_runner   = BattleRunner(SHOWDOWN_PATH, format_id=FORMAT)
+    _gen0_handler  = handler_kind
+
+    if handler_kind == "model":
+        _gen0_model = BattlePolicy.load(MODEL_PATH)
+        _gen0_vocab = BattleVocab.load(VOCAB_DIR)
+
+
+def _gen0_make_handlers():
+    if _gen0_handler == "model":
+        def make_p1():
+            return ModelDecisionHandler(model=_gen0_model, vocab=_gen0_vocab, side="p1")
+        def make_p2():
+            return ModelDecisionHandler(model=_gen0_model, vocab=_gen0_vocab, side="p2")
+    else:
+        ctr = [random.randint(0, 2**31)]
+        def make_p1():
+            ctr[0] += 1
+            return RandomDecisionHandler(seed=ctr[0])
+        def make_p2():
+            ctr[0] += 1
+            return RandomDecisionHandler(seed=ctr[0])
+    return make_p1, make_p2
+
+
+def _gen0_run_one_team(args: tuple) -> tuple[list[TeamSpec], int]:
+    """Generate one random team, play n_rounds BO3 series, return (team, series_won)."""
+    seed, n_rounds = args
+    rng    = random.Random(seed)
+    team   = generate_team(_gen0_metagame, rng=rng)
+    team   = _ensure_item_clause(team, _gen0_metagame, rng)
+    packed = team_to_packed(team)
+
+    make_p1, make_p2 = _gen0_make_handlers()
+
+    series_won = 0
+    for _ in range(n_rounds):
+        opp_team   = generate_team(_gen0_metagame, rng=rng)
+        opp_team   = _ensure_item_clause(opp_team, _gen0_metagame, rng)
+        opp_packed = team_to_packed(opp_team)
+        wa, wb, _wt = _battle_best_of_3(packed, opp_packed, _gen0_runner, make_p1, make_p2)
+        if wa > wb:
+            series_won += 1
+
+    return team, series_won
+
+
+def run_gen0_cull(
+    n_teams: int,
+    n_rounds: int,
+    min_wins: int,
+    handler_kind: str,
+    workers: int,
+    rng: random.Random,
+) -> list[Individual]:
+    """Generate n_teams random teams, play n_rounds BO3 series each against fresh
+    random opponents, and keep only teams with series_won >= min_wins.
+
+    Survivors become the GA's initial population — no mutation or breeding is
+    applied here, this is a pure cull of pre-experiment random teams down to a
+    "viable" starting pool.
+    """
+    print(f"\n{'='*66}")
+    print(f"  GEN-0 VIABILITY CULL")
+    print(f"{'='*66}")
+    print(f"  Teams       : {n_teams}")
+    print(f"  Rounds      : {n_rounds}  (BO3 series, fresh random opponents)")
+    print(f"  Min wins    : {min_wins}/{n_rounds} to survive")
+    print(f"  Workers     : {workers}")
+    print(f"{'='*66}\n")
+
+    team_args = [(rng.randint(0, 2**32 - 1), n_rounds) for _ in range(n_teams)]
+    survivors: list[Individual] = []
+    done = 0
+    t0   = time.time()
+
+    def _record(team: list[TeamSpec], wins: int) -> None:
+        nonlocal done
+        done += 1
+        if wins >= min_wins:
+            survivors.append(Individual(team=team))
+        if done % 25 == 0 or done == n_teams:
             print(
-                f"  [{done:>3}/{total_series}] "
-                f"Team {i+1:>2} ({', '.join(ind.species_list()[:2])}) "
-                f"vs random  →  {result_str}  ({time.time()-t0:.1f}s)",
+                f"  [{done:>4}/{n_teams}] survivors so far: {len(survivors)}  "
+                f"({time.time()-t0:.0f}s)",
                 flush=True,
             )
+
+    if workers <= 1:
+        _gen0_worker_init(handler_kind)
+        for a in team_args:
+            team, wins = _gen0_run_one_team(a)
+            _record(team, wins)
+    else:
+        with multiprocessing.Pool(
+            processes=workers, initializer=_gen0_worker_init, initargs=(handler_kind,)
+        ) as pool:
+            for team, wins in pool.imap_unordered(_gen0_run_one_team, team_args):
+                _record(team, wins)
+
+    elapsed = time.time() - t0
+    print(
+        f"\n  Gen-0 complete in {elapsed:.0f}s  ->  {len(survivors)}/{n_teams} teams survived "
+        f"({100*len(survivors)/n_teams:.1f}%)"
+    )
+    print(f"{'='*66}")
+    return survivors
 
 
 # ---------------------------------------------------------------------------
@@ -666,21 +822,37 @@ def _max_spread_shift(gen: int, n_gens: int, s0: int = 24, s_min: int = 2) -> in
 
 
 def _pop_schedule(gen: int, n_gens: int, pop_start: int, pop_end: int) -> int:
-    """Anneal population size from pop_start down to ~pop_end over n_gens.
+    """Linearly interpolate population size from pop_start to pop_end over n_gens.
 
-    Uses the same exponential decay as mutation prob; reaches ~pop_end + 5% of
-    the range at the final generation (exp(-3) ≈ 0.05).
+    Linear (not exponential) so it lands exactly on pop_end at the final
+    generation regardless of how large pop_start is — important because
+    pop_start may come from the data-driven Gen-0 cull rather than a preset.
     """
-    return max(1, round(_anneal(gen, n_gens, float(pop_start), float(pop_end))))
+    if n_gens <= 1:
+        return pop_end
+    frac = (gen - 1) / (n_gens - 1)
+    return max(1, round(pop_start + (pop_end - pop_start) * frac))
 
 
 def _rounds_schedule(gen: int, n_gens: int, rounds_start: int, rounds_end: int) -> int:
-    """Anneal rounds per team from rounds_start up to ~rounds_end over n_gens.
+    """Linearly interpolate rounds per team from rounds_start to rounds_end over n_gens.
 
-    When rounds_start < rounds_end the _anneal formula naturally grows (the
-    v0 - v_min term is negative), so no separate function is needed.
+    Linear (not exponential) so it lands exactly on rounds_end at the final
+    generation — important when rounds are increasing (rounds_start < rounds_end).
     """
-    return max(1, round(_anneal(gen, n_gens, float(rounds_start), float(rounds_end))))
+    if n_gens <= 1:
+        return rounds_end
+    frac = (gen - 1) / (n_gens - 1)
+    return max(1, round(rounds_start + (rounds_end - rounds_start) * frac))
+
+
+def _topn_count(pop_size: int, topn_pct: float) -> int:
+    """Elites to carry over: topn_pct of pop_size, floored at 2 (need at least
+    two distinct survivors so the elite pool isn't a single clone) and capped
+    at pop_size.
+    """
+    n = max(2, round(pop_size * topn_pct))
+    return min(pop_size, n)
 
 
 # ---------------------------------------------------------------------------
@@ -735,6 +907,83 @@ def _log_generation(
 
 
 # ---------------------------------------------------------------------------
+# Checkpoint helpers
+# ---------------------------------------------------------------------------
+
+def _write_checkpoint(
+    path: Path,
+    gen: int,
+    total_gens: int,
+    original_pop_start: int,
+    pop_end: int,
+    rounds_start: int,
+    rounds_end: int,
+    elapsed_s: float,
+    rng: random.Random,
+    population: list[Individual],
+) -> None:
+    """Write GA state to disk so a crashed run can be resumed.
+
+    gen == 0 means the checkpoint was written after the Gen-0 cull (before
+    any GA generation ran).  The file is overwritten each time.
+    """
+    v, istate, gnext = rng.getstate()
+    data = {
+        "gen": gen,
+        "total_gens": total_gens,
+        "elapsed_s": round(elapsed_s),
+        "original_pop_start": original_pop_start,
+        "pop_end": pop_end,
+        "rounds_start": rounds_start,
+        "rounds_end": rounds_end,
+        "rng_state": [v, list(istate), gnext],
+        "population": [
+            {
+                "team": [
+                    {"species": ts.species, "item": ts.item, "ability": ts.ability,
+                     "moves": ts.moves, "nature": ts.nature, "ev_str": ts.ev_str}
+                    for ts in ind.team
+                ],
+                "series_wins":   ind.series_wins,
+                "series_losses": ind.series_losses,
+                "series_ties":   ind.series_ties,
+            }
+            for ind in population
+        ],
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    label = "gen-0 survivors" if gen == 0 else f"gen {gen}/{total_gens}"
+    print(f"  [checkpoint] {label} → {path}  ({len(population)} teams)", flush=True)
+
+
+def load_checkpoint(path: Path) -> tuple[dict, list[Individual]]:
+    """Load a checkpoint written by _write_checkpoint.
+
+    Returns (meta, population).  meta keys: gen, total_gens, elapsed_s,
+    original_pop_start, pop_end, rounds_start, rounds_end, rng_state.
+    gen == 0 means the population is Gen-0 survivors ready for gen 1.
+    """
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    population = [
+        Individual(
+            team=[
+                TeamSpec(
+                    species=m["species"], item=m["item"], ability=m["ability"],
+                    moves=m["moves"], nature=m["nature"], ev_str=m["ev_str"],
+                )
+                for m in entry["team"]
+            ],
+            series_wins=entry["series_wins"],
+            series_losses=entry["series_losses"],
+            series_ties=entry["series_ties"],
+        )
+        for entry in raw["population"]
+    ]
+    return raw, population
+
+
+# ---------------------------------------------------------------------------
 # GA loop
 # ---------------------------------------------------------------------------
 
@@ -749,19 +998,36 @@ def run_ga(
     generations:   int   = 20,
     rounds_start:  int   = 5,
     rounds_end:    int   = 5,
-    topn:          int   = 4,
+    topn_pct:      float = 0.15,
     mutation_t0:   float = 0.35,
     mutation_tmin: float = 0.05,
     rng: Optional[random.Random] = None,
+    initial_population: Optional[list[Individual]] = None,
+    # Resume / checkpoint support
+    start_gen:          int   = 1,
+    original_pop_start: Optional[int]  = None,
+    checkpoint_path:    Optional[Path] = None,
+    resume_elapsed:     float = 0.0,
 ) -> list[Individual]:
     if rng is None:
         rng = random.Random()
 
-    pop_annealed    = pop_start != pop_end
+    # For annealing, use the original pop_start from the full run so the
+    # decay curves stay on the same trajectory after a resume.
+    annealing_pop_start = original_pop_start if original_pop_start is not None else pop_start
+
+    # A Gen-0-cull-supplied population overrides pop_start on fresh starts only.
+    # On a resume (start_gen > 1) the checkpoint carries the correct annealing base.
+    if initial_population is not None and start_gen == 1:
+        pop_start = len(initial_population)
+        if original_pop_start is None:
+            annealing_pop_start = pop_start
+
+    pop_annealed    = annealing_pop_start != pop_end
     rounds_annealed = rounds_start != rounds_end
 
     def _pop_g(gen: int) -> int:
-        return _pop_schedule(gen, generations, pop_start, pop_end)
+        return _pop_schedule(gen, generations, annealing_pop_start, pop_end)
 
     def _rounds_g(gen: int) -> int:
         return _rounds_schedule(gen, generations, rounds_start, rounds_end)
@@ -772,32 +1038,63 @@ def run_ga(
     print(f"  GENETIC TEAM SEARCH  —  Champions VGC")
     print(f"{'='*66}")
     if pop_annealed:
-        print(f"  Population  : {pop_start} -> {pop_end} teams  (annealed)")
+        print(f"  Population  : {annealing_pop_start} -> {pop_end} teams  (linear anneal)")
     else:
-        print(f"  Population  : {pop_start} teams")
+        print(f"  Population  : {annealing_pop_start} teams")
     print(f"  Generations : {generations}")
     if rounds_annealed:
         print(f"  Rounds      : {rounds_start} -> {rounds_end} per team per gen  (annealed)")
     else:
         print(f"  Rounds      : {rounds_start} per team per gen")
-    print(f"  Top-N keep  : {topn}")
+    print(f"  Top-N keep  : {topn_pct*100:.0f}% of current pop (min 2)")
     print(f"  Mutation    : {mutation_t0:.2f} -> {mutation_tmin:.2f}  (simulated annealing)")
     print(f"  Max series  : ~{max_series} in generation 1  (BO3 series)")
     print(f"{'='*66}")
 
-    # Initialize population at pop_start size
-    print(f"\nInitializing {pop_start} random teams ...")
-    population: list[Individual] = []
-    for idx in range(pop_start):
-        team = generate_team(metagame, rng=rng)
-        team = _ensure_item_clause(team, metagame, rng)
-        ind  = Individual(team=team)
-        print(f"  Team {idx+1:>2}: {', '.join(ind.species_list())}")
-        population.append(ind)
+    if start_gen > 1:
+        # Resuming mid-run: initial_population is the sorted result of gen (start_gen-1).
+        # Reconstruct the gen start_gen population via crossover+mutation using the
+        # restored RNG state so the search continues naturally from the checkpoint.
+        assert initial_population is not None, "resume requires a checkpoint population"
+        prev_pop   = list(initial_population)
+        prev_gen   = start_gen - 1
+        mu_prev    = _mutation_prob(prev_gen, generations, mutation_t0, mutation_tmin)
+        shift_prev = _max_spread_shift(prev_gen, generations)
+        pop_this   = _pop_g(start_gen)
+        n_elite    = _topn_count(pop_this, topn_pct)
+
+        print(f"\nResuming GA from generation {start_gen}/{generations}  "
+              f"({len(prev_pop)} checkpoint teams → rebuilding {pop_this}).")
+
+        population: list[Individual] = []
+        for e in prev_pop[:n_elite]:
+            elite = copy.deepcopy(e)
+            elite.reset_fitness()
+            population.append(elite)
+        while len(population) < pop_this:
+            pa    = _tournament_select(prev_pop, rng)
+            pb    = _tournament_select(prev_pop, rng)
+            child = Individual(team=_crossover_teams(pa.team, pb.team, metagame, rng))
+            child = _mutate_individual(child, metagame, mu_prev, rng, max_shift=shift_prev)
+            population.append(child)
+        population = population[:pop_this]
+
+    elif initial_population is not None:
+        print(f"\nUsing {pop_start} Gen-0 survivors as the initial population.")
+        population = list(initial_population)
+    else:
+        print(f"\nInitializing {pop_start} random teams ...")
+        population = []
+        for idx in range(pop_start):
+            team = generate_team(metagame, rng=rng)
+            team = _ensure_item_clause(team, metagame, rng)
+            ind  = Individual(team=team)
+            print(f"  Team {idx+1:>2}: {', '.join(ind.species_list())}")
+            population.append(ind)
 
     total_start = time.time()
 
-    for gen in range(1, generations + 1):
+    for gen in range(start_gen, generations + 1):
         gen_start = time.time()
         mu        = _mutation_prob(gen, generations, mutation_t0, mutation_tmin)
         pop_g     = _pop_g(gen)
@@ -811,13 +1108,13 @@ def run_ga(
 
         shift = _max_spread_shift(gen, generations)
 
-        print(f"\n{'─'*66}")
+        print(f"\n{'-'*66}")
         print(
             f"  Generation {gen}/{generations}  |  "
             f"pop={pop_g}  |  rounds={rounds_g}  |  "
             f"mutation={mu:.3f}  |  {pop_g * rounds_g} series"
         )
-        print(f"{'─'*66}")
+        print(f"{'-'*66}")
 
         _evaluate_generation(
             population, metagame, runner, make_p1, make_p2, rounds_g, rng
@@ -827,6 +1124,15 @@ def run_ga(
         gen_time = time.time() - gen_start
         _log_generation(gen, generations, population, gen_time, mu, shift, rounds_g)
 
+        if checkpoint_path is not None:
+            elapsed = resume_elapsed + (time.time() - total_start)
+            _write_checkpoint(
+                checkpoint_path, gen, generations,
+                annealing_pop_start, pop_end,
+                rounds_start, rounds_end,
+                elapsed, rng, population,
+            )
+
         if gen == generations:
             break
 
@@ -834,8 +1140,8 @@ def run_ga(
         pop_next = _pop_g(gen + 1)
         next_gen: list[Individual] = []
 
-        # Top-N elites carry over unchanged (fitness reset for next round).
-        n_elite = min(topn, pop_next)
+        # Top-N% elites carry over unchanged (fitness reset for next round).
+        n_elite = _topn_count(pop_next, topn_pct)
         for e in population[:n_elite]:
             elite = copy.deepcopy(e)
             elite.reset_fitness()
@@ -890,33 +1196,88 @@ def main() -> None:
         description="Genetic algorithm team optimizer for Champions VGC.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser.add_argument("--pop",         type=int,   default=16,
-                        help="Starting population size (number of teams)")
-    parser.add_argument("--pop-end",    type=int,   default=None,
-                        help="Ending population size for annealing (default: --pop, no annealing)")
-    parser.add_argument("--gens",       type=int,   default=20,
+    parser.add_argument("--pop",          type=int,   default=16,
+                        help="Starting population size (number of teams); ignored if --gen0-teams > 0")
+    parser.add_argument("--pop-end",      type=int,   default=None,
+                        help="Ending population size for linear annealing (default: --pop / Gen-0 survivor count, no annealing)")
+    parser.add_argument("--gens",         type=int,   default=20,
                         help="Number of generations")
-    parser.add_argument("--rounds",     type=int,   default=5,
+    parser.add_argument("--rounds",       type=int,   default=5,
                         help="Starting number of random meta opponents per team per generation")
-    parser.add_argument("--rounds-end", type=int,   default=None,
+    parser.add_argument("--rounds-end",   type=int,   default=None,
                         help="Ending rounds for annealing (default: --rounds, no annealing)")
-    parser.add_argument("--topn",       type=int,   default=4,
-                        help="Top-N teams carried over unchanged each generation")
-    parser.add_argument("--t0",         type=float, default=0.35,
+    parser.add_argument("--topn-pct",     type=float, default=0.15,
+                        help="Fraction of current population carried over unchanged each generation (floored at 2)")
+    parser.add_argument("--t0",           type=float, default=0.35,
                         help="Initial mutation probability per slot per type")
-    parser.add_argument("--tmin",       type=float, default=0.05,
+    parser.add_argument("--tmin",         type=float, default=0.05,
                         help="Final mutation probability after annealing")
-    parser.add_argument("--seed",      type=int,   default=None,
+    parser.add_argument("--gen0-teams",   type=int,   default=0,
+                        help="If >0, run a Gen-0 viability cull first: generate this many random "
+                             "teams, play --gen0-rounds BO3 series each, and keep only teams that "
+                             "sweep all rounds as the GA's initial population (overrides --pop)")
+    parser.add_argument("--gen0-rounds",  type=int,   default=3,
+                        help="BO3 series per team during the Gen-0 cull")
+    parser.add_argument("--gen0-min-wins", type=int,  default=None,
+                        help="Minimum series wins to survive Gen-0 (default: --gen0-rounds, i.e. a full sweep)")
+    parser.add_argument("--gen0-workers", type=int,   default=4,
+                        help="Parallel worker processes for the Gen-0 cull")
+    parser.add_argument("--seed",         type=int,   default=None,
                         help="RNG seed for reproducibility")
-    parser.add_argument("--handler",   choices=["model", "random"], default="model",
+    parser.add_argument("--handler",      choices=["model", "random"], default="model",
                         help="Decision handler used in battles")
-    parser.add_argument("--top",       type=int,   default=10,
+    parser.add_argument("--top",          type=int,   default=10,
                         help="Number of teams to print in the final report")
-    parser.add_argument("--out",       default=None,
+    parser.add_argument("--out",          default=None,
                         help="Optional JSON file to save the top teams")
+    parser.add_argument("--checkpoint",   default=None,
+                        help="Path to write a checkpoint JSON after each generation "
+                             "(e.g. results/run3_ckpt.json). Overwritten each gen so "
+                             "you always have the latest state.")
+    parser.add_argument("--resume",       default=None,
+                        help="Resume from a checkpoint file written by --checkpoint. "
+                             "Skips Gen-0 and picks up from the saved generation.")
     args = parser.parse_args()
 
     rng = random.Random(args.seed)
+
+    # ---- Resume from checkpoint (must happen before gen-0 cull) ----
+    start_gen          = 1
+    resume_elapsed     = 0.0
+    original_pop_start = None
+    checkpoint_initial_population = None
+
+    if args.resume:
+        ckpt_path = Path(args.resume)
+        if not ckpt_path.exists():
+            print(f"ERROR: checkpoint file not found: {ckpt_path}")
+            return
+        meta, checkpoint_initial_population = load_checkpoint(ckpt_path)
+        if not checkpoint_initial_population:
+            print("ERROR: checkpoint has no population.")
+            return
+        resumed_gen        = meta["gen"]
+        start_gen          = resumed_gen + 1
+        resume_elapsed     = float(meta.get("elapsed_s", 0))
+        original_pop_start = meta["original_pop_start"]
+        v, istate, gnext   = meta["rng_state"]
+        rng.setstate((v, tuple(istate), gnext))
+        print(
+            f"\nLoaded checkpoint: gen {resumed_gen}/{meta['total_gens']} completed  "
+            f"({len(checkpoint_initial_population)} teams, "
+            f"{resume_elapsed/3600:.1f}h elapsed)"
+        )
+        if start_gen > meta["total_gens"]:
+            print("Checkpoint is already at the final generation — printing results.")
+            print_top_teams(checkpoint_initial_population, n=args.top)
+            return
+        if meta["total_gens"] != args.gens:
+            print(
+                f"  NOTE: using checkpoint's total_gens={meta['total_gens']} "
+                f"(ignoring --gens={args.gens})"
+            )
+            args.gens = meta["total_gens"]
+    # ----------------------------------------------------------------
 
     print(f"Loading metagame from {PIKALYTICS_DIR} …")
     metagame = load_metagame(PIKALYTICS_DIR, FORMAT)
@@ -941,6 +1302,35 @@ def main() -> None:
 
     runner = BattleRunner(showdown_path=SHOWDOWN_PATH, format_id=FORMAT)
 
+    initial_population = checkpoint_initial_population  # None unless --resume
+    checkpoint_path    = Path(args.checkpoint) if args.checkpoint else None
+
+    if args.resume:
+        pass  # population already loaded from checkpoint; skip gen-0 cull entirely
+    elif args.gen0_teams > 0:
+        min_wins = args.gen0_min_wins if args.gen0_min_wins is not None else args.gen0_rounds
+        initial_population = run_gen0_cull(
+            n_teams=args.gen0_teams,
+            n_rounds=args.gen0_rounds,
+            min_wins=min_wins,
+            handler_kind=args.handler,
+            workers=args.gen0_workers,
+            rng=rng,
+        )
+        if not initial_population:
+            print("\nNo teams survived the Gen-0 cull. Try more --gen0-teams or a lower --gen0-min-wins.")
+            return
+        # Checkpoint the gen-0 survivors so a crash before gen 1 can be resumed.
+        if checkpoint_path is not None:
+            pop_end_val    = args.pop_end if args.pop_end is not None else len(initial_population)
+            rounds_end_val = args.rounds_end if args.rounds_end is not None else args.rounds
+            _write_checkpoint(
+                checkpoint_path, 0, args.gens,
+                len(initial_population), pop_end_val,
+                args.rounds, rounds_end_val,
+                0.0, rng, initial_population,
+            )
+
     final_pop = run_ga(
         metagame=metagame,
         runner=runner,
@@ -951,10 +1341,15 @@ def main() -> None:
         generations=args.gens,
         rounds_start=args.rounds,
         rounds_end=args.rounds_end if args.rounds_end is not None else args.rounds,
-        topn=args.topn,
+        topn_pct=args.topn_pct,
         mutation_t0=args.t0,
         mutation_tmin=args.tmin,
         rng=rng,
+        initial_population=initial_population,
+        start_gen=start_gen,
+        original_pop_start=original_pop_start,
+        checkpoint_path=checkpoint_path,
+        resume_elapsed=resume_elapsed,
     )
 
     print_top_teams(final_pop, n=args.top)
@@ -970,4 +1365,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    multiprocessing.freeze_support()
     main()

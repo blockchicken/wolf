@@ -1,0 +1,11068 @@
+{
+  "format_id": "battledataregmbs3",
+  "rating": "1760",
+  "date": "2026-05",
+  "fetched_at": "2026-06-20T21:12:25.708714",
+  "pokemon": {
+    "Sinistcha": {
+      "name": "Sinistcha",
+      "usage": 56.31775992512284,
+      "winrate": 51.219,
+      "moves": [
+        [
+          "Rage Powder",
+          99.2
+        ],
+        [
+          "Matcha Gotcha",
+          98.8
+        ],
+        [
+          "Life Dew",
+          58.7
+        ],
+        [
+          "Trick Room",
+          58.6
+        ],
+        [
+          "Protect",
+          54.5
+        ],
+        [
+          "Strength Sap",
+          15.1
+        ],
+        [
+          "Shadow Ball",
+          8.8
+        ],
+        [
+          "Imprison",
+          2.2
+        ],
+        [
+          "Psych Up",
+          1.1
+        ],
+        [
+          "Leaf Storm",
+          0.8
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          35.2
+        ],
+        [
+          "Kasib Berry",
+          30.4
+        ],
+        [
+          "Colbur Berry",
+          14.3
+        ],
+        [
+          "Leftovers",
+          6.7
+        ],
+        [
+          "Coba Berry",
+          5.1
+        ],
+        [
+          "Occa Berry",
+          4.0
+        ],
+        [
+          "Big Root",
+          1.4
+        ],
+        [
+          "Focus Sash",
+          0.9
+        ],
+        [
+          "Bright Powder",
+          0.8
+        ],
+        [
+          "Mental Herb",
+          0.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Hospitality",
+          99.5
+        ],
+        [
+          "Heatproof",
+          0.5
+        ]
+      ],
+      "teammates": {
+        "Staraptor": 0.0,
+        "Incineroar": 0.0,
+        "Grimmsnarl": 0.0,
+        "Garchomp": 0.0,
+        "Pelipper": 0.0,
+        "Archaludon": 0.0,
+        "Swampert": 0.0,
+        "Raichu": 0.0,
+        "Basculegion": 0.0,
+        "Whimsicott": 0.0
+      },
+      "spreads": []
+    },
+    "Kingambit": {
+      "name": "Kingambit",
+      "usage": 95.44497309102255,
+      "winrate": 55.753,
+      "moves": [
+        [
+          "Sucker Punch",
+          99.5
+        ],
+        [
+          "Kowtow Cleave",
+          97.9
+        ],
+        [
+          "Iron Head",
+          73.5
+        ],
+        [
+          "Protect",
+          68.6
+        ],
+        [
+          "Low Kick",
+          43.7
+        ],
+        [
+          "Swords Dance",
+          15.0
+        ],
+        [
+          "Brick Break",
+          1.1
+        ],
+        [
+          "Quick Guard",
+          0.2
+        ],
+        [
+          "Low Sweep",
+          0.1
+        ],
+        [
+          "Assurance",
+          0.1
+        ]
+      ],
+      "items": [
+        [
+          "Chople Berry",
+          42.9
+        ],
+        [
+          "Black Glasses",
+          31.8
+        ],
+        [
+          "Focus Sash",
+          12.8
+        ],
+        [
+          "Life Orb",
+          5.7
+        ],
+        [
+          "Occa Berry",
+          4.8
+        ],
+        [
+          "Sitrus Berry",
+          0.4
+        ],
+        [
+          "Lum Berry",
+          0.3
+        ],
+        [
+          "Muscle Band",
+          0.3
+        ],
+        [
+          "Leftovers",
+          0.3
+        ],
+        [
+          "Shuca Berry",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Defiant",
+          96.1
+        ],
+        [
+          "Supreme Overlord",
+          3.9
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Whimsicott": 0.0,
+        "Charizard": 0.0,
+        "Sneasler": 0.0,
+        "Floette-Eternal": 0.0,
+        "Sylveon": 0.0,
+        "Staraptor": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0
+      },
+      "spreads": []
+    },
+    "Whimsicott": {
+      "name": "Whimsicott",
+      "usage": 50.15989392403089,
+      "winrate": 53.098,
+      "moves": [
+        [
+          "Tailwind",
+          98.5
+        ],
+        [
+          "Moonblast",
+          92.0
+        ],
+        [
+          "Encore",
+          74.1
+        ],
+        [
+          "Protect",
+          56.5
+        ],
+        [
+          "Charm",
+          28.0
+        ],
+        [
+          "Sunny Day",
+          11.9
+        ],
+        [
+          "Fake Tears",
+          8.6
+        ],
+        [
+          "Tickle",
+          5.6
+        ],
+        [
+          "Energy Ball",
+          4.6
+        ],
+        [
+          "Taunt",
+          3.8
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          75.5
+        ],
+        [
+          "Fairy Feather",
+          11.4
+        ],
+        [
+          "Mental Herb",
+          3.6
+        ],
+        [
+          "Coba Berry",
+          2.7
+        ],
+        [
+          "Sitrus Berry",
+          1.9
+        ],
+        [
+          "Occa Berry",
+          1.4
+        ],
+        [
+          "Kebia Berry",
+          1.3
+        ],
+        [
+          "Babiri Berry",
+          0.8
+        ],
+        [
+          "Light Clay",
+          0.4
+        ],
+        [
+          "Heat Rock",
+          0.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Prankster",
+          99.4
+        ],
+        [
+          "Chlorophyll",
+          0.5
+        ],
+        [
+          "Infiltrator",
+          0.0
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Staraptor": 0.0,
+        "Kingambit": 0.0,
+        "Charizard": 0.0,
+        "Floette-Eternal": 0.0,
+        "Raichu": 0.0,
+        "Incineroar": 0.0,
+        "Sinistcha": 0.0,
+        "Sneasler": 0.0
+      },
+      "spreads": []
+    },
+    "Garchomp": {
+      "name": "Garchomp",
+      "usage": 95.2655799079635,
+      "winrate": 53.5,
+      "moves": [
+        [
+          "Dragon Claw",
+          89.4
+        ],
+        [
+          "Rock Slide",
+          82.0
+        ],
+        [
+          "Earthquake",
+          80.7
+        ],
+        [
+          "Protect",
+          70.2
+        ],
+        [
+          "Stomping Tantrum",
+          40.3
+        ],
+        [
+          "Poison Jab",
+          18.3
+        ],
+        [
+          "Rock Tomb",
+          8.0
+        ],
+        [
+          "Scale Shot",
+          3.1
+        ],
+        [
+          "Swords Dance",
+          2.5
+        ],
+        [
+          "Dragon Tail",
+          2.0
+        ]
+      ],
+      "items": [
+        [
+          "Life Orb",
+          51.5
+        ],
+        [
+          "Sitrus Berry",
+          13.6
+        ],
+        [
+          "Choice Scarf",
+          12.7
+        ],
+        [
+          "Roseli Berry",
+          10.8
+        ],
+        [
+          "Soft Sand",
+          3.6
+        ],
+        [
+          "White Herb",
+          1.3
+        ],
+        [
+          "Focus Sash",
+          1.1
+        ],
+        [
+          "Haban Berry",
+          1.1
+        ],
+        [
+          "Expert Belt",
+          0.9
+        ],
+        [
+          "Lum Berry",
+          0.9
+        ]
+      ],
+      "abilities": [
+        [
+          "Rough Skin",
+          98.5
+        ],
+        [
+          "Sand Veil",
+          1.5
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Charizard": 0.0,
+        "Basculegion": 0.0,
+        "Kingambit": 0.0,
+        "Staraptor": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Sylveon": 0.0,
+        "Floette-Eternal": 0.0,
+        "Raichu": 0.0
+      },
+      "spreads": []
+    },
+    "Basculegion": {
+      "name": "Basculegion",
+      "usage": 100.0,
+      "winrate": 54.504,
+      "moves": [
+        [
+          "Last Respects",
+          100.0
+        ],
+        [
+          "Aqua Jet",
+          94.9
+        ],
+        [
+          "Wave Crash",
+          82.3
+        ],
+        [
+          "Protect",
+          53.8
+        ],
+        [
+          "Flip Turn",
+          43.1
+        ],
+        [
+          "Liquidation",
+          17.0
+        ],
+        [
+          "Psychic Fangs",
+          4.7
+        ],
+        [
+          "Head Smash",
+          0.6
+        ],
+        [
+          "Soak",
+          0.6
+        ],
+        [
+          "Waterfall",
+          0.6
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          44.7
+        ],
+        [
+          "Mystic Water",
+          19.6
+        ],
+        [
+          "Focus Sash",
+          17.6
+        ],
+        [
+          "Life Orb",
+          11.8
+        ],
+        [
+          "Sitrus Berry",
+          4.7
+        ],
+        [
+          "Colbur Berry",
+          0.6
+        ],
+        [
+          "Kasib Berry",
+          0.3
+        ],
+        [
+          "Spell Tag",
+          0.3
+        ],
+        [
+          "Muscle Band",
+          0.2
+        ],
+        [
+          "Iron Ball",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Adaptability",
+          93.2
+        ],
+        [
+          "Swift Swim",
+          6.8
+        ],
+        [
+          "Mold Breaker",
+          0.0
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Kingambit": 0.0,
+        "Charizard": 0.0,
+        "Staraptor": 0.0,
+        "Floette-Eternal": 0.0,
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Pelipper": 0.0,
+        "Sneasler": 0.0
+      },
+      "spreads": []
+    },
+    "Charizard": {
+      "name": "Charizard",
+      "usage": 70.92660478901801,
+      "winrate": 54.105,
+      "moves": [
+        [
+          "Protect",
+          98.4
+        ],
+        [
+          "Heat Wave",
+          95.4
+        ],
+        [
+          "Solar Beam",
+          92.2
+        ],
+        [
+          "Weather Ball",
+          83.9
+        ],
+        [
+          "Air Slash",
+          6.0
+        ],
+        [
+          "Dragon Dance",
+          4.2
+        ],
+        [
+          "Flare Blitz",
+          3.4
+        ],
+        [
+          "Dragon Claw",
+          3.2
+        ],
+        [
+          "Ancient Power",
+          2.8
+        ],
+        [
+          "Overheat",
+          2.2
+        ]
+      ],
+      "items": [
+        [
+          "Charizardite Y",
+          95.4
+        ],
+        [
+          "Charizardite X",
+          3.9
+        ],
+        [
+          "Focus Sash",
+          0.2
+        ],
+        [
+          "Life Orb",
+          0.1
+        ],
+        [
+          "Charcoal",
+          0.0
+        ],
+        [
+          "Choice Scarf",
+          0.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Blaze",
+          80.5
+        ],
+        [
+          "Solar Power",
+          19.5
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Basculegion": 0.0,
+        "Kingambit": 0.0,
+        "Sylveon": 0.0,
+        "Floette-Eternal": 0.0,
+        "Aerodactyl": 0.0,
+        "Incineroar": 0.0,
+        "Sneasler": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Staraptor": {
+      "name": "Staraptor",
+      "usage": 3.5644645503470866,
+      "winrate": 46.061,
+      "moves": [
+        [
+          "Close Combat",
+          98.2
+        ],
+        [
+          "Protect",
+          90.2
+        ],
+        [
+          "Brave Bird",
+          81.2
+        ],
+        [
+          "Roost",
+          71.5
+        ],
+        [
+          "Dual Wingbeat",
+          19.4
+        ],
+        [
+          "Tailwind",
+          11.4
+        ],
+        [
+          "U-turn",
+          6.2
+        ],
+        [
+          "Final Gambit",
+          6.2
+        ],
+        [
+          "Blaze Kick",
+          5.0
+        ],
+        [
+          "Quick Attack",
+          4.1
+        ]
+      ],
+      "items": [
+        [
+          "Staraptite",
+          94.5
+        ],
+        [
+          "Choice Scarf",
+          5.4
+        ],
+        [
+          "Life Orb",
+          0.1
+        ],
+        [
+          "Skarmorite",
+          0.0
+        ],
+        [
+          "Sitrus Berry",
+          0.0
+        ],
+        [
+          "White Herb",
+          0.0
+        ],
+        [
+          "Lopunnite",
+          0.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Intimidate",
+          97.1
+        ],
+        [
+          "Reckless",
+          2.9
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Grimmsnarl": 0.0,
+        "Incineroar": 0.0,
+        "Basculegion": 0.0,
+        "Gholdengo": 0.0,
+        "Raichu": 0.0,
+        "Kingambit": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Raichu": {
+      "name": "Raichu",
+      "usage": 2.9872864831136416,
+      "winrate": 38.512,
+      "moves": [
+        [
+          "Fake Out",
+          71.6
+        ],
+        [
+          "Protect",
+          66.4
+        ],
+        [
+          "Zap Cannon",
+          60.4
+        ],
+        [
+          "Focus Blast",
+          56.3
+        ],
+        [
+          "Volt Switch",
+          30.3
+        ],
+        [
+          "Charm",
+          14.8
+        ],
+        [
+          "Encore",
+          14.4
+        ],
+        [
+          "Grass Knot",
+          12.1
+        ],
+        [
+          "Volt Tackle",
+          10.6
+        ],
+        [
+          "Nuzzle",
+          10.4
+        ]
+      ],
+      "items": [
+        [
+          "Raichunite Y",
+          60.5
+        ],
+        [
+          "Raichunite X",
+          18.2
+        ],
+        [
+          "Focus Sash",
+          14.7
+        ],
+        [
+          "Shuca Berry",
+          3.8
+        ],
+        [
+          "Magnet",
+          0.7
+        ],
+        [
+          "Sitrus Berry",
+          0.5
+        ],
+        [
+          "Light Clay",
+          0.4
+        ],
+        [
+          "Focus Band",
+          0.3
+        ],
+        [
+          "King's Rock",
+          0.3
+        ],
+        [
+          "Choice Scarf",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Lightning Rod",
+          98.3
+        ],
+        [
+          "Static",
+          1.7
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Staraptor": 0.0,
+        "Whimsicott": 0.0,
+        "Incineroar": 0.0,
+        "Kingambit": 0.0,
+        "Gholdengo": 0.0,
+        "Pelipper": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Incineroar": {
+      "name": "Incineroar",
+      "usage": 74.19078075033148,
+      "winrate": 52.768,
+      "moves": [
+        [
+          "Fake Out",
+          99.9
+        ],
+        [
+          "Parting Shot",
+          96.8
+        ],
+        [
+          "Flare Blitz",
+          92.6
+        ],
+        [
+          "Throat Chop",
+          53.7
+        ],
+        [
+          "Darkest Lariat",
+          29.4
+        ],
+        [
+          "Protect",
+          9.5
+        ],
+        [
+          "Will-O-Wisp",
+          3.5
+        ],
+        [
+          "Taunt",
+          3.4
+        ],
+        [
+          "Helping Hand",
+          3.2
+        ],
+        [
+          "Snarl",
+          2.4
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          59.8
+        ],
+        [
+          "Chople Berry",
+          15.0
+        ],
+        [
+          "Passho Berry",
+          12.0
+        ],
+        [
+          "Leftovers",
+          4.0
+        ],
+        [
+          "Charcoal",
+          3.7
+        ],
+        [
+          "Shuca Berry",
+          2.6
+        ],
+        [
+          "White Herb",
+          1.0
+        ],
+        [
+          "Life Orb",
+          0.7
+        ],
+        [
+          "Lum Berry",
+          0.5
+        ],
+        [
+          "Expert Belt",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Intimidate",
+          99.8
+        ],
+        [
+          "Blaze",
+          0.2
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0,
+        "Staraptor": 0.0,
+        "Whimsicott": 0.0,
+        "Basculegion": 0.0,
+        "Sneasler": 0.0,
+        "Kingambit": 0.0,
+        "Raichu": 0.0,
+        "Floette-Eternal": 0.0,
+        "Grimmsnarl": 0.0
+      },
+      "spreads": []
+    },
+    "Pelipper": {
+      "name": "Pelipper",
+      "usage": 24.608064893534046,
+      "winrate": 50.46,
+      "moves": [
+        [
+          "Hurricane",
+          98.9
+        ],
+        [
+          "Weather Ball",
+          87.7
+        ],
+        [
+          "Tailwind",
+          86.5
+        ],
+        [
+          "Wide Guard",
+          51.2
+        ],
+        [
+          "Protect",
+          42.5
+        ],
+        [
+          "Muddy Water",
+          6.6
+        ],
+        [
+          "Rain Dance",
+          6.1
+        ],
+        [
+          "Helping Hand",
+          5.2
+        ],
+        [
+          "U-turn",
+          4.2
+        ],
+        [
+          "Ice Beam",
+          3.4
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          45.3
+        ],
+        [
+          "Sitrus Berry",
+          31.4
+        ],
+        [
+          "Damp Rock",
+          13.1
+        ],
+        [
+          "Choice Scarf",
+          4.1
+        ],
+        [
+          "Life Orb",
+          2.4
+        ],
+        [
+          "Mystic Water",
+          0.6
+        ],
+        [
+          "Wacan Berry",
+          0.6
+        ],
+        [
+          "Leftovers",
+          0.5
+        ],
+        [
+          "Sharp Beak",
+          0.5
+        ],
+        [
+          "Expert Belt",
+          0.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Drizzle",
+          100.0
+        ],
+        [
+          "Keen Eye",
+          0.0
+        ]
+      ],
+      "teammates": {
+        "Archaludon": 0.0,
+        "Swampert": 0.0,
+        "Sinistcha": 0.0,
+        "Basculegion": 0.0,
+        "Sableye": 0.0,
+        "Grimmsnarl": 0.0,
+        "Sneasler": 0.0,
+        "Raichu": 0.0,
+        "Metagross": 0.0,
+        "Incineroar": 0.0
+      },
+      "spreads": []
+    },
+    "Sneasler": {
+      "name": "Sneasler",
+      "usage": 77.26386397316902,
+      "winrate": 52.183,
+      "moves": [
+        [
+          "Close Combat",
+          99.3
+        ],
+        [
+          "Fake Out",
+          94.4
+        ],
+        [
+          "Dire Claw",
+          93.6
+        ],
+        [
+          "Protect",
+          59.3
+        ],
+        [
+          "Coaching",
+          21.7
+        ],
+        [
+          "Rock Slide",
+          7.8
+        ],
+        [
+          "Gunk Shot",
+          3.6
+        ],
+        [
+          "Feint",
+          3.5
+        ],
+        [
+          "Throat Chop",
+          3.2
+        ],
+        [
+          "Rock Tomb",
+          2.4
+        ]
+      ],
+      "items": [
+        [
+          "White Herb",
+          71.1
+        ],
+        [
+          "Focus Sash",
+          26.0
+        ],
+        [
+          "Sitrus Berry",
+          0.6
+        ],
+        [
+          "Lum Berry",
+          0.5
+        ],
+        [
+          "Life Orb",
+          0.4
+        ],
+        [
+          "Black Belt",
+          0.4
+        ],
+        [
+          "Expert Belt",
+          0.2
+        ],
+        [
+          "Mental Herb",
+          0.2
+        ],
+        [
+          "King's Rock",
+          0.2
+        ],
+        [
+          "Choice Scarf",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Unburden",
+          88.7
+        ],
+        [
+          "Poison Touch",
+          11.2
+        ],
+        [
+          "Pressure",
+          0.1
+        ]
+      ],
+      "teammates": {
+        "Basculegion": 0.0,
+        "Kingambit": 0.0,
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Incineroar": 0.0,
+        "Metagross": 0.0,
+        "Pelipper": 0.0,
+        "Charizard": 0.0,
+        "Archaludon": 0.0
+      },
+      "spreads": []
+    },
+    "Swampert": {
+      "name": "Swampert",
+      "usage": 2.1332189376803683,
+      "winrate": 50.64,
+      "moves": [
+        [
+          "Protect",
+          94.2
+        ],
+        [
+          "Wave Crash",
+          88.2
+        ],
+        [
+          "Earthquake",
+          66.2
+        ],
+        [
+          "Ice Punch",
+          57.0
+        ],
+        [
+          "High Horsepower",
+          37.2
+        ],
+        [
+          "Rock Slide",
+          12.2
+        ],
+        [
+          "Flip Turn",
+          8.7
+        ],
+        [
+          "Liquidation",
+          7.7
+        ],
+        [
+          "Knock Off",
+          7.2
+        ],
+        [
+          "Bulk Up",
+          4.9
+        ]
+      ],
+      "items": [
+        [
+          "Swampertite",
+          98.5
+        ],
+        [
+          "Life Orb",
+          0.7
+        ],
+        [
+          "Rindo Berry",
+          0.3
+        ],
+        [
+          "Sitrus Berry",
+          0.2
+        ],
+        [
+          "Leftovers",
+          0.2
+        ],
+        [
+          "Mystic Water",
+          0.0
+        ],
+        [
+          "White Herb",
+          0.0
+        ],
+        [
+          "Black Belt",
+          0.0
+        ],
+        [
+          "Expert Belt",
+          0.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Torrent",
+          53.6
+        ],
+        [
+          "Damp",
+          46.4
+        ]
+      ],
+      "teammates": {
+        "Pelipper": 0.0,
+        "Archaludon": 0.0,
+        "Sinistcha": 0.0,
+        "Sableye": 0.0,
+        "Basculegion": 0.0,
+        "Grimmsnarl": 0.0,
+        "Sneasler": 0.0,
+        "Incineroar": 0.0,
+        "Metagross": 0.0,
+        "Raichu": 0.0
+      },
+      "spreads": []
+    },
+    "Sylveon": {
+      "name": "Sylveon",
+      "usage": 30.122455346696825,
+      "winrate": 51.56,
+      "moves": [
+        [
+          "Hyper Voice",
+          99.9
+        ],
+        [
+          "Quick Attack",
+          81.6
+        ],
+        [
+          "Hyper Beam",
+          71.2
+        ],
+        [
+          "Detect",
+          61.1
+        ],
+        [
+          "Protect",
+          35.0
+        ],
+        [
+          "Moonblast",
+          13.1
+        ],
+        [
+          "Calm Mind",
+          10.5
+        ],
+        [
+          "Yawn",
+          8.9
+        ],
+        [
+          "Mystical Fire",
+          3.7
+        ],
+        [
+          "Shadow Ball",
+          3.6
+        ]
+      ],
+      "items": [
+        [
+          "Fairy Feather",
+          89.6
+        ],
+        [
+          "Life Orb",
+          5.1
+        ],
+        [
+          "Sitrus Berry",
+          1.5
+        ],
+        [
+          "Leftovers",
+          1.5
+        ],
+        [
+          "Choice Scarf",
+          1.2
+        ],
+        [
+          "Quick Claw",
+          0.6
+        ],
+        [
+          "Babiri Berry",
+          0.5
+        ],
+        [
+          "Metronome",
+          0.1
+        ],
+        [
+          "Bright Powder",
+          0.0
+        ],
+        [
+          "Wise Glasses",
+          0.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Pixilate",
+          99.9
+        ],
+        [
+          "Cute Charm",
+          0.1
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Charizard": 0.0,
+        "Kingambit": 0.0,
+        "Basculegion": 0.0,
+        "Farigiraf": 0.0,
+        "Aerodactyl": 0.0,
+        "Raichu": 0.0,
+        "Staraptor": 0.0,
+        "Whimsicott": 0.0,
+        "Sinistcha": 0.0
+      },
+      "spreads": []
+    },
+    "Archaludon": {
+      "name": "Archaludon",
+      "usage": 31.155916075189143,
+      "winrate": 51.083,
+      "moves": [
+        [
+          "Electro Shot",
+          96.7
+        ],
+        [
+          "Flash Cannon",
+          95.2
+        ],
+        [
+          "Protect",
+          94.3
+        ],
+        [
+          "Dragon Pulse",
+          73.5
+        ],
+        [
+          "Draco Meteor",
+          21.2
+        ],
+        [
+          "Aura Sphere",
+          12.7
+        ],
+        [
+          "Snarl",
+          2.4
+        ],
+        [
+          "Thunderbolt",
+          2.3
+        ],
+        [
+          "Steel Beam",
+          0.3
+        ],
+        [
+          "Substitute",
+          0.3
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          88.6
+        ],
+        [
+          "Choice Scarf",
+          2.4
+        ],
+        [
+          "White Herb",
+          2.0
+        ],
+        [
+          "Chople Berry",
+          1.8
+        ],
+        [
+          "Sitrus Berry",
+          1.7
+        ],
+        [
+          "Life Orb",
+          1.4
+        ],
+        [
+          "Magnet",
+          0.4
+        ],
+        [
+          "Wise Glasses",
+          0.3
+        ],
+        [
+          "Scope Lens",
+          0.3
+        ],
+        [
+          "Dragon Fang",
+          0.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Stamina",
+          93.4
+        ],
+        [
+          "Sturdy",
+          5.3
+        ],
+        [
+          "Stalwart",
+          1.3
+        ]
+      ],
+      "teammates": {
+        "Pelipper": 0.0,
+        "Swampert": 0.0,
+        "Sinistcha": 0.0,
+        "Basculegion": 0.0,
+        "Sableye": 0.0,
+        "Grimmsnarl": 0.0,
+        "Sneasler": 0.0,
+        "Raichu": 0.0,
+        "Incineroar": 0.0,
+        "Metagross": 0.0
+      },
+      "spreads": []
+    },
+    "Grimmsnarl": {
+      "name": "Grimmsnarl",
+      "usage": 2.8936900397784884,
+      "winrate": 45.013,
+      "moves": [
+        [
+          "Light Screen",
+          87.0
+        ],
+        [
+          "Parting Shot",
+          82.8
+        ],
+        [
+          "Reflect",
+          81.8
+        ],
+        [
+          "Spirit Break",
+          61.9
+        ],
+        [
+          "Fake Out",
+          27.1
+        ],
+        [
+          "Scary Face",
+          22.0
+        ],
+        [
+          "Foul Play",
+          12.9
+        ],
+        [
+          "Fake Tears",
+          7.8
+        ],
+        [
+          "Sucker Punch",
+          4.9
+        ],
+        [
+          "Taunt",
+          2.8
+        ]
+      ],
+      "items": [
+        [
+          "Light Clay",
+          83.0
+        ],
+        [
+          "Roseli Berry",
+          9.3
+        ],
+        [
+          "Sitrus Berry",
+          3.0
+        ],
+        [
+          "Leftovers",
+          2.0
+        ],
+        [
+          "Focus Sash",
+          0.7
+        ],
+        [
+          "Black Glasses",
+          0.5
+        ],
+        [
+          "Mental Herb",
+          0.4
+        ],
+        [
+          "Life Orb",
+          0.3
+        ],
+        [
+          "Babiri Berry",
+          0.2
+        ],
+        [
+          "Iron Ball",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Prankster",
+          99.6
+        ],
+        [
+          "Frisk",
+          0.3
+        ],
+        [
+          "Pickpocket",
+          0.1
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Staraptor": 0.0,
+        "Garchomp": 0.0,
+        "Pelipper": 0.0,
+        "Incineroar": 0.0,
+        "Archaludon": 0.0,
+        "Basculegion": 0.0,
+        "Gholdengo": 0.0,
+        "Raichu": 0.0,
+        "Swampert": 0.0
+      },
+      "spreads": []
+    },
+    "Metagross": {
+      "name": "Metagross",
+      "usage": 2.7727946338039153,
+      "winrate": 48.945,
+      "moves": [
+        [
+          "Protect",
+          89.8
+        ],
+        [
+          "Psychic Fangs",
+          86.7
+        ],
+        [
+          "Iron Head",
+          58.7
+        ],
+        [
+          "Bullet Punch",
+          38.5
+        ],
+        [
+          "Stomping Tantrum",
+          31.8
+        ],
+        [
+          "Meteor Mash",
+          28.8
+        ],
+        [
+          "Ice Punch",
+          23.2
+        ],
+        [
+          "Rock Slide",
+          9.0
+        ],
+        [
+          "Body Press",
+          8.8
+        ],
+        [
+          "Thunder Punch",
+          5.9
+        ]
+      ],
+      "items": [
+        [
+          "Metagrossite",
+          94.5
+        ],
+        [
+          "Life Orb",
+          2.3
+        ],
+        [
+          "Metal Coat",
+          0.8
+        ],
+        [
+          "Leftovers",
+          0.5
+        ],
+        [
+          "Sitrus Berry",
+          0.4
+        ],
+        [
+          "Choice Scarf",
+          0.4
+        ],
+        [
+          "Expert Belt",
+          0.4
+        ],
+        [
+          "Occa Berry",
+          0.2
+        ],
+        [
+          "Shuca Berry",
+          0.1
+        ],
+        [
+          "Shell Bell",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Clear Body",
+          99.5
+        ],
+        [
+          "Light Metal",
+          0.5
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Sinistcha": 0.0,
+        "Whimsicott": 0.0,
+        "Basculegion": 0.0,
+        "Sneasler": 0.0,
+        "Incineroar": 0.0,
+        "Staraptor": 0.0,
+        "Grimmsnarl": 0.0,
+        "Pelipper": 0.0,
+        "Annihilape": 0.0
+      },
+      "spreads": []
+    },
+    "Aerodactyl": {
+      "name": "Aerodactyl",
+      "usage": 35.64464550347087,
+      "winrate": 52.319,
+      "moves": [
+        [
+          "Rock Slide",
+          99.9
+        ],
+        [
+          "Tailwind",
+          92.7
+        ],
+        [
+          "Dual Wingbeat",
+          86.9
+        ],
+        [
+          "Protect",
+          56.8
+        ],
+        [
+          "Wide Guard",
+          33.6
+        ],
+        [
+          "Ice Fang",
+          26.0
+        ],
+        [
+          "Taunt",
+          1.0
+        ],
+        [
+          "Sunny Day",
+          0.8
+        ],
+        [
+          "Earthquake",
+          0.7
+        ],
+        [
+          "Rain Dance",
+          0.5
+        ]
+      ],
+      "items": [
+        [
+          "Aerodactylite",
+          61.2
+        ],
+        [
+          "Focus Sash",
+          34.7
+        ],
+        [
+          "Passho Berry",
+          1.3
+        ],
+        [
+          "Life Orb",
+          0.6
+        ],
+        [
+          "Wide Lens",
+          0.5
+        ],
+        [
+          "Sitrus Berry",
+          0.3
+        ],
+        [
+          "Lum Berry",
+          0.3
+        ],
+        [
+          "Quick Claw",
+          0.2
+        ],
+        [
+          "Mental Herb",
+          0.2
+        ],
+        [
+          "Never-Melt Ice",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Unnerve",
+          95.7
+        ],
+        [
+          "Pressure",
+          2.2
+        ],
+        [
+          "Rock Head",
+          2.1
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Kingambit": 0.0,
+        "Sylveon": 0.0,
+        "Charizard": 0.0,
+        "Basculegion": 0.0,
+        "Farigiraf": 0.0,
+        "Incineroar": 0.0,
+        "Sneasler": 0.0,
+        "Metagross": 0.0,
+        "Sinistcha": 0.0
+      },
+      "spreads": []
+    },
+    "Floette-Eternal": {
+      "name": "Floette-Eternal",
+      "usage": 59.88612432727556,
+      "winrate": 55.991,
+      "moves": [
+        [
+          "Protect",
+          99.8
+        ],
+        [
+          "Dazzling Gleam",
+          97.1
+        ],
+        [
+          "Moonblast",
+          79.0
+        ],
+        [
+          "Light of Ruin",
+          58.0
+        ],
+        [
+          "Calm Mind",
+          42.7
+        ],
+        [
+          "Draining Kiss",
+          19.3
+        ],
+        [
+          "Psychic",
+          2.6
+        ],
+        [
+          "Grass Knot",
+          0.3
+        ],
+        [
+          "Giga Drain",
+          0.3
+        ],
+        [
+          "Energy Ball",
+          0.2
+        ]
+      ],
+      "items": [
+        [
+          "Floettite",
+          99.4
+        ],
+        [
+          "Life Orb",
+          0.4
+        ],
+        [
+          "Fairy Feather",
+          0.1
+        ],
+        [
+          "Choice Scarf",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Flower Veil",
+          98.9
+        ],
+        [
+          "Symbiosis",
+          1.1
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Whimsicott": 0.0,
+        "Kingambit": 0.0,
+        "Charizard": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Sneasler": 0.0,
+        "Grimmsnarl": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Farigiraf": {
+      "name": "Farigiraf",
+      "usage": 29.68567194446611,
+      "winrate": 49.672,
+      "moves": [
+        [
+          "Trick Room",
+          95.7
+        ],
+        [
+          "Psychic",
+          60.7
+        ],
+        [
+          "Helping Hand",
+          48.9
+        ],
+        [
+          "Protect",
+          39.1
+        ],
+        [
+          "Thunderbolt",
+          30.3
+        ],
+        [
+          "Hyper Voice",
+          30.2
+        ],
+        [
+          "Twin Beam",
+          24.7
+        ],
+        [
+          "Imprison",
+          13.9
+        ],
+        [
+          "Roar",
+          11.6
+        ],
+        [
+          "Foul Play",
+          6.4
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          62.0
+        ],
+        [
+          "Colbur Berry",
+          24.9
+        ],
+        [
+          "Mental Herb",
+          4.4
+        ],
+        [
+          "Focus Sash",
+          2.9
+        ],
+        [
+          "Leftovers",
+          2.2
+        ],
+        [
+          "Life Orb",
+          0.8
+        ],
+        [
+          "Lum Berry",
+          0.5
+        ],
+        [
+          "Silk Scarf",
+          0.5
+        ],
+        [
+          "Twisted Spoon",
+          0.4
+        ],
+        [
+          "Bright Powder",
+          0.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Armor Tail",
+          99.9
+        ],
+        [
+          "Cud Chew",
+          0.0
+        ],
+        [
+          "Sap Sipper",
+          0.0
+        ]
+      ],
+      "teammates": {
+        "Sylveon": 0.0,
+        "Kingambit": 0.0,
+        "Torkoal": 0.0,
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Mawile": 0.0,
+        "Incineroar": 0.0,
+        "Aerodactyl": 0.0,
+        "Charizard": 0.0,
+        "Whimsicott": 0.0
+      },
+      "spreads": []
+    },
+    "Gholdengo": {
+      "name": "Gholdengo",
+      "usage": 2.2112159737929957,
+      "winrate": 42.857,
+      "moves": [
+        [
+          "Make It Rain",
+          99.0
+        ],
+        [
+          "Shadow Ball",
+          99.0
+        ],
+        [
+          "Protect",
+          70.9
+        ],
+        [
+          "Nasty Plot",
+          58.5
+        ],
+        [
+          "Power Gem",
+          27.1
+        ],
+        [
+          "Trick",
+          17.3
+        ],
+        [
+          "Thunderbolt",
+          11.4
+        ],
+        [
+          "Dazzling Gleam",
+          5.8
+        ],
+        [
+          "Flash Cannon",
+          3.5
+        ],
+        [
+          "Thunder",
+          1.7
+        ]
+      ],
+      "items": [
+        [
+          "Life Orb",
+          37.9
+        ],
+        [
+          "Choice Scarf",
+          27.1
+        ],
+        [
+          "Metal Coat",
+          11.3
+        ],
+        [
+          "Leftovers",
+          7.3
+        ],
+        [
+          "White Herb",
+          6.5
+        ],
+        [
+          "Sitrus Berry",
+          2.8
+        ],
+        [
+          "Focus Sash",
+          2.6
+        ],
+        [
+          "Shuca Berry",
+          1.4
+        ],
+        [
+          "Wise Glasses",
+          0.8
+        ],
+        [
+          "Kasib Berry",
+          0.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Good as Gold",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Staraptor": 0.0,
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Grimmsnarl": 0.0,
+        "Incineroar": 0.0,
+        "Charizard": 0.0,
+        "Basculegion": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Maushold": {
+      "name": "Maushold",
+      "usage": 13.442789174011388,
+      "winrate": 50.508,
+      "moves": [
+        [
+          "Follow Me",
+          95.4
+        ],
+        [
+          "Protect",
+          89.4
+        ],
+        [
+          "Super Fang",
+          40.2
+        ],
+        [
+          "Population Bomb",
+          31.5
+        ],
+        [
+          "Beat Up",
+          31.0
+        ],
+        [
+          "Encore",
+          24.2
+        ],
+        [
+          "Taunt",
+          21.8
+        ],
+        [
+          "Feint",
+          20.8
+        ],
+        [
+          "Helping Hand",
+          11.5
+        ],
+        [
+          "Charm",
+          10.5
+        ]
+      ],
+      "items": [
+        [
+          "Chople Berry",
+          38.7
+        ],
+        [
+          "Wide Lens",
+          29.4
+        ],
+        [
+          "Focus Sash",
+          24.2
+        ],
+        [
+          "Sitrus Berry",
+          6.0
+        ],
+        [
+          "Mental Herb",
+          0.6
+        ],
+        [
+          "Leftovers",
+          0.4
+        ],
+        [
+          "Choice Scarf",
+          0.3
+        ],
+        [
+          "Bright Powder",
+          0.1
+        ],
+        [
+          "Silk Scarf",
+          0.1
+        ],
+        [
+          "Zoom Lens",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Friend Guard",
+          73.2
+        ],
+        [
+          "Technician",
+          26.3
+        ],
+        [
+          "Cheek Pouch",
+          0.5
+        ]
+      ],
+      "teammates": {
+        "Annihilape": 0.0,
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0,
+        "Staraptor": 0.0,
+        "Incineroar": 0.0,
+        "Basculegion": 0.0,
+        "Whimsicott": 0.0,
+        "Grimmsnarl": 0.0,
+        "Pelipper": 0.0,
+        "Gholdengo": 0.0
+      },
+      "spreads": []
+    },
+    "Mawile": {
+      "name": "Mawile",
+      "usage": 0.8150690273769596,
+      "winrate": 48.325,
+      "moves": [
+        [
+          "Play Rough",
+          97.2
+        ],
+        [
+          "Sucker Punch",
+          92.9
+        ],
+        [
+          "Protect",
+          89.0
+        ],
+        [
+          "Iron Head",
+          80.8
+        ],
+        [
+          "Swords Dance",
+          17.0
+        ],
+        [
+          "Rock Slide",
+          12.4
+        ],
+        [
+          "Knock Off",
+          3.7
+        ],
+        [
+          "Thunder Punch",
+          2.2
+        ],
+        [
+          "Brick Break",
+          1.9
+        ],
+        [
+          "Stone Edge",
+          1.0
+        ]
+      ],
+      "items": [
+        [
+          "Mawilite",
+          100.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Intimidate",
+          71.7
+        ],
+        [
+          "Hyper Cutter",
+          27.9
+        ],
+        [
+          "Sheer Force",
+          0.4
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Torkoal": 0.0,
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Pelipper": 0.0,
+        "Staraptor": 0.0,
+        "Archaludon": 0.0,
+        "Swampert": 0.0
+      },
+      "spreads": []
+    },
+    "Sableye": {
+      "name": "Sableye",
+      "usage": 10.57639809687232,
+      "winrate": 45.299,
+      "moves": [
+        [
+          "Rain Dance",
+          78.8
+        ],
+        [
+          "Light Screen",
+          67.0
+        ],
+        [
+          "Encore",
+          56.2
+        ],
+        [
+          "Reflect",
+          52.4
+        ],
+        [
+          "Will-O-Wisp",
+          38.9
+        ],
+        [
+          "Disable",
+          30.4
+        ],
+        [
+          "Fake Out",
+          20.5
+        ],
+        [
+          "Foul Play",
+          17.8
+        ],
+        [
+          "Quash",
+          15.1
+        ],
+        [
+          "Taunt",
+          4.8
+        ]
+      ],
+      "items": [
+        [
+          "Roseli Berry",
+          48.0
+        ],
+        [
+          "Light Clay",
+          41.5
+        ],
+        [
+          "Sitrus Berry",
+          2.7
+        ],
+        [
+          "Focus Sash",
+          2.6
+        ],
+        [
+          "Leftovers",
+          1.6
+        ],
+        [
+          "Damp Rock",
+          1.0
+        ],
+        [
+          "Wide Lens",
+          0.8
+        ],
+        [
+          "Mental Herb",
+          0.8
+        ],
+        [
+          "Bright Powder",
+          0.6
+        ],
+        [
+          "Sablenite",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Prankster",
+          100.0
+        ],
+        [
+          "Stall",
+          0.0
+        ]
+      ],
+      "teammates": {
+        "Archaludon": 0.0,
+        "Pelipper": 0.0,
+        "Swampert": 0.0,
+        "Sinistcha": 0.0,
+        "Basculegion": 0.0,
+        "Sneasler": 0.0,
+        "Metagross": 0.0,
+        "Raichu": 0.0,
+        "Incineroar": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Annihilape": {
+      "name": "Annihilape",
+      "usage": 1.1543561344668902,
+      "winrate": 50.676,
+      "moves": [
+        [
+          "Rage Fist",
+          93.2
+        ],
+        [
+          "Protect",
+          78.5
+        ],
+        [
+          "Drain Punch",
+          77.7
+        ],
+        [
+          "Bulk Up",
+          69.6
+        ],
+        [
+          "Close Combat",
+          23.9
+        ],
+        [
+          "Coaching",
+          13.0
+        ],
+        [
+          "Taunt",
+          7.9
+        ],
+        [
+          "Rock Slide",
+          7.0
+        ],
+        [
+          "U-turn",
+          5.9
+        ],
+        [
+          "Shadow Claw",
+          4.4
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          50.7
+        ],
+        [
+          "Sitrus Berry",
+          17.5
+        ],
+        [
+          "Choice Scarf",
+          11.4
+        ],
+        [
+          "Focus Sash",
+          6.0
+        ],
+        [
+          "Roseli Berry",
+          3.2
+        ],
+        [
+          "Kasib Berry",
+          2.6
+        ],
+        [
+          "Lum Berry",
+          2.4
+        ],
+        [
+          "Life Orb",
+          2.3
+        ],
+        [
+          "Muscle Band",
+          1.4
+        ],
+        [
+          "Spell Tag",
+          0.8
+        ]
+      ],
+      "abilities": [
+        [
+          "Defiant",
+          99.3
+        ],
+        [
+          "Inner Focus",
+          0.5
+        ],
+        [
+          "Vital Spirit",
+          0.2
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Maushold": 0.0,
+        "Metagross": 0.0,
+        "Incineroar": 0.0,
+        "Grimmsnarl": 0.0,
+        "Whimsicott": 0.0,
+        "Pelipper": 0.0,
+        "Garchomp": 0.0,
+        "Swampert": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Torkoal": {
+      "name": "Torkoal",
+      "usage": 9.488339443101163,
+      "winrate": 46.691,
+      "moves": [
+        [
+          "Eruption",
+          97.2
+        ],
+        [
+          "Protect",
+          86.2
+        ],
+        [
+          "Weather Ball",
+          62.8
+        ],
+        [
+          "Heat Wave",
+          52.7
+        ],
+        [
+          "Earth Power",
+          34.0
+        ],
+        [
+          "Solar Beam",
+          32.9
+        ],
+        [
+          "Helping Hand",
+          8.7
+        ],
+        [
+          "Sunny Day",
+          5.8
+        ],
+        [
+          "Flamethrower",
+          4.2
+        ],
+        [
+          "Ancient Power",
+          3.6
+        ]
+      ],
+      "items": [
+        [
+          "Charcoal",
+          88.8
+        ],
+        [
+          "Life Orb",
+          4.6
+        ],
+        [
+          "Heat Rock",
+          2.6
+        ],
+        [
+          "Leftovers",
+          2.2
+        ],
+        [
+          "Sitrus Berry",
+          0.7
+        ],
+        [
+          "Wise Glasses",
+          0.7
+        ],
+        [
+          "Quick Claw",
+          0.3
+        ],
+        [
+          "Expert Belt",
+          0.1
+        ],
+        [
+          "Metronome",
+          0.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Drought",
+          99.8
+        ],
+        [
+          "White Smoke",
+          0.1
+        ],
+        [
+          "Shell Armor",
+          0.0
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Sylveon": 0.0,
+        "Mawile": 0.0,
+        "Kangaskhan": 0.0,
+        "Basculegion": 0.0,
+        "Blastoise": 0.0,
+        "Kingambit": 0.0,
+        "Incineroar": 0.0,
+        "Sinistcha": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Ninetales-Alola": {
+      "name": "Ninetales-Alola",
+      "usage": 10.007019733250136,
+      "winrate": 50.409,
+      "moves": [
+        [
+          "Blizzard",
+          95.2
+        ],
+        [
+          "Protect",
+          67.4
+        ],
+        [
+          "Freeze-Dry",
+          63.3
+        ],
+        [
+          "Aurora Veil",
+          63.1
+        ],
+        [
+          "Moonblast",
+          43.7
+        ],
+        [
+          "Encore",
+          26.3
+        ],
+        [
+          "Icy Wind",
+          20.6
+        ],
+        [
+          "Dazzling Gleam",
+          5.9
+        ],
+        [
+          "Disable",
+          4.4
+        ],
+        [
+          "Icicle Spear",
+          2.0
+        ]
+      ],
+      "items": [
+        [
+          "Light Clay",
+          36.6
+        ],
+        [
+          "Focus Sash",
+          19.8
+        ],
+        [
+          "Choice Scarf",
+          18.4
+        ],
+        [
+          "Never-Melt Ice",
+          16.4
+        ],
+        [
+          "Life Orb",
+          5.3
+        ],
+        [
+          "Sitrus Berry",
+          1.3
+        ],
+        [
+          "Icy Rock",
+          1.1
+        ],
+        [
+          "Kebia Berry",
+          0.4
+        ],
+        [
+          "Babiri Berry",
+          0.3
+        ],
+        [
+          "Leftovers",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Snow Warning",
+          99.9
+        ],
+        [
+          "Snow Cloak",
+          0.1
+        ]
+      ],
+      "teammates": {
+        "Raichu": 0.0,
+        "Garchomp": 0.0,
+        "Incineroar": 0.0,
+        "Sinistcha": 0.0,
+        "Whimsicott": 0.0,
+        "Kingambit": 0.0,
+        "Basculegion": 0.0,
+        "Staraptor": 0.0,
+        "Sneasler": 0.0,
+        "Metagross": 0.0
+      },
+      "spreads": []
+    },
+    "Rotom-Wash": {
+      "name": "Rotom-Wash",
+      "usage": 20.552219015677405,
+      "winrate": 47.6,
+      "moves": [
+        [
+          "Hydro Pump",
+          96.4
+        ],
+        [
+          "Will-O-Wisp",
+          77.9
+        ],
+        [
+          "Thunderbolt",
+          71.5
+        ],
+        [
+          "Protect",
+          54.2
+        ],
+        [
+          "Volt Switch",
+          41.2
+        ],
+        [
+          "Electroweb",
+          22.8
+        ],
+        [
+          "Light Screen",
+          11.0
+        ],
+        [
+          "Discharge",
+          8.9
+        ],
+        [
+          "Eerie Impulse",
+          5.4
+        ],
+        [
+          "Trick",
+          5.3
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          39.1
+        ],
+        [
+          "Leftovers",
+          29.7
+        ],
+        [
+          "Choice Scarf",
+          21.6
+        ],
+        [
+          "Magnet",
+          4.0
+        ],
+        [
+          "Life Orb",
+          2.3
+        ],
+        [
+          "Wide Lens",
+          1.2
+        ],
+        [
+          "Rindo Berry",
+          0.7
+        ],
+        [
+          "Quick Claw",
+          0.5
+        ],
+        [
+          "Focus Sash",
+          0.4
+        ],
+        [
+          "Mystic Water",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Levitate",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Sinistcha": 0.0,
+        "Sneasler": 0.0,
+        "Incineroar": 0.0,
+        "Metagross": 0.0,
+        "Staraptor": 0.0,
+        "Tyranitar": 0.0,
+        "Charizard": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Talonflame": {
+      "name": "Talonflame",
+      "usage": 13.887372279853366,
+      "winrate": 48.357,
+      "moves": [
+        [
+          "Tailwind",
+          97.8
+        ],
+        [
+          "Protect",
+          63.3
+        ],
+        [
+          "Flare Blitz",
+          61.0
+        ],
+        [
+          "Brave Bird",
+          46.4
+        ],
+        [
+          "Acrobatics",
+          27.6
+        ],
+        [
+          "Quick Guard",
+          25.5
+        ],
+        [
+          "Dual Wingbeat",
+          23.9
+        ],
+        [
+          "Will-O-Wisp",
+          15.2
+        ],
+        [
+          "Taunt",
+          12.7
+        ],
+        [
+          "Rain Dance",
+          7.4
+        ]
+      ],
+      "items": [
+        [
+          "Sharp Beak",
+          30.9
+        ],
+        [
+          "Focus Sash",
+          17.5
+        ],
+        [
+          "Life Orb",
+          13.1
+        ],
+        [
+          "Charti Berry",
+          2.8
+        ],
+        [
+          "Mental Herb",
+          2.4
+        ],
+        [
+          "Expert Belt",
+          2.4
+        ],
+        [
+          "Leftovers",
+          1.8
+        ],
+        [
+          "Charcoal",
+          1.0
+        ],
+        [
+          "Sitrus Berry",
+          0.3
+        ],
+        [
+          "White Herb",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Gale Wings",
+          99.9
+        ],
+        [
+          "Flame Body",
+          0.1
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Kingambit": 0.0,
+        "Sneasler": 0.0,
+        "Metagross": 0.0,
+        "Gholdengo": 0.0,
+        "Floette-Eternal": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Froslass": {
+      "name": "Froslass",
+      "usage": 22.689337805163404,
+      "winrate": 55.801,
+      "moves": [
+        [
+          "Blizzard",
+          98.9
+        ],
+        [
+          "Protect",
+          96.3
+        ],
+        [
+          "Shadow Ball",
+          86.0
+        ],
+        [
+          "Aurora Veil",
+          80.2
+        ],
+        [
+          "Rain Dance",
+          10.6
+        ],
+        [
+          "Nasty Plot",
+          4.1
+        ],
+        [
+          "Taunt",
+          3.7
+        ],
+        [
+          "Weather Ball",
+          3.7
+        ],
+        [
+          "Thunderbolt",
+          2.8
+        ],
+        [
+          "Substitute",
+          2.6
+        ]
+      ],
+      "items": [
+        [
+          "Froslassite",
+          99.6
+        ],
+        [
+          "Focus Sash",
+          0.2
+        ],
+        [
+          "Never-Melt Ice",
+          0.1
+        ],
+        [
+          "Choice Scarf",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Cursed Body",
+          79.0
+        ],
+        [
+          "Snow Cloak",
+          21.0
+        ]
+      ],
+      "teammates": {
+        "Kingambit": 0.0,
+        "Sneasler": 0.0,
+        "Basculegion": 0.0,
+        "Garchomp": 0.0,
+        "Incineroar": 0.0,
+        "Whimsicott": 0.0,
+        "Sinistcha": 0.0,
+        "Sylveon": 0.0,
+        "Raichu": 0.0,
+        "Archaludon": 0.0
+      },
+      "spreads": []
+    },
+    "Tyranitar": {
+      "name": "Tyranitar",
+      "usage": 18.298104672022465,
+      "winrate": 48.785,
+      "moves": [
+        [
+          "Rock Slide",
+          98.8
+        ],
+        [
+          "Knock Off",
+          92.9
+        ],
+        [
+          "Protect",
+          91.9
+        ],
+        [
+          "Low Kick",
+          43.5
+        ],
+        [
+          "Dragon Dance",
+          31.0
+        ],
+        [
+          "Ice Punch",
+          17.0
+        ],
+        [
+          "High Horsepower",
+          6.3
+        ],
+        [
+          "Crunch",
+          6.0
+        ],
+        [
+          "Brick Break",
+          2.5
+        ],
+        [
+          "Earthquake",
+          1.8
+        ]
+      ],
+      "items": [
+        [
+          "Tyranitarite",
+          69.9
+        ],
+        [
+          "Chople Berry",
+          7.2
+        ],
+        [
+          "Choice Scarf",
+          5.8
+        ],
+        [
+          "Focus Sash",
+          4.7
+        ],
+        [
+          "Sitrus Berry",
+          4.0
+        ],
+        [
+          "Life Orb",
+          2.6
+        ],
+        [
+          "Quick Claw",
+          1.4
+        ],
+        [
+          "Expert Belt",
+          0.9
+        ],
+        [
+          "White Herb",
+          0.6
+        ],
+        [
+          "Smooth Rock",
+          0.6
+        ]
+      ],
+      "abilities": [
+        [
+          "Sand Stream",
+          99.7
+        ],
+        [
+          "Unnerve",
+          0.3
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Excadrill": 0.0,
+        "Staraptor": 0.0,
+        "Garchomp": 0.0,
+        "Metagross": 0.0,
+        "Sneasler": 0.0,
+        "Rotom-Wash": 0.0,
+        "Corviknight": 0.0,
+        "Whimsicott": 0.0,
+        "Incineroar": 0.0
+      },
+      "spreads": []
+    },
+    "Glimmora": {
+      "name": "Glimmora",
+      "usage": 21.628578114031665,
+      "winrate": 50.721,
+      "moves": [
+        [
+          "Power Gem",
+          99.7
+        ],
+        [
+          "Earth Power",
+          94.3
+        ],
+        [
+          "Sludge Bomb",
+          94.2
+        ],
+        [
+          "Spiky Shield",
+          84.5
+        ],
+        [
+          "Energy Ball",
+          15.3
+        ],
+        [
+          "Sludge Wave",
+          4.4
+        ],
+        [
+          "Dazzling Gleam",
+          1.4
+        ],
+        [
+          "Protect",
+          1.3
+        ],
+        [
+          "Stealth Rock",
+          1.3
+        ],
+        [
+          "Mortal Spin",
+          1.3
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          76.5
+        ],
+        [
+          "Glimmoranite",
+          19.0
+        ],
+        [
+          "Choice Scarf",
+          2.5
+        ],
+        [
+          "Sitrus Berry",
+          0.7
+        ],
+        [
+          "Life Orb",
+          0.7
+        ],
+        [
+          "Quick Claw",
+          0.2
+        ],
+        [
+          "Shuca Berry",
+          0.2
+        ],
+        [
+          "Expert Belt",
+          0.1
+        ],
+        [
+          "Babiri Berry",
+          0.1
+        ],
+        [
+          "Poison Barb",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Toxic Debris",
+          99.9
+        ],
+        [
+          "Corrosion",
+          0.1
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Basculegion": 0.0,
+        "Garchomp": 0.0,
+        "Staraptor": 0.0,
+        "Kingambit": 0.0,
+        "Charizard": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Floette-Eternal": 0.0,
+        "Raichu": 0.0
+      },
+      "spreads": []
+    },
+    "Delphox": {
+      "name": "Delphox",
+      "usage": 13.692379689571796,
+      "winrate": 51.339,
+      "moves": [
+        [
+          "Protect",
+          98.6
+        ],
+        [
+          "Heat Wave",
+          98.6
+        ],
+        [
+          "Nasty Plot",
+          74.0
+        ],
+        [
+          "Psychic",
+          52.5
+        ],
+        [
+          "Psyshock",
+          46.1
+        ],
+        [
+          "Encore",
+          12.5
+        ],
+        [
+          "Substitute",
+          6.2
+        ],
+        [
+          "Dazzling Gleam",
+          3.1
+        ],
+        [
+          "Calm Mind",
+          1.5
+        ],
+        [
+          "Flamethrower",
+          1.1
+        ]
+      ],
+      "items": [
+        [
+          "Delphoxite",
+          99.9
+        ],
+        [
+          "Pyroarite",
+          0.1
+        ],
+        [
+          "Choice Scarf",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Blaze",
+          93.2
+        ],
+        [
+          "Magician",
+          6.8
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Staraptor": 0.0,
+        "Garchomp": 0.0,
+        "Grimmsnarl": 0.0,
+        "Kingambit": 0.0,
+        "Sneasler": 0.0,
+        "Whimsicott": 0.0,
+        "Maushold": 0.0,
+        "Basculegion": 0.0
+      },
+      "spreads": []
+    },
+    "Dragonite": {
+      "name": "Dragonite",
+      "usage": 22.677638249746508,
+      "winrate": 54.084,
+      "moves": [
+        [
+          "Protect",
+          67.6
+        ],
+        [
+          "Dragon Pulse",
+          46.6
+        ],
+        [
+          "Hurricane",
+          45.5
+        ],
+        [
+          "Extreme Speed",
+          39.1
+        ],
+        [
+          "Tailwind",
+          36.5
+        ],
+        [
+          "Draco Meteor",
+          27.3
+        ],
+        [
+          "Thunderbolt",
+          20.7
+        ],
+        [
+          "Dragon Claw",
+          17.9
+        ],
+        [
+          "Thunder",
+          14.4
+        ],
+        [
+          "Heat Wave",
+          13.8
+        ]
+      ],
+      "items": [
+        [
+          "Dragoninite",
+          67.7
+        ],
+        [
+          "Dragon Fang",
+          13.6
+        ],
+        [
+          "Life Orb",
+          4.7
+        ],
+        [
+          "Leftovers",
+          2.3
+        ],
+        [
+          "Expert Belt",
+          1.9
+        ],
+        [
+          "Muscle Band",
+          1.8
+        ],
+        [
+          "Sharp Beak",
+          1.4
+        ],
+        [
+          "Yache Berry",
+          1.4
+        ],
+        [
+          "Roseli Berry",
+          1.2
+        ],
+        [
+          "Silk Scarf",
+          1.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Multiscale",
+          72.8
+        ],
+        [
+          "Inner Focus",
+          27.2
+        ]
+      ],
+      "teammates": {
+        "Basculegion": 0.0,
+        "Pelipper": 0.0,
+        "Archaludon": 0.0,
+        "Sneasler": 0.0,
+        "Swampert": 0.0,
+        "Kingambit": 0.0,
+        "Sinistcha": 0.0,
+        "Sableye": 0.0,
+        "Incineroar": 0.0,
+        "Whimsicott": 0.0
+      },
+      "spreads": []
+    },
+    "Hydreigon": {
+      "name": "Hydreigon",
+      "usage": 8.349582715856798,
+      "winrate": 51.238,
+      "moves": [
+        [
+          "Dark Pulse",
+          96.9
+        ],
+        [
+          "Draco Meteor",
+          91.9
+        ],
+        [
+          "Snarl",
+          61.1
+        ],
+        [
+          "Earth Power",
+          56.4
+        ],
+        [
+          "Protect",
+          23.5
+        ],
+        [
+          "Heat Wave",
+          20.0
+        ],
+        [
+          "U-turn",
+          12.3
+        ],
+        [
+          "Tailwind",
+          9.1
+        ],
+        [
+          "Flamethrower",
+          7.9
+        ],
+        [
+          "Dragon Pulse",
+          7.3
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          73.3
+        ],
+        [
+          "Life Orb",
+          18.2
+        ],
+        [
+          "Chople Berry",
+          1.7
+        ],
+        [
+          "Haban Berry",
+          1.7
+        ],
+        [
+          "Black Glasses",
+          1.3
+        ],
+        [
+          "Scope Lens",
+          1.2
+        ],
+        [
+          "Focus Sash",
+          1.1
+        ],
+        [
+          "Roseli Berry",
+          0.6
+        ],
+        [
+          "Sitrus Berry",
+          0.3
+        ],
+        [
+          "White Herb",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Levitate",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Metagross": 0.0,
+        "Sinistcha": 0.0,
+        "Sneasler": 0.0,
+        "Whimsicott": 0.0,
+        "Incineroar": 0.0,
+        "Pelipper": 0.0,
+        "Garchomp": 0.0,
+        "Staraptor": 0.0,
+        "Swampert": 0.0,
+        "Basculegion": 0.0
+      },
+      "spreads": []
+    },
+    "Milotic": {
+      "name": "Milotic",
+      "usage": 10.783090242570783,
+      "winrate": 45.461,
+      "moves": [
+        [
+          "Scald",
+          58.6
+        ],
+        [
+          "Protect",
+          54.1
+        ],
+        [
+          "Recover",
+          45.0
+        ],
+        [
+          "Muddy Water",
+          42.0
+        ],
+        [
+          "Coil",
+          39.4
+        ],
+        [
+          "Icy Wind",
+          38.7
+        ],
+        [
+          "Hypnosis",
+          38.2
+        ],
+        [
+          "Life Dew",
+          33.5
+        ],
+        [
+          "Ice Beam",
+          32.5
+        ],
+        [
+          "Psych Up",
+          4.8
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          74.5
+        ],
+        [
+          "Sitrus Berry",
+          18.2
+        ],
+        [
+          "Mystic Water",
+          2.0
+        ],
+        [
+          "Life Orb",
+          1.5
+        ],
+        [
+          "Shell Bell",
+          1.3
+        ],
+        [
+          "Wacan Berry",
+          0.7
+        ],
+        [
+          "Mental Herb",
+          0.7
+        ],
+        [
+          "Rindo Berry",
+          0.5
+        ],
+        [
+          "Bright Powder",
+          0.2
+        ],
+        [
+          "Wise Glasses",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Competitive",
+          99.1
+        ],
+        [
+          "Cute Charm",
+          0.7
+        ],
+        [
+          "Marvel Scale",
+          0.3
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0,
+        "Incineroar": 0.0,
+        "Sneasler": 0.0,
+        "Staraptor": 0.0,
+        "Whimsicott": 0.0,
+        "Grimmsnarl": 0.0,
+        "Raichu": 0.0,
+        "Metagross": 0.0,
+        "Charizard": 0.0
+      },
+      "spreads": []
+    },
+    "Blastoise": {
+      "name": "Blastoise",
+      "usage": 9.215349816706965,
+      "winrate": 49.556,
+      "moves": [
+        [
+          "Water Spout",
+          93.4
+        ],
+        [
+          "Dark Pulse",
+          83.4
+        ],
+        [
+          "Aura Sphere",
+          60.0
+        ],
+        [
+          "Fake Out",
+          57.6
+        ],
+        [
+          "Shell Smash",
+          46.8
+        ],
+        [
+          "Protect",
+          33.6
+        ],
+        [
+          "Ice Beam",
+          9.4
+        ],
+        [
+          "Water Pulse",
+          5.0
+        ],
+        [
+          "Dragon Pulse",
+          3.4
+        ],
+        [
+          "Muddy Water",
+          3.1
+        ]
+      ],
+      "items": [
+        [
+          "Blastoisinite",
+          96.2
+        ],
+        [
+          "Mystic Water",
+          2.4
+        ],
+        [
+          "Leftovers",
+          1.0
+        ],
+        [
+          "White Herb",
+          0.3
+        ],
+        [
+          "Sitrus Berry",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Rain Dish",
+          71.6
+        ],
+        [
+          "Torrent",
+          28.4
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Basculegion": 0.0,
+        "Torkoal": 0.0,
+        "Sinistcha": 0.0,
+        "Sylveon": 0.0,
+        "Vivillon": 0.0,
+        "Kangaskhan": 0.0,
+        "Kingambit": 0.0,
+        "Sneasler": 0.0,
+        "Incineroar": 0.0
+      },
+      "spreads": []
+    },
+    "Venusaur": {
+      "name": "Venusaur",
+      "usage": 22.431947585991733,
+      "winrate": 49.861,
+      "moves": [
+        [
+          "Sludge Bomb",
+          95.4
+        ],
+        [
+          "Protect",
+          83.0
+        ],
+        [
+          "Earth Power",
+          73.5
+        ],
+        [
+          "Giga Drain",
+          57.3
+        ],
+        [
+          "Sleep Powder",
+          46.3
+        ],
+        [
+          "Energy Ball",
+          22.5
+        ],
+        [
+          "Leaf Storm",
+          6.1
+        ],
+        [
+          "Leech Seed",
+          3.9
+        ],
+        [
+          "Weather Ball",
+          3.0
+        ],
+        [
+          "Solar Beam",
+          2.7
+        ]
+      ],
+      "items": [
+        [
+          "Venusaurite",
+          47.3
+        ],
+        [
+          "Focus Sash",
+          18.7
+        ],
+        [
+          "Life Orb",
+          10.0
+        ],
+        [
+          "Wide Lens",
+          9.6
+        ],
+        [
+          "Sitrus Berry",
+          3.7
+        ],
+        [
+          "Leftovers",
+          2.4
+        ],
+        [
+          "Miracle Seed",
+          2.4
+        ],
+        [
+          "Occa Berry",
+          2.0
+        ],
+        [
+          "Lum Berry",
+          1.7
+        ],
+        [
+          "Expert Belt",
+          0.8
+        ]
+      ],
+      "abilities": [
+        [
+          "Chlorophyll",
+          98.6
+        ],
+        [
+          "Overgrow",
+          1.4
+        ]
+      ],
+      "teammates": {
+        "Charizard": 0.0,
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Incineroar": 0.0,
+        "Whimsicott": 0.0,
+        "Archaludon": 0.0,
+        "Pelipper": 0.0,
+        "Grimmsnarl": 0.0,
+        "Kingambit": 0.0,
+        "Raichu": 0.0
+      },
+      "spreads": []
+    },
+    "Politoed": {
+      "name": "Politoed",
+      "usage": 9.804227439357305,
+      "winrate": 51.75,
+      "moves": [
+        [
+          "Weather Ball",
+          89.9
+        ],
+        [
+          "Protect",
+          86.8
+        ],
+        [
+          "Perish Song",
+          51.9
+        ],
+        [
+          "Ice Beam",
+          32.4
+        ],
+        [
+          "Muddy Water",
+          31.9
+        ],
+        [
+          "Hypnosis",
+          26.8
+        ],
+        [
+          "Encore",
+          21.6
+        ],
+        [
+          "Icy Wind",
+          18.7
+        ],
+        [
+          "Rain Dance",
+          16.8
+        ],
+        [
+          "Helping Hand",
+          11.0
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          58.3
+        ],
+        [
+          "Damp Rock",
+          10.0
+        ],
+        [
+          "Leftovers",
+          9.4
+        ],
+        [
+          "Mystic Water",
+          8.6
+        ],
+        [
+          "Choice Scarf",
+          6.9
+        ],
+        [
+          "Life Orb",
+          3.2
+        ],
+        [
+          "Wacan Berry",
+          1.2
+        ],
+        [
+          "Quick Claw",
+          1.0
+        ],
+        [
+          "Wide Lens",
+          0.5
+        ],
+        [
+          "Focus Sash",
+          0.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Drizzle",
+          99.9
+        ],
+        [
+          "Damp",
+          0.1
+        ]
+      ],
+      "teammates": {
+        "Archaludon": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Gengar": 0.0,
+        "Swampert": 0.0,
+        "Grimmsnarl": 0.0,
+        "Basculegion": 0.0,
+        "Pelipper": 0.0,
+        "Sableye": 0.0,
+        "Sneasler": 0.0
+      },
+      "spreads": []
+    },
+    "Tsareena": {
+      "name": "Tsareena",
+      "usage": 3.747757585211762,
+      "winrate": 43.496,
+      "moves": [
+        [
+          "Triple Axel",
+          86.6
+        ],
+        [
+          "Trop Kick",
+          62.0
+        ],
+        [
+          "Protect",
+          52.5
+        ],
+        [
+          "Low Kick",
+          48.2
+        ],
+        [
+          "Power Whip",
+          35.4
+        ],
+        [
+          "Taunt",
+          23.6
+        ],
+        [
+          "U-turn",
+          22.0
+        ],
+        [
+          "High Jump Kick",
+          17.1
+        ],
+        [
+          "Zen Headbutt",
+          15.1
+        ],
+        [
+          "Helping Hand",
+          11.1
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          27.6
+        ],
+        [
+          "Wide Lens",
+          23.3
+        ],
+        [
+          "Sitrus Berry",
+          19.3
+        ],
+        [
+          "Focus Sash",
+          6.2
+        ],
+        [
+          "Miracle Seed",
+          5.5
+        ],
+        [
+          "Life Orb",
+          5.3
+        ],
+        [
+          "Leftovers",
+          2.7
+        ],
+        [
+          "Expert Belt",
+          2.4
+        ],
+        [
+          "Occa Berry",
+          2.2
+        ],
+        [
+          "White Herb",
+          1.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Queenly Majesty",
+          99.9
+        ],
+        [
+          "Leaf Guard",
+          0.1
+        ]
+      ],
+      "teammates": {
+        "Raichu": 0.0,
+        "Basculegion": 0.0,
+        "Talonflame": 0.0,
+        "Kingambit": 0.0,
+        "Incineroar": 0.0,
+        "Garchomp": 0.0,
+        "Pelipper": 0.0,
+        "Whimsicott": 0.0,
+        "Sneasler": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Gengar": {
+      "name": "Gengar",
+      "usage": 11.894548007175727,
+      "winrate": 52.049,
+      "moves": [
+        [
+          "Shadow Ball",
+          94.4
+        ],
+        [
+          "Protect",
+          87.1
+        ],
+        [
+          "Perish Song",
+          66.0
+        ],
+        [
+          "Sludge Bomb",
+          55.4
+        ],
+        [
+          "Disable",
+          46.9
+        ],
+        [
+          "Icy Wind",
+          12.0
+        ],
+        [
+          "Psychic",
+          10.9
+        ],
+        [
+          "Trick Room",
+          6.3
+        ],
+        [
+          "Sludge Wave",
+          4.5
+        ],
+        [
+          "Destiny Bond",
+          2.3
+        ]
+      ],
+      "items": [
+        [
+          "Gengarite",
+          84.4
+        ],
+        [
+          "Focus Sash",
+          10.5
+        ],
+        [
+          "Choice Scarf",
+          2.1
+        ],
+        [
+          "Life Orb",
+          1.9
+        ],
+        [
+          "Quick Claw",
+          0.8
+        ],
+        [
+          "Expert Belt",
+          0.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Cursed Body",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Incineroar": 0.0,
+        "Sinistcha": 0.0,
+        "Politoed": 0.0,
+        "Archaludon": 0.0,
+        "Kingambit": 0.0,
+        "Grimmsnarl": 0.0,
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Swampert": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Gardevoir": {
+      "name": "Gardevoir",
+      "usage": 7.947897979876765,
+      "winrate": 48.626,
+      "moves": [
+        [
+          "Hyper Voice",
+          89.6
+        ],
+        [
+          "Protect",
+          88.8
+        ],
+        [
+          "Psychic",
+          47.8
+        ],
+        [
+          "Psyshock",
+          42.4
+        ],
+        [
+          "Trick Room",
+          41.6
+        ],
+        [
+          "Vacuum Wave",
+          17.3
+        ],
+        [
+          "Calm Mind",
+          15.9
+        ],
+        [
+          "Moonblast",
+          11.2
+        ],
+        [
+          "Aura Sphere",
+          7.7
+        ],
+        [
+          "Dazzling Gleam",
+          7.5
+        ]
+      ],
+      "items": [
+        [
+          "Gardevoirite",
+          89.9
+        ],
+        [
+          "Choice Scarf",
+          7.3
+        ],
+        [
+          "Shell Bell",
+          0.9
+        ],
+        [
+          "Expert Belt",
+          0.9
+        ],
+        [
+          "Focus Sash",
+          0.8
+        ],
+        [
+          "Leftovers",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Trace",
+          72.5
+        ],
+        [
+          "Telepathy",
+          25.8
+        ],
+        [
+          "Synchronize",
+          1.7
+        ]
+      ],
+      "teammates": {
+        "Maushold": 0.0,
+        "Basculegion": 0.0,
+        "Garchomp": 0.0,
+        "Incineroar": 0.0,
+        "Talonflame": 0.0,
+        "Pelipper": 0.0,
+        "Archaludon": 0.0,
+        "Kingambit": 0.0,
+        "Sinistcha": 0.0,
+        "Whimsicott": 0.0
+      },
+      "spreads": []
+    },
+    "Kangaskhan": {
+      "name": "Kangaskhan",
+      "usage": 10.264409952421808,
+      "winrate": 47.492,
+      "moves": [
+        [
+          "Fake Out",
+          99.8
+        ],
+        [
+          "Last Resort",
+          49.6
+        ],
+        [
+          "Double-Edge",
+          45.3
+        ],
+        [
+          "Ice Punch",
+          32.4
+        ],
+        [
+          "Low Kick",
+          24.0
+        ],
+        [
+          "Sucker Punch",
+          15.3
+        ],
+        [
+          "Drain Punch",
+          13.7
+        ],
+        [
+          "Hammer Arm",
+          8.2
+        ],
+        [
+          "Protect",
+          2.7
+        ],
+        [
+          "Facade",
+          2.6
+        ]
+      ],
+      "items": [
+        [
+          "Kangaskhanite",
+          52.0
+        ],
+        [
+          "Silk Scarf",
+          37.6
+        ],
+        [
+          "Life Orb",
+          2.8
+        ],
+        [
+          "Metronome",
+          2.8
+        ],
+        [
+          "Iron Ball",
+          1.4
+        ],
+        [
+          "Chople Berry",
+          1.1
+        ],
+        [
+          "Focus Sash",
+          0.9
+        ],
+        [
+          "Sitrus Berry",
+          0.6
+        ],
+        [
+          "King's Rock",
+          0.4
+        ],
+        [
+          "Leftovers",
+          0.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Scrappy",
+          98.9
+        ],
+        [
+          "Inner Focus",
+          1.1
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Torkoal": 0.0,
+        "Blastoise": 0.0,
+        "Basculegion": 0.0,
+        "Vivillon": 0.0,
+        "Sylveon": 0.0,
+        "Kingambit": 0.0,
+        "Mawile": 0.0,
+        "Sinistcha": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Scovillain": {
+      "name": "Scovillain",
+      "usage": 13.45058887762265,
+      "winrate": 56.509,
+      "moves": [
+        [
+          "Protect",
+          98.9
+        ],
+        [
+          "Rage Powder",
+          96.5
+        ],
+        [
+          "Overheat",
+          77.7
+        ],
+        [
+          "Leech Seed",
+          53.6
+        ],
+        [
+          "Giga Drain",
+          36.0
+        ],
+        [
+          "Flamethrower",
+          14.4
+        ],
+        [
+          "Leaf Storm",
+          9.5
+        ],
+        [
+          "Temper Flare",
+          3.4
+        ],
+        [
+          "Super Fang",
+          3.0
+        ],
+        [
+          "Fire Blast",
+          2.8
+        ]
+      ],
+      "items": [
+        [
+          "Scovillainite",
+          99.3
+        ],
+        [
+          "Kebia Berry",
+          0.3
+        ],
+        [
+          "Sceptilite",
+          0.3
+        ],
+        [
+          "Focus Band",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Moody",
+          88.2
+        ],
+        [
+          "Chlorophyll",
+          9.6
+        ],
+        [
+          "Insomnia",
+          2.2
+        ]
+      ],
+      "teammates": {
+        "Sneasler": 0.0,
+        "Basculegion": 0.0,
+        "Archaludon": 0.0,
+        "Kingambit": 0.0,
+        "Froslass": 0.0,
+        "Lycanroc-Dusk": 0.0,
+        "Politoed": 0.0,
+        "Pelipper": 0.0,
+        "Annihilape": 0.0,
+        "Espathra": 0.0
+      },
+      "spreads": []
+    },
+    "Eelektross": {
+      "name": "Eelektross",
+      "usage": 0.514780438343343,
+      "winrate": 41.667,
+      "moves": [
+        [
+          "Protect",
+          91.8
+        ],
+        [
+          "Thunderbolt",
+          67.7
+        ],
+        [
+          "Flamethrower",
+          47.4
+        ],
+        [
+          "Giga Drain",
+          39.0
+        ],
+        [
+          "Dragon Pulse",
+          25.0
+        ],
+        [
+          "Discharge",
+          20.2
+        ],
+        [
+          "Supercell Slam",
+          11.6
+        ],
+        [
+          "Coil",
+          11.3
+        ],
+        [
+          "Drain Punch",
+          10.4
+        ],
+        [
+          "Muddy Water",
+          8.8
+        ]
+      ],
+      "items": [
+        [
+          "Eelektrossite",
+          99.8
+        ],
+        [
+          "Magnet",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Levitate",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Basculegion": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Kingambit": 0.0,
+        "Farigiraf": 0.0,
+        "Staraptor": 0.0,
+        "Grimmsnarl": 0.0,
+        "Sneasler": 0.0
+      },
+      "spreads": []
+    },
+    "Corviknight": {
+      "name": "Corviknight",
+      "usage": 13.161999844005928,
+      "winrate": 49.852,
+      "moves": [
+        [
+          "Brave Bird",
+          85.4
+        ],
+        [
+          "Tailwind",
+          61.0
+        ],
+        [
+          "Iron Head",
+          56.9
+        ],
+        [
+          "Bulk Up",
+          56.2
+        ],
+        [
+          "Roost",
+          51.5
+        ],
+        [
+          "Body Press",
+          44.9
+        ],
+        [
+          "Protect",
+          20.8
+        ],
+        [
+          "Iron Defense",
+          17.0
+        ],
+        [
+          "Fly",
+          1.6
+        ],
+        [
+          "Agility",
+          1.6
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          71.3
+        ],
+        [
+          "Sitrus Berry",
+          13.2
+        ],
+        [
+          "Occa Berry",
+          11.3
+        ],
+        [
+          "Life Orb",
+          1.0
+        ],
+        [
+          "Muscle Band",
+          0.9
+        ],
+        [
+          "Roseli Berry",
+          0.7
+        ],
+        [
+          "Bright Powder",
+          0.6
+        ],
+        [
+          "Metal Coat",
+          0.2
+        ],
+        [
+          "Focus Sash",
+          0.2
+        ],
+        [
+          "Lum Berry",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Mirror Armor",
+          97.9
+        ],
+        [
+          "Unnerve",
+          2.1
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Tyranitar": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Raichu": 0.0,
+        "Rotom-Wash": 0.0,
+        "Sylveon": 0.0,
+        "Froslass": 0.0,
+        "Staraptor": 0.0,
+        "Basculegion": 0.0
+      },
+      "spreads": []
+    },
+    "Vivillon": {
+      "name": "Vivillon",
+      "usage": 11.106777942438187,
+      "winrate": 54.143,
+      "moves": [
+        [
+          "Sleep Powder",
+          92.3
+        ],
+        [
+          "Hurricane",
+          81.2
+        ],
+        [
+          "Rage Powder",
+          75.6
+        ],
+        [
+          "Tailwind",
+          40.3
+        ],
+        [
+          "Rain Dance",
+          34.7
+        ],
+        [
+          "Pollen Puff",
+          31.3
+        ],
+        [
+          "Protect",
+          23.7
+        ],
+        [
+          "Air Slash",
+          4.8
+        ],
+        [
+          "Bug Buzz",
+          3.6
+        ],
+        [
+          "Struggle Bug",
+          2.9
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          54.8
+        ],
+        [
+          "Focus Sash",
+          41.1
+        ],
+        [
+          "Charti Berry",
+          4.0
+        ],
+        [
+          "Leftovers",
+          0.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Compound Eyes",
+          84.5
+        ],
+        [
+          "Friend Guard",
+          8.9
+        ],
+        [
+          "Shield Dust",
+          6.5
+        ]
+      ],
+      "teammates": {
+        "Basculegion": 0.0,
+        "Blastoise": 0.0,
+        "Farigiraf": 0.0,
+        "Torkoal": 0.0,
+        "Kangaskhan": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Sneasler": 0.0,
+        "Kingambit": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Scizor": {
+      "name": "Scizor",
+      "usage": 12.171437485375556,
+      "winrate": 49.423,
+      "moves": [
+        [
+          "Bullet Punch",
+          100.0
+        ],
+        [
+          "Protect",
+          88.7
+        ],
+        [
+          "Swords Dance",
+          80.6
+        ],
+        [
+          "Bug Bite",
+          73.4
+        ],
+        [
+          "Close Combat",
+          25.9
+        ],
+        [
+          "Dual Wingbeat",
+          9.4
+        ],
+        [
+          "Knock Off",
+          7.9
+        ],
+        [
+          "Brick Break",
+          5.9
+        ],
+        [
+          "U-turn",
+          3.4
+        ],
+        [
+          "Pounce",
+          1.5
+        ]
+      ],
+      "items": [
+        [
+          "Scizorite",
+          53.5
+        ],
+        [
+          "Life Orb",
+          25.0
+        ],
+        [
+          "Metal Coat",
+          14.0
+        ],
+        [
+          "White Herb",
+          2.8
+        ],
+        [
+          "Sitrus Berry",
+          2.3
+        ],
+        [
+          "Lum Berry",
+          1.0
+        ],
+        [
+          "Expert Belt",
+          0.8
+        ],
+        [
+          "Focus Sash",
+          0.5
+        ],
+        [
+          "King's Rock",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Technician",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Pelipper": 0.0,
+        "Sinistcha": 0.0,
+        "Basculegion": 0.0,
+        "Archaludon": 0.0,
+        "Staraptor": 0.0,
+        "Raichu": 0.0,
+        "Incineroar": 0.0,
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Sableye": 0.0
+      },
+      "spreads": []
+    },
+    "Kommo-o": {
+      "name": "Kommo-o",
+      "usage": 10.038218547695188,
+      "winrate": 50.408,
+      "moves": [
+        [
+          "Clanging Scales",
+          95.7
+        ],
+        [
+          "Protect",
+          94.9
+        ],
+        [
+          "Clangorous Soul",
+          83.2
+        ],
+        [
+          "Aura Sphere",
+          79.2
+        ],
+        [
+          "Drain Punch",
+          9.8
+        ],
+        [
+          "Flash Cannon",
+          7.4
+        ],
+        [
+          "Vacuum Wave",
+          4.8
+        ],
+        [
+          "Body Press",
+          4.1
+        ],
+        [
+          "Iron Defense",
+          3.9
+        ],
+        [
+          "Helping Hand",
+          3.4
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          71.2
+        ],
+        [
+          "Dragon Fang",
+          14.1
+        ],
+        [
+          "Life Orb",
+          6.9
+        ],
+        [
+          "Sitrus Berry",
+          2.4
+        ],
+        [
+          "Payapa Berry",
+          2.2
+        ],
+        [
+          "Haban Berry",
+          1.5
+        ],
+        [
+          "Choice Scarf",
+          1.4
+        ],
+        [
+          "Wise Glasses",
+          0.2
+        ],
+        [
+          "Roseli Berry",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Soundproof",
+          80.6
+        ],
+        [
+          "Overcoat",
+          14.9
+        ],
+        [
+          "Bulletproof",
+          4.5
+        ]
+      ],
+      "teammates": {
+        "Incineroar": 0.0,
+        "Sinistcha": 0.0,
+        "Metagross": 0.0,
+        "Sneasler": 0.0,
+        "Kingambit": 0.0,
+        "Froslass": 0.0,
+        "Ninetales-Alola": 0.0,
+        "Gengar": 0.0,
+        "Tyranitar": 0.0,
+        "Milotic": 0.0
+      },
+      "spreads": []
+    },
+    "Excadrill": {
+      "name": "Excadrill",
+      "usage": 7.959597535293659,
+      "winrate": 49.265,
+      "moves": [
+        [
+          "Iron Head",
+          96.8
+        ],
+        [
+          "Protect",
+          93.7
+        ],
+        [
+          "Rock Slide",
+          82.4
+        ],
+        [
+          "Earthquake",
+          63.7
+        ],
+        [
+          "High Horsepower",
+          52.2
+        ],
+        [
+          "Swords Dance",
+          6.6
+        ],
+        [
+          "Rock Tomb",
+          3.1
+        ],
+        [
+          "Drill Run",
+          1.0
+        ],
+        [
+          "Megahorn",
+          0.2
+        ],
+        [
+          "Brick Break",
+          0.2
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          74.4
+        ],
+        [
+          "Life Orb",
+          10.5
+        ],
+        [
+          "Choice Scarf",
+          4.9
+        ],
+        [
+          "Excadrite",
+          4.1
+        ],
+        [
+          "Soft Sand",
+          2.5
+        ],
+        [
+          "King's Rock",
+          2.2
+        ],
+        [
+          "Lum Berry",
+          0.5
+        ],
+        [
+          "Shuca Berry",
+          0.5
+        ],
+        [
+          "White Herb",
+          0.2
+        ],
+        [
+          "Metal Coat",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Sand Rush",
+          84.4
+        ],
+        [
+          "Mold Breaker",
+          15.1
+        ],
+        [
+          "Sand Force",
+          0.5
+        ]
+      ],
+      "teammates": {
+        "Tyranitar": 0.0,
+        "Staraptor": 0.0,
+        "Rotom-Wash": 0.0,
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Basculegion": 0.0,
+        "Whimsicott": 0.0,
+        "Farigiraf": 0.0,
+        "Corviknight": 0.0,
+        "Sneasler": 0.0
+      },
+      "spreads": []
+    },
+    "Primarina": {
+      "name": "Primarina",
+      "usage": 4.149442321191795,
+      "winrate": 42.622,
+      "moves": [
+        [
+          "Hyper Voice",
+          97.1
+        ],
+        [
+          "Protect",
+          89.5
+        ],
+        [
+          "Moonblast",
+          83.9
+        ],
+        [
+          "Calm Mind",
+          37.1
+        ],
+        [
+          "Ice Beam",
+          14.0
+        ],
+        [
+          "Dazzling Gleam",
+          10.1
+        ],
+        [
+          "Hydro Cannon",
+          9.2
+        ],
+        [
+          "Energy Ball",
+          6.9
+        ],
+        [
+          "Draining Kiss",
+          6.2
+        ],
+        [
+          "Aqua Jet",
+          5.6
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          32.7
+        ],
+        [
+          "Life Orb",
+          18.9
+        ],
+        [
+          "Sitrus Berry",
+          15.8
+        ],
+        [
+          "Mystic Water",
+          14.8
+        ],
+        [
+          "Choice Scarf",
+          6.6
+        ],
+        [
+          "Quick Claw",
+          3.8
+        ],
+        [
+          "Never-Melt Ice",
+          2.4
+        ],
+        [
+          "Expert Belt",
+          2.2
+        ],
+        [
+          "Wise Glasses",
+          1.7
+        ],
+        [
+          "Fairy Feather",
+          0.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Liquid Voice",
+          97.1
+        ],
+        [
+          "Torrent",
+          2.9
+        ]
+      ],
+      "teammates": {
+        "Incineroar": 0.0,
+        "Sinistcha": 0.0,
+        "Metagross": 0.0,
+        "Garchomp": 0.0,
+        "Sneasler": 0.0,
+        "Raichu": 0.0,
+        "Farigiraf": 0.0,
+        "Whimsicott": 0.0,
+        "Kingambit": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Ceruledge": {
+      "name": "Ceruledge",
+      "usage": 3.6697605490991343,
+      "winrate": 52.072,
+      "moves": [
+        [
+          "Bitter Blade",
+          100.0
+        ],
+        [
+          "Protect",
+          92.0
+        ],
+        [
+          "Shadow Sneak",
+          89.4
+        ],
+        [
+          "Bulk Up",
+          62.0
+        ],
+        [
+          "Swords Dance",
+          31.9
+        ],
+        [
+          "Poltergeist",
+          20.0
+        ],
+        [
+          "Psych Up",
+          1.6
+        ],
+        [
+          "Close Combat",
+          1.3
+        ],
+        [
+          "Taunt",
+          0.8
+        ],
+        [
+          "Ally Switch",
+          0.3
+        ]
+      ],
+      "items": [
+        [
+          "Colbur Berry",
+          32.4
+        ],
+        [
+          "Focus Sash",
+          22.6
+        ],
+        [
+          "Leftovers",
+          16.4
+        ],
+        [
+          "Charcoal",
+          11.1
+        ],
+        [
+          "Sitrus Berry",
+          7.2
+        ],
+        [
+          "Life Orb",
+          3.8
+        ],
+        [
+          "Mental Herb",
+          2.3
+        ],
+        [
+          "Shuca Berry",
+          1.6
+        ],
+        [
+          "Big Root",
+          1.5
+        ],
+        [
+          "Lum Berry",
+          0.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Flash Fire",
+          89.5
+        ],
+        [
+          "Weak Armor",
+          10.5
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Staraptor": 0.0,
+        "Kingambit": 0.0,
+        "Incineroar": 0.0,
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Milotic": 0.0,
+        "Grimmsnarl": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Meganium": {
+      "name": "Meganium",
+      "usage": 3.1276811481163715,
+      "winrate": 41.147,
+      "moves": [
+        [
+          "Solar Beam",
+          100.0
+        ],
+        [
+          "Weather Ball",
+          98.2
+        ],
+        [
+          "Dazzling Gleam",
+          97.0
+        ],
+        [
+          "Protect",
+          92.5
+        ],
+        [
+          "Synthesis",
+          8.9
+        ],
+        [
+          "Earth Power",
+          2.2
+        ],
+        [
+          "Encore",
+          1.0
+        ],
+        [
+          "Giga Drain",
+          0.2
+        ]
+      ],
+      "items": [
+        [
+          "Meganiumite",
+          100.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Overgrow",
+          71.0
+        ],
+        [
+          "Leaf Guard",
+          29.0
+        ]
+      ],
+      "teammates": {
+        "Pelipper": 0.0,
+        "Archaludon": 0.0,
+        "Basculegion": 0.0,
+        "Swampert": 0.0,
+        "Sneasler": 0.0,
+        "Incineroar": 0.0,
+        "Raichu": 0.0,
+        "Sableye": 0.0,
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0
+      },
+      "spreads": []
+    },
+    "Gyarados": {
+      "name": "Gyarados",
+      "usage": 4.438031354808517,
+      "winrate": 47.583,
+      "moves": [
+        [
+          "Waterfall",
+          98.6
+        ],
+        [
+          "Protect",
+          79.7
+        ],
+        [
+          "Dragon Dance",
+          68.8
+        ],
+        [
+          "Crunch",
+          33.3
+        ],
+        [
+          "Lash Out",
+          26.7
+        ],
+        [
+          "Taunt",
+          20.7
+        ],
+        [
+          "Ice Fang",
+          17.5
+        ],
+        [
+          "Thunder Wave",
+          14.4
+        ],
+        [
+          "Helping Hand",
+          10.1
+        ],
+        [
+          "Earthquake",
+          7.4
+        ]
+      ],
+      "items": [
+        [
+          "Gyaradosite",
+          61.0
+        ],
+        [
+          "Sitrus Berry",
+          28.8
+        ],
+        [
+          "Leftovers",
+          4.5
+        ],
+        [
+          "White Herb",
+          1.9
+        ],
+        [
+          "Lum Berry",
+          1.4
+        ],
+        [
+          "Life Orb",
+          1.0
+        ],
+        [
+          "Focus Sash",
+          1.0
+        ],
+        [
+          "Mystic Water",
+          0.2
+        ],
+        [
+          "Wide Lens",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Intimidate",
+          99.4
+        ],
+        [
+          "Moxie",
+          0.6
+        ]
+      ],
+      "teammates": {
+        "Sneasler": 0.0,
+        "Garchomp": 0.0,
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Kingambit": 0.0,
+        "Metagross": 0.0,
+        "Incineroar": 0.0,
+        "Pelipper": 0.0,
+        "Whimsicott": 0.0,
+        "Gholdengo": 0.0
+      },
+      "spreads": []
+    },
+    "Arcanine-Hisui": {
+      "name": "Arcanine-Hisui",
+      "usage": 6.477653849153732,
+      "winrate": 56.201,
+      "moves": [
+        [
+          "Flare Blitz",
+          99.2
+        ],
+        [
+          "Extreme Speed",
+          81.3
+        ],
+        [
+          "Protect",
+          79.3
+        ],
+        [
+          "Head Smash",
+          62.5
+        ],
+        [
+          "Rock Slide",
+          45.9
+        ],
+        [
+          "Wild Charge",
+          6.7
+        ],
+        [
+          "Close Combat",
+          6.5
+        ],
+        [
+          "Will-O-Wisp",
+          5.4
+        ],
+        [
+          "Psychic Fangs",
+          3.3
+        ],
+        [
+          "Snarl",
+          2.7
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          56.0
+        ],
+        [
+          "Choice Scarf",
+          16.1
+        ],
+        [
+          "Life Orb",
+          7.8
+        ],
+        [
+          "Sitrus Berry",
+          7.1
+        ],
+        [
+          "Chople Berry",
+          5.2
+        ],
+        [
+          "Charcoal",
+          3.3
+        ],
+        [
+          "White Herb",
+          2.3
+        ],
+        [
+          "Shuca Berry",
+          1.9
+        ],
+        [
+          "Lum Berry",
+          0.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Rock Head",
+          72.5
+        ],
+        [
+          "Intimidate",
+          27.5
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0,
+        "Metagross": 0.0,
+        "Staraptor": 0.0,
+        "Froslass": 0.0,
+        "Raichu": 0.0,
+        "Sneasler": 0.0,
+        "Grimmsnarl": 0.0,
+        "Hydreigon": 0.0
+      },
+      "spreads": []
+    },
+    "Gallade": {
+      "name": "Gallade",
+      "usage": 2.6518992278293423,
+      "winrate": 43.235,
+      "moves": [
+        [
+          "Sacred Sword",
+          94.7
+        ],
+        [
+          "Psycho Cut",
+          87.3
+        ],
+        [
+          "Protect",
+          65.5
+        ],
+        [
+          "Leaf Blade",
+          54.0
+        ],
+        [
+          "Trick Room",
+          27.1
+        ],
+        [
+          "Night Slash",
+          16.0
+        ],
+        [
+          "Wide Guard",
+          13.3
+        ],
+        [
+          "Zen Headbutt",
+          5.3
+        ],
+        [
+          "Shadow Sneak",
+          4.5
+        ],
+        [
+          "Close Combat",
+          4.3
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          31.8
+        ],
+        [
+          "Scope Lens",
+          13.8
+        ],
+        [
+          "Galladite",
+          10.5
+        ],
+        [
+          "Life Orb",
+          10.1
+        ],
+        [
+          "Black Belt",
+          8.0
+        ],
+        [
+          "Lum Berry",
+          7.4
+        ],
+        [
+          "Choice Scarf",
+          5.7
+        ],
+        [
+          "Iron Ball",
+          3.5
+        ],
+        [
+          "Roseli Berry",
+          2.9
+        ],
+        [
+          "White Herb",
+          2.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Sharpness",
+          94.9
+        ],
+        [
+          "Justified",
+          5.1
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Metagross": 0.0,
+        "Sinistcha": 0.0,
+        "Whimsicott": 0.0,
+        "Sylveon": 0.0,
+        "Kingambit": 0.0,
+        "Mawile": 0.0,
+        "Talonflame": 0.0,
+        "Milotic": 0.0,
+        "Pelipper": 0.0
+      },
+      "spreads": []
+    },
+    "Meowscarada": {
+      "name": "Meowscarada",
+      "usage": 3.1198814445051086,
+      "winrate": 47.063,
+      "moves": [
+        [
+          "Flower Trick",
+          97.4
+        ],
+        [
+          "Triple Axel",
+          85.2
+        ],
+        [
+          "Knock Off",
+          63.0
+        ],
+        [
+          "Sucker Punch",
+          37.3
+        ],
+        [
+          "U-turn",
+          30.1
+        ],
+        [
+          "Play Rough",
+          24.1
+        ],
+        [
+          "Protect",
+          18.5
+        ],
+        [
+          "Throat Chop",
+          9.2
+        ],
+        [
+          "Low Kick",
+          9.0
+        ],
+        [
+          "Brick Break",
+          7.7
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          52.6
+        ],
+        [
+          "Focus Sash",
+          24.6
+        ],
+        [
+          "Life Orb",
+          13.9
+        ],
+        [
+          "Wide Lens",
+          3.0
+        ],
+        [
+          "Expert Belt",
+          2.8
+        ],
+        [
+          "Sitrus Berry",
+          0.7
+        ],
+        [
+          "Miracle Seed",
+          0.7
+        ],
+        [
+          "Black Glasses",
+          0.7
+        ],
+        [
+          "Fairy Feather",
+          0.5
+        ],
+        [
+          "White Herb",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Protean",
+          83.6
+        ],
+        [
+          "Overgrow",
+          16.4
+        ]
+      ],
+      "teammates": {
+        "Raichu": 0.0,
+        "Sneasler": 0.0,
+        "Whimsicott": 0.0,
+        "Basculegion": 0.0,
+        "Pelipper": 0.0,
+        "Staraptor": 0.0,
+        "Garchomp": 0.0,
+        "Metagross": 0.0,
+        "Torkoal": 0.0,
+        "Farigiraf": 0.0
+      },
+      "spreads": []
+    },
+    "Aegislash": {
+      "name": "Aegislash",
+      "usage": 8.55237500974963,
+      "winrate": 49.362,
+      "moves": [
+        [
+          "Poltergeist",
+          82.0
+        ],
+        [
+          "King's Shield",
+          80.6
+        ],
+        [
+          "Shadow Sneak",
+          72.1
+        ],
+        [
+          "Iron Head",
+          56.0
+        ],
+        [
+          "Wide Guard",
+          36.8
+        ],
+        [
+          "Sacred Sword",
+          28.5
+        ],
+        [
+          "Shadow Ball",
+          14.5
+        ],
+        [
+          "Flash Cannon",
+          12.4
+        ],
+        [
+          "Close Combat",
+          9.5
+        ],
+        [
+          "Protect",
+          4.5
+        ]
+      ],
+      "items": [
+        [
+          "Spell Tag",
+          25.4
+        ],
+        [
+          "Focus Sash",
+          18.2
+        ],
+        [
+          "Life Orb",
+          15.9
+        ],
+        [
+          "Leftovers",
+          12.0
+        ],
+        [
+          "Expert Belt",
+          6.6
+        ],
+        [
+          "Lum Berry",
+          5.6
+        ],
+        [
+          "Kasib Berry",
+          4.8
+        ],
+        [
+          "Metal Coat",
+          4.3
+        ],
+        [
+          "Occa Berry",
+          2.1
+        ],
+        [
+          "Sitrus Berry",
+          1.7
+        ]
+      ],
+      "abilities": [
+        [
+          "Stance Change",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Staraptor": 0.0,
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Sinistcha": 0.0,
+        "Grimmsnarl": 0.0,
+        "Pelipper": 0.0,
+        "Incineroar": 0.0,
+        "Archaludon": 0.0,
+        "Swampert": 0.0,
+        "Raichu": 0.0
+      },
+      "spreads": []
+    },
+    "Camerupt": {
+      "name": "Camerupt",
+      "usage": 3.7711566960455505,
+      "winrate": 51.189,
+      "moves": [
+        [
+          "Earth Power",
+          99.1
+        ],
+        [
+          "Protect",
+          86.8
+        ],
+        [
+          "Heat Wave",
+          68.0
+        ],
+        [
+          "Ancient Power",
+          66.0
+        ],
+        [
+          "Eruption",
+          65.1
+        ],
+        [
+          "Flamethrower",
+          5.4
+        ],
+        [
+          "Rock Slide",
+          2.9
+        ],
+        [
+          "Flash Cannon",
+          2.5
+        ],
+        [
+          "Flare Blitz",
+          0.9
+        ],
+        [
+          "Stomping Tantrum",
+          0.9
+        ]
+      ],
+      "items": [
+        [
+          "Cameruptite",
+          97.5
+        ],
+        [
+          "Choice Scarf",
+          2.3
+        ],
+        [
+          "Wise Glasses",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Solid Rock",
+          96.6
+        ],
+        [
+          "Magma Armor",
+          2.3
+        ],
+        [
+          "Anger Point",
+          1.1
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Kingambit": 0.0,
+        "Sylveon": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Blastoise": 0.0,
+        "Hatterene": 0.0,
+        "Basculegion": 0.0,
+        "Staraptor": 0.0,
+        "Mawile": 0.0
+      },
+      "spreads": []
+    },
+    "Rotom-Heat": {
+      "name": "Rotom-Heat",
+      "usage": 3.2173777396458934,
+      "winrate": 46.545,
+      "moves": [
+        [
+          "Overheat",
+          97.8
+        ],
+        [
+          "Volt Switch",
+          69.1
+        ],
+        [
+          "Will-O-Wisp",
+          48.6
+        ],
+        [
+          "Thunderbolt",
+          48.6
+        ],
+        [
+          "Discharge",
+          45.1
+        ],
+        [
+          "Electroweb",
+          38.3
+        ],
+        [
+          "Trick",
+          18.3
+        ],
+        [
+          "Protect",
+          18.1
+        ],
+        [
+          "Eerie Impulse",
+          6.1
+        ],
+        [
+          "Nasty Plot",
+          3.7
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          69.5
+        ],
+        [
+          "Sitrus Berry",
+          20.0
+        ],
+        [
+          "Life Orb",
+          3.5
+        ],
+        [
+          "Leftovers",
+          2.4
+        ],
+        [
+          "Wide Lens",
+          2.4
+        ],
+        [
+          "Passho Berry",
+          0.7
+        ],
+        [
+          "Bright Powder",
+          0.7
+        ],
+        [
+          "Shell Bell",
+          0.4
+        ],
+        [
+          "Magnet",
+          0.2
+        ],
+        [
+          "Focus Sash",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Levitate",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Sceptile": 0.0,
+        "Basculegion": 0.0,
+        "Metagross": 0.0,
+        "Sneasler": 0.0,
+        "Staraptor": 0.0,
+        "Sinistcha": 0.0,
+        "Swampert": 0.0,
+        "Whimsicott": 0.0,
+        "Pelipper": 0.0
+      },
+      "spreads": []
+    },
+    "Volcarona": {
+      "name": "Volcarona",
+      "usage": 2.2658138990718353,
+      "winrate": 50.43,
+      "moves": [
+        [
+          "Heat Wave",
+          65.5
+        ],
+        [
+          "Quiver Dance",
+          65.2
+        ],
+        [
+          "Protect",
+          61.8
+        ],
+        [
+          "Rage Powder",
+          51.9
+        ],
+        [
+          "Bug Buzz",
+          37.9
+        ],
+        [
+          "Fiery Dance",
+          24.6
+        ],
+        [
+          "Giga Drain",
+          18.6
+        ],
+        [
+          "Struggle Bug",
+          17.6
+        ],
+        [
+          "Tailwind",
+          15.0
+        ],
+        [
+          "Will-O-Wisp",
+          10.1
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          45.2
+        ],
+        [
+          "Sitrus Berry",
+          33.3
+        ],
+        [
+          "Charti Berry",
+          5.1
+        ],
+        [
+          "Charcoal",
+          4.8
+        ],
+        [
+          "Focus Sash",
+          3.9
+        ],
+        [
+          "Silver Powder",
+          3.4
+        ],
+        [
+          "Life Orb",
+          3.1
+        ],
+        [
+          "Passho Berry",
+          0.5
+        ],
+        [
+          "Choice Scarf",
+          0.5
+        ],
+        [
+          "Expert Belt",
+          0.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Flame Body",
+          99.3
+        ],
+        [
+          "Swarm",
+          0.7
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Basculegion": 0.0,
+        "Raichu": 0.0,
+        "Whimsicott": 0.0,
+        "Staraptor": 0.0,
+        "Grimmsnarl": 0.0,
+        "Sinistcha": 0.0,
+        "Sneasler": 0.0,
+        "Metagross": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Mamoswine": {
+      "name": "Mamoswine",
+      "usage": 1.5677404258638172,
+      "winrate": 50.622,
+      "moves": [
+        [
+          "Ice Shard",
+          85.5
+        ],
+        [
+          "Icicle Crash",
+          75.8
+        ],
+        [
+          "Protect",
+          66.6
+        ],
+        [
+          "High Horsepower",
+          63.7
+        ],
+        [
+          "Earthquake",
+          39.8
+        ],
+        [
+          "Rock Slide",
+          18.5
+        ],
+        [
+          "Icicle Spear",
+          11.4
+        ],
+        [
+          "Iron Head",
+          9.0
+        ],
+        [
+          "Rock Tomb",
+          5.5
+        ],
+        [
+          "Freeze-Dry",
+          5.2
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          39.3
+        ],
+        [
+          "Choice Scarf",
+          27.3
+        ],
+        [
+          "Life Orb",
+          15.6
+        ],
+        [
+          "Expert Belt",
+          7.1
+        ],
+        [
+          "Sitrus Berry",
+          4.7
+        ],
+        [
+          "Never-Melt Ice",
+          2.6
+        ],
+        [
+          "Soft Sand",
+          2.1
+        ],
+        [
+          "Wide Lens",
+          0.7
+        ],
+        [
+          "Occa Berry",
+          0.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Oblivious",
+          77.5
+        ],
+        [
+          "Thick Fat",
+          22.5
+        ]
+      ],
+      "teammates": {
+        "Incineroar": 0.0,
+        "Raichu": 0.0,
+        "Sinistcha": 0.0,
+        "Aerodactyl": 0.0,
+        "Floette-Eternal": 0.0,
+        "Whimsicott": 0.0,
+        "Talonflame": 0.0,
+        "Metagross": 0.0,
+        "Basculegion": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Clefable": {
+      "name": "Clefable",
+      "usage": 2.495905155604087,
+      "winrate": 46.719,
+      "moves": [
+        [
+          "Moonblast",
+          94.3
+        ],
+        [
+          "Follow Me",
+          92.1
+        ],
+        [
+          "Protect",
+          74.2
+        ],
+        [
+          "Helping Hand",
+          29.5
+        ],
+        [
+          "Life Dew",
+          22.4
+        ],
+        [
+          "Icy Wind",
+          9.6
+        ],
+        [
+          "Calm Mind",
+          9.3
+        ],
+        [
+          "Ice Beam",
+          9.3
+        ],
+        [
+          "Dazzling Gleam",
+          7.9
+        ],
+        [
+          "Moonlight",
+          7.1
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          33.7
+        ],
+        [
+          "Leftovers",
+          21.6
+        ],
+        [
+          "Clefablite",
+          20.6
+        ],
+        [
+          "Fairy Feather",
+          8.8
+        ],
+        [
+          "Babiri Berry",
+          4.7
+        ],
+        [
+          "Lum Berry",
+          3.9
+        ],
+        [
+          "Kebia Berry",
+          2.7
+        ],
+        [
+          "Mental Herb",
+          1.2
+        ],
+        [
+          "Shell Bell",
+          1.2
+        ],
+        [
+          "Life Orb",
+          0.7
+        ]
+      ],
+      "abilities": [
+        [
+          "Unaware",
+          92.9
+        ],
+        [
+          "Magic Guard",
+          7.1
+        ]
+      ],
+      "teammates": {
+        "Pelipper": 0.0,
+        "Swampert": 0.0,
+        "Archaludon": 0.0,
+        "Garchomp": 0.0,
+        "Staraptor": 0.0,
+        "Torkoal": 0.0,
+        "Basculegion": 0.0,
+        "Farigiraf": 0.0,
+        "Sinistcha": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Hatterene": {
+      "name": "Hatterene",
+      "usage": 1.4780438343342952,
+      "winrate": 41.953,
+      "moves": [
+        [
+          "Dazzling Gleam",
+          99.7
+        ],
+        [
+          "Trick Room",
+          87.2
+        ],
+        [
+          "Protect",
+          81.7
+        ],
+        [
+          "Psychic",
+          51.2
+        ],
+        [
+          "Expanding Force",
+          24.1
+        ],
+        [
+          "Psyshock",
+          17.7
+        ],
+        [
+          "Mystical Fire",
+          16.0
+        ],
+        [
+          "Psychic Terrain",
+          9.0
+        ],
+        [
+          "Psychic Noise",
+          5.5
+        ],
+        [
+          "Magic Powder",
+          2.6
+        ]
+      ],
+      "items": [
+        [
+          "Life Orb",
+          48.0
+        ],
+        [
+          "Fairy Feather",
+          25.6
+        ],
+        [
+          "Focus Sash",
+          15.1
+        ],
+        [
+          "Babiri Berry",
+          5.2
+        ],
+        [
+          "Sitrus Berry",
+          3.2
+        ],
+        [
+          "Kebia Berry",
+          1.5
+        ],
+        [
+          "Iron Ball",
+          0.9
+        ],
+        [
+          "Quick Claw",
+          0.3
+        ],
+        [
+          "Twisted Spoon",
+          0.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Magic Bounce",
+          98.0
+        ],
+        [
+          "Healer",
+          1.5
+        ],
+        [
+          "Anticipation",
+          0.6
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Torkoal": 0.0,
+        "Incineroar": 0.0,
+        "Kingambit": 0.0,
+        "Camerupt": 0.0,
+        "Mawile": 0.0,
+        "Medicham": 0.0,
+        "Staraptor": 0.0,
+        "Scrafty": 0.0,
+        "Sinistcha": 0.0
+      },
+      "spreads": []
+    },
+    "Lycanroc-Dusk": {
+      "name": "Lycanroc-Dusk",
+      "usage": 5.62748615552609,
+      "winrate": 63.583,
+      "moves": [
+        [
+          "Accelerock",
+          100.0
+        ],
+        [
+          "Protect",
+          94.6
+        ],
+        [
+          "Close Combat",
+          94.6
+        ],
+        [
+          "Rock Slide",
+          93.7
+        ],
+        [
+          "Drill Run",
+          4.8
+        ],
+        [
+          "Iron Head",
+          3.9
+        ],
+        [
+          "Sucker Punch",
+          3.0
+        ],
+        [
+          "Roar",
+          1.5
+        ],
+        [
+          "Throat Chop",
+          1.5
+        ],
+        [
+          "Psychic Fangs",
+          1.5
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          84.5
+        ],
+        [
+          "Hard Stone",
+          7.5
+        ],
+        [
+          "Life Orb",
+          5.1
+        ],
+        [
+          "Expert Belt",
+          3.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Tough Claws",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Sneasler": 0.0,
+        "Froslass": 0.0,
+        "Kingambit": 0.0,
+        "Basculegion": 0.0,
+        "Scovillain": 0.0,
+        "Metagross": 0.0,
+        "Milotic": 0.0,
+        "Staraptor": 0.0,
+        "Grimmsnarl": 0.0,
+        "Garchomp": 0.0
+      },
+      "spreads": []
+    },
+    "Zoroark-Hisui": {
+      "name": "Zoroark-Hisui",
+      "usage": 2.024023087122689,
+      "winrate": 39.306,
+      "moves": [
+        [
+          "Shadow Ball",
+          63.9
+        ],
+        [
+          "Hyper Voice",
+          54.5
+        ],
+        [
+          "Icy Wind",
+          52.0
+        ],
+        [
+          "Bitter Malice",
+          31.0
+        ],
+        [
+          "Psychic",
+          30.0
+        ],
+        [
+          "Flamethrower",
+          29.6
+        ],
+        [
+          "Protect",
+          26.0
+        ],
+        [
+          "Trick",
+          23.1
+        ],
+        [
+          "Taunt",
+          15.5
+        ],
+        [
+          "Will-O-Wisp",
+          14.4
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          46.2
+        ],
+        [
+          "Life Orb",
+          25.6
+        ],
+        [
+          "Focus Sash",
+          20.9
+        ],
+        [
+          "Bright Powder",
+          3.6
+        ],
+        [
+          "Spell Tag",
+          2.2
+        ],
+        [
+          "Colbur Berry",
+          1.1
+        ],
+        [
+          "Silk Scarf",
+          0.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Illusion",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Sneasler": 0.0,
+        "Farigiraf": 0.0,
+        "Aerodactyl": 0.0,
+        "Garchomp": 0.0,
+        "Kingambit": 0.0,
+        "Raichu": 0.0,
+        "Decidueye-Hisui": 0.0,
+        "Sylveon": 0.0,
+        "Metagross": 0.0
+      },
+      "spreads": []
+    },
+    "Lopunny": {
+      "name": "Lopunny",
+      "usage": 3.767256844239919,
+      "winrate": 46.739,
+      "moves": [
+        [
+          "Fake Out",
+          100.0
+        ],
+        [
+          "Close Combat",
+          96.8
+        ],
+        [
+          "Encore",
+          53.0
+        ],
+        [
+          "Triple Axel",
+          42.8
+        ],
+        [
+          "Giga Impact",
+          37.2
+        ],
+        [
+          "U-turn",
+          28.1
+        ],
+        [
+          "After You",
+          9.5
+        ],
+        [
+          "Facade",
+          7.4
+        ],
+        [
+          "Protect",
+          4.9
+        ],
+        [
+          "Iron Tail",
+          4.9
+        ]
+      ],
+      "items": [
+        [
+          "Lopunnite",
+          99.6
+        ],
+        [
+          "Venusaurite",
+          0.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Limber",
+          56.5
+        ],
+        [
+          "Cute Charm",
+          40.4
+        ],
+        [
+          "Klutz",
+          3.2
+        ]
+      ],
+      "teammates": {
+        "Basculegion": 0.0,
+        "Sylveon": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Ceruledge": 0.0,
+        "Kingambit": 0.0,
+        "Gholdengo": 0.0,
+        "Maushold": 0.0,
+        "Aerodactyl": 0.0,
+        "Archaludon": 0.0
+      },
+      "spreads": []
+    },
+    "Oranguru": {
+      "name": "Oranguru",
+      "usage": 1.918727088370642,
+      "winrate": 47.561,
+      "moves": [
+        [
+          "Trick Room",
+          96.9
+        ],
+        [
+          "Instruct",
+          88.4
+        ],
+        [
+          "Protect",
+          47.0
+        ],
+        [
+          "Psychic",
+          39.2
+        ],
+        [
+          "Encore",
+          28.2
+        ],
+        [
+          "Psychic Terrain",
+          22.3
+        ],
+        [
+          "Imprison",
+          10.7
+        ],
+        [
+          "Energy Ball",
+          10.3
+        ],
+        [
+          "Terrain Pulse",
+          10.3
+        ],
+        [
+          "After You",
+          8.8
+        ]
+      ],
+      "items": [
+        [
+          "Mental Herb",
+          56.7
+        ],
+        [
+          "Colbur Berry",
+          28.2
+        ],
+        [
+          "Sitrus Berry",
+          9.1
+        ],
+        [
+          "Focus Sash",
+          3.1
+        ],
+        [
+          "Leftovers",
+          1.6
+        ],
+        [
+          "Twisted Spoon",
+          1.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Inner Focus",
+          69.6
+        ],
+        [
+          "Telepathy",
+          30.4
+        ]
+      ],
+      "teammates": {
+        "Torkoal": 0.0,
+        "Sylveon": 0.0,
+        "Glalie": 0.0,
+        "Sinistcha": 0.0,
+        "Mudsdale": 0.0,
+        "Camerupt": 0.0,
+        "Blastoise": 0.0,
+        "Basculegion": 0.0,
+        "Mawile": 0.0,
+        "Kingambit": 0.0
+      },
+      "spreads": []
+    },
+    "Espathra": {
+      "name": "Espathra",
+      "usage": 3.9115513610482804,
+      "winrate": 55.085,
+      "moves": [
+        [
+          "Protect",
+          100.0
+        ],
+        [
+          "Calm Mind",
+          83.1
+        ],
+        [
+          "Lumina Crash",
+          80.4
+        ],
+        [
+          "Baton Pass",
+          77.3
+        ],
+        [
+          "Feather Dance",
+          12.7
+        ],
+        [
+          "Psychic Terrain",
+          10.8
+        ],
+        [
+          "Expanding Force",
+          10.8
+        ],
+        [
+          "Dazzling Gleam",
+          9.6
+        ],
+        [
+          "Stored Power",
+          6.9
+        ],
+        [
+          "Skill Swap",
+          1.9
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          32.7
+        ],
+        [
+          "Mental Herb",
+          27.7
+        ],
+        [
+          "Leftovers",
+          15.0
+        ],
+        [
+          "Colbur Berry",
+          11.2
+        ],
+        [
+          "Focus Sash",
+          6.9
+        ],
+        [
+          "Twisted Spoon",
+          6.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Speed Boost",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Archaludon": 0.0,
+        "Scovillain": 0.0,
+        "Politoed": 0.0,
+        "Incineroar": 0.0,
+        "Sneasler": 0.0,
+        "Sinistcha": 0.0,
+        "Sableye": 0.0,
+        "Dragonite": 0.0,
+        "Basculegion": 0.0,
+        "Sylveon": 0.0
+      },
+      "spreads": []
+    },
+    "Kleavor": {
+      "name": "Kleavor",
+      "usage": 4.859215349816707,
+      "winrate": 46.87,
+      "moves": [
+        [
+          "Stone Axe",
+          97.9
+        ],
+        [
+          "X-Scissor",
+          66.5
+        ],
+        [
+          "Close Combat",
+          58.9
+        ],
+        [
+          "Protect",
+          37.5
+        ],
+        [
+          "Night Slash",
+          31.1
+        ],
+        [
+          "U-turn",
+          30.8
+        ],
+        [
+          "Rock Slide",
+          28.4
+        ],
+        [
+          "Tailwind",
+          24.2
+        ],
+        [
+          "Feint",
+          9.1
+        ],
+        [
+          "Rock Tomb",
+          6.3
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          45.0
+        ],
+        [
+          "Focus Sash",
+          33.5
+        ],
+        [
+          "White Herb",
+          16.9
+        ],
+        [
+          "Life Orb",
+          2.7
+        ],
+        [
+          "Silver Powder",
+          1.2
+        ],
+        [
+          "Quick Claw",
+          0.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Sharpness",
+          97.9
+        ],
+        [
+          "Sheer Force",
+          2.1
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Kingambit": 0.0,
+        "Basculegion": 0.0,
+        "Raichu": 0.0,
+        "Sneasler": 0.0,
+        "Froslass": 0.0,
+        "Metagross": 0.0,
+        "Charizard": 0.0,
+        "Staraptor": 0.0,
+        "Sinistcha": 0.0
+      },
+      "spreads": []
+    },
+    "Palafin": {
+      "name": "Palafin",
+      "usage": 3.8530535839638094,
+      "winrate": 55.111,
+      "moves": [
+        [
+          "Jet Punch",
+          100.0
+        ],
+        [
+          "Wave Crash",
+          91.8
+        ],
+        [
+          "Protect",
+          74.7
+        ],
+        [
+          "Close Combat",
+          56.0
+        ],
+        [
+          "Flip Turn",
+          37.7
+        ],
+        [
+          "Bulk Up",
+          14.0
+        ],
+        [
+          "Taunt",
+          5.8
+        ],
+        [
+          "Liquidation",
+          5.4
+        ],
+        [
+          "Ice Punch",
+          5.4
+        ],
+        [
+          "Drain Punch",
+          4.3
+        ]
+      ],
+      "items": [
+        [
+          "Mystic Water",
+          65.0
+        ],
+        [
+          "Leftovers",
+          16.7
+        ],
+        [
+          "Life Orb",
+          7.4
+        ],
+        [
+          "Choice Scarf",
+          5.1
+        ],
+        [
+          "Sitrus Berry",
+          4.7
+        ],
+        [
+          "Lum Berry",
+          0.8
+        ]
+      ],
+      "abilities": [
+        [
+          "Zero to Hero",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Incineroar": 0.0,
+        "Sinistcha": 0.0,
+        "Sneasler": 0.0,
+        "Kingambit": 0.0,
+        "Froslass": 0.0,
+        "Kommo-o": 0.0,
+        "Garchomp": 0.0,
+        "Raichu": 0.0,
+        "Pelipper": 0.0,
+        "Mawile": 0.0
+      },
+      "spreads": []
+    },
+    "Heliolisk": {
+      "name": "Heliolisk",
+      "usage": 0.6941736214023867,
+      "winrate": 35.674,
+      "moves": [
+        [
+          "Protect",
+          73.2
+        ],
+        [
+          "Thunderbolt",
+          54.0
+        ],
+        [
+          "Dragon Pulse",
+          31.4
+        ],
+        [
+          "Hyper Voice",
+          31.0
+        ],
+        [
+          "Shed Tail",
+          28.0
+        ],
+        [
+          "Ally Switch",
+          20.1
+        ],
+        [
+          "Glare",
+          19.2
+        ],
+        [
+          "Electroweb",
+          19.2
+        ],
+        [
+          "Volt Switch",
+          18.0
+        ],
+        [
+          "Eerie Impulse",
+          18.0
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          36.4
+        ],
+        [
+          "Choice Scarf",
+          19.7
+        ],
+        [
+          "Life Orb",
+          14.2
+        ],
+        [
+          "Magnet",
+          13.8
+        ],
+        [
+          "Sitrus Berry",
+          9.6
+        ],
+        [
+          "Wise Glasses",
+          3.3
+        ],
+        [
+          "Lum Berry",
+          2.9
+        ]
+      ],
+      "abilities": [
+        [
+          "Dry Skin",
+          77.8
+        ],
+        [
+          "Solar Power",
+          22.2
+        ]
+      ],
+      "teammates": {
+        "Raichu": 0.0,
+        "Vileplume": 0.0,
+        "Pelipper": 0.0,
+        "Sylveon": 0.0,
+        "Torkoal": 0.0,
+        "Froslass": 0.0,
+        "Charizard": 0.0,
+        "Meowscarada": 0.0,
+        "Armarouge": 0.0,
+        "Maushold": 0.0
+      },
+      "spreads": []
+    },
+    "Toxapex": {
+      "name": "Toxapex",
+      "usage": 1.9616254582325872,
+      "winrate": 53.479,
+      "moves": [
+        [
+          "Infestation",
+          95.3
+        ],
+        [
+          "Toxic",
+          92.2
+        ],
+        [
+          "Baneful Bunker",
+          87.5
+        ],
+        [
+          "Wide Guard",
+          68.0
+        ],
+        [
+          "Recover",
+          28.9
+        ],
+        [
+          "Haze",
+          18.4
+        ],
+        [
+          "Protect",
+          4.7
+        ],
+        [
+          "Stockpile",
+          4.3
+        ],
+        [
+          "Ice Beam",
+          0.8
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          92.2
+        ],
+        [
+          "Lum Berry",
+          3.1
+        ],
+        [
+          "Bright Powder",
+          2.0
+        ],
+        [
+          "Sitrus Berry",
+          0.8
+        ],
+        [
+          "Quick Claw",
+          0.8
+        ],
+        [
+          "Mental Herb",
+          0.8
+        ],
+        [
+          "Payapa Berry",
+          0.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Regenerator",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Incineroar": 0.0,
+        "Grimmsnarl": 0.0,
+        "Garchomp": 0.0,
+        "Charizard": 0.0,
+        "Staraptor": 0.0,
+        "Hydreigon": 0.0,
+        "Sinistcha": 0.0,
+        "Gholdengo": 0.0,
+        "Kingambit": 0.0,
+        "Whimsicott": 0.0
+      },
+      "spreads": []
+    },
+    "Samurott-Hisui": {
+      "name": "Samurott-Hisui",
+      "usage": 0.838468138210748,
+      "winrate": 54.884,
+      "moves": [
+        [
+          "Sacred Sword",
+          75.1
+        ],
+        [
+          "Aqua Cutter",
+          70.3
+        ],
+        [
+          "Ceaseless Edge",
+          52.6
+        ],
+        [
+          "Night Slash",
+          49.8
+        ],
+        [
+          "Protect",
+          48.8
+        ],
+        [
+          "Sucker Punch",
+          47.8
+        ],
+        [
+          "Flip Turn",
+          26.8
+        ],
+        [
+          "Detect",
+          13.9
+        ],
+        [
+          "Razor Shell",
+          8.6
+        ],
+        [
+          "Taunt",
+          2.9
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          31.1
+        ],
+        [
+          "Life Orb",
+          21.1
+        ],
+        [
+          "Black Glasses",
+          18.7
+        ],
+        [
+          "Choice Scarf",
+          15.8
+        ],
+        [
+          "Scope Lens",
+          6.7
+        ],
+        [
+          "Muscle Band",
+          4.3
+        ],
+        [
+          "Leftovers",
+          1.9
+        ],
+        [
+          "White Herb",
+          0.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Sharpness",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Sneasler": 0.0,
+        "Talonflame": 0.0,
+        "Sinistcha": 0.0,
+        "Metagross": 0.0,
+        "Staraptor": 0.0,
+        "Gardevoir": 0.0,
+        "Arcanine": 0.0,
+        "Grimmsnarl": 0.0,
+        "Tsareena": 0.0,
+        "Gallade": 0.0
+      },
+      "spreads": []
+    },
+    "Lucario": {
+      "name": "Lucario",
+      "usage": 1.7939318305904375,
+      "winrate": 38.043,
+      "moves": [
+        [
+          "Close Combat",
+          42.3
+        ],
+        [
+          "Protect",
+          41.8
+        ],
+        [
+          "Final Gambit",
+          36.8
+        ],
+        [
+          "Bullet Punch",
+          31.8
+        ],
+        [
+          "Meteor Mash",
+          30.5
+        ],
+        [
+          "Flash Cannon",
+          28.6
+        ],
+        [
+          "Aura Sphere",
+          28.2
+        ],
+        [
+          "Dark Pulse",
+          20.5
+        ],
+        [
+          "Steel Beam",
+          19.5
+        ],
+        [
+          "Focus Blast",
+          18.6
+        ]
+      ],
+      "items": [
+        [
+          "Lucarionite",
+          44.1
+        ],
+        [
+          "Choice Scarf",
+          36.4
+        ],
+        [
+          "Expert Belt",
+          10.0
+        ],
+        [
+          "Focus Sash",
+          7.3
+        ],
+        [
+          "Black Belt",
+          0.9
+        ],
+        [
+          "Life Orb",
+          0.9
+        ]
+      ],
+      "abilities": [
+        [
+          "Inner Focus",
+          80.5
+        ],
+        [
+          "Steadfast",
+          10.5
+        ],
+        [
+          "Justified",
+          9.1
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Farigiraf": 0.0,
+        "Staraptor": 0.0,
+        "Sylveon": 0.0,
+        "Sableye": 0.0,
+        "Garchomp": 0.0,
+        "Kingambit": 0.0,
+        "Incineroar": 0.0,
+        "Torkoal": 0.0,
+        "Whimsicott": 0.0
+      },
+      "spreads": []
+    },
+    "Armarouge": {
+      "name": "Armarouge",
+      "usage": 0.545979252788394,
+      "winrate": 47.857,
+      "moves": [
+        [
+          "Psychic",
+          61.3
+        ],
+        [
+          "Trick Room",
+          53.2
+        ],
+        [
+          "Heat Wave",
+          51.1
+        ],
+        [
+          "Protect",
+          45.7
+        ],
+        [
+          "Armor Cannon",
+          43.0
+        ],
+        [
+          "Wide Guard",
+          42.5
+        ],
+        [
+          "Aura Sphere",
+          21.0
+        ],
+        [
+          "Expanding Force",
+          20.4
+        ],
+        [
+          "Destiny Bond",
+          10.8
+        ],
+        [
+          "Flamethrower",
+          10.8
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          31.2
+        ],
+        [
+          "Focus Sash",
+          15.6
+        ],
+        [
+          "Iron Ball",
+          12.9
+        ],
+        [
+          "Colbur Berry",
+          8.6
+        ],
+        [
+          "White Herb",
+          8.1
+        ],
+        [
+          "Wise Glasses",
+          5.9
+        ],
+        [
+          "Shuca Berry",
+          4.8
+        ],
+        [
+          "Leftovers",
+          4.3
+        ],
+        [
+          "Life Orb",
+          3.8
+        ],
+        [
+          "Twisted Spoon",
+          2.7
+        ]
+      ],
+      "abilities": [
+        [
+          "Flash Fire",
+          94.1
+        ],
+        [
+          "Weak Armor",
+          5.9
+        ]
+      ],
+      "teammates": {
+        "Raichu": 0.0,
+        "Torkoal": 0.0,
+        "Vileplume": 0.0,
+        "Meowscarada": 0.0,
+        "Heliolisk": 0.0,
+        "Blastoise": 0.0,
+        "Tsareena": 0.0,
+        "Incineroar": 0.0,
+        "Oranguru": 0.0,
+        "Hatterene": 0.0
+      },
+      "spreads": []
+    },
+    "Weavile": {
+      "name": "Weavile",
+      "usage": 1.4624444271117698,
+      "winrate": 48.8,
+      "moves": [
+        [
+          "Fake Out",
+          98.1
+        ],
+        [
+          "Knock Off",
+          71.4
+        ],
+        [
+          "Triple Axel",
+          58.3
+        ],
+        [
+          "Protect",
+          38.3
+        ],
+        [
+          "Feint",
+          20.9
+        ],
+        [
+          "Ice Spinner",
+          20.4
+        ],
+        [
+          "Low Kick",
+          16.0
+        ],
+        [
+          "Icicle Crash",
+          11.7
+        ],
+        [
+          "Ice Shard",
+          10.7
+        ],
+        [
+          "Upper Hand",
+          10.2
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          65.5
+        ],
+        [
+          "Wide Lens",
+          17.5
+        ],
+        [
+          "King's Rock",
+          4.9
+        ],
+        [
+          "Never-Melt Ice",
+          3.9
+        ],
+        [
+          "Expert Belt",
+          3.9
+        ],
+        [
+          "Muscle Band",
+          1.9
+        ],
+        [
+          "Life Orb",
+          1.5
+        ],
+        [
+          "White Herb",
+          0.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Pickpocket",
+          59.2
+        ],
+        [
+          "Pressure",
+          40.8
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Whimsicott": 0.0,
+        "Raichu": 0.0,
+        "Archaludon": 0.0,
+        "Garchomp": 0.0,
+        "Pelipper": 0.0,
+        "Incineroar": 0.0,
+        "Charizard": 0.0,
+        "Sneasler": 0.0,
+        "Basculegion": 0.0
+      },
+      "spreads": []
+    },
+    "Tinkaton": {
+      "name": "Tinkaton",
+      "usage": 3.314874034786678,
+      "winrate": 47.176,
+      "moves": [
+        [
+          "Gigaton Hammer",
+          100.0
+        ],
+        [
+          "Fake Out",
+          97.0
+        ],
+        [
+          "Play Rough",
+          58.7
+        ],
+        [
+          "Encore",
+          56.2
+        ],
+        [
+          "Protect",
+          55.2
+        ],
+        [
+          "Knock Off",
+          10.4
+        ],
+        [
+          "Baby-Doll Eyes",
+          9.0
+        ],
+        [
+          "Feint",
+          7.5
+        ],
+        [
+          "Wood Hammer",
+          2.5
+        ],
+        [
+          "Light Screen",
+          1.0
+        ]
+      ],
+      "items": [
+        [
+          "Occa Berry",
+          26.9
+        ],
+        [
+          "Metal Coat",
+          26.4
+        ],
+        [
+          "Leftovers",
+          17.4
+        ],
+        [
+          "Sitrus Berry",
+          9.5
+        ],
+        [
+          "Shuca Berry",
+          7.0
+        ],
+        [
+          "White Herb",
+          5.0
+        ],
+        [
+          "Wide Lens",
+          3.0
+        ],
+        [
+          "Muscle Band",
+          3.0
+        ],
+        [
+          "Mental Herb",
+          1.0
+        ],
+        [
+          "King's Rock",
+          0.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Mold Breaker",
+          67.7
+        ],
+        [
+          "Own Tempo",
+          32.3
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Politoed": 0.0,
+        "Incineroar": 0.0,
+        "Staraptor": 0.0,
+        "Pelipper": 0.0,
+        "Raichu": 0.0,
+        "Kommo-o": 0.0,
+        "Gengar": 0.0,
+        "Garchomp": 0.0,
+        "Talonflame": 0.0
+      },
+      "spreads": []
+    },
+    "Wyrdeer": {
+      "name": "Wyrdeer",
+      "usage": 0.6434755479291787,
+      "winrate": 46.667,
+      "moves": [
+        [
+          "Trick Room",
+          72.8
+        ],
+        [
+          "Psyshield Bash",
+          64.9
+        ],
+        [
+          "Skill Swap",
+          46.6
+        ],
+        [
+          "Hypnosis",
+          34.6
+        ],
+        [
+          "Gravity",
+          32.5
+        ],
+        [
+          "Protect",
+          25.1
+        ],
+        [
+          "High Horsepower",
+          24.1
+        ],
+        [
+          "Psychic",
+          22.0
+        ],
+        [
+          "Earth Power",
+          15.7
+        ],
+        [
+          "Psyshock",
+          12.6
+        ]
+      ],
+      "items": [
+        [
+          "Colbur Berry",
+          34.0
+        ],
+        [
+          "Sitrus Berry",
+          31.9
+        ],
+        [
+          "Mental Herb",
+          27.7
+        ],
+        [
+          "Twisted Spoon",
+          5.8
+        ],
+        [
+          "Wise Glasses",
+          0.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Intimidate",
+          75.9
+        ],
+        [
+          "Sap Sipper",
+          24.1
+        ]
+      ],
+      "teammates": {
+        "Sneasler": 0.0,
+        "Milotic": 0.0,
+        "Kingambit": 0.0,
+        "Sinistcha": 0.0,
+        "Charizard": 0.0,
+        "Sylveon": 0.0,
+        "Whimsicott": 0.0,
+        "Annihilape": 0.0,
+        "Swampert": 0.0,
+        "Garchomp": 0.0
+      },
+      "spreads": []
+    },
+    "Dragapult": {
+      "name": "Dragapult",
+      "usage": 2.0279229389283207,
+      "winrate": 40.962,
+      "moves": [
+        [
+          "Protect",
+          60.5
+        ],
+        [
+          "Draco Meteor",
+          40.1
+        ],
+        [
+          "Dragon Darts",
+          38.3
+        ],
+        [
+          "Will-O-Wisp",
+          36.5
+        ],
+        [
+          "Phantom Force",
+          32.3
+        ],
+        [
+          "Psychic Fangs",
+          31.7
+        ],
+        [
+          "Shadow Ball",
+          31.1
+        ],
+        [
+          "U-turn",
+          26.3
+        ],
+        [
+          "Light Screen",
+          14.4
+        ],
+        [
+          "Thunderbolt",
+          13.2
+        ]
+      ],
+      "items": [
+        [
+          "Life Orb",
+          41.3
+        ],
+        [
+          "Focus Sash",
+          34.7
+        ],
+        [
+          "Light Clay",
+          7.2
+        ],
+        [
+          "Spell Tag",
+          6.6
+        ],
+        [
+          "Colbur Berry",
+          4.2
+        ],
+        [
+          "Bright Powder",
+          1.8
+        ],
+        [
+          "Dragon Fang",
+          1.2
+        ],
+        [
+          "Sitrus Berry",
+          0.6
+        ],
+        [
+          "Yache Berry",
+          0.6
+        ],
+        [
+          "Haban Berry",
+          0.6
+        ]
+      ],
+      "abilities": [
+        [
+          "Clear Body",
+          73.7
+        ],
+        [
+          "Infiltrator",
+          18.0
+        ],
+        [
+          "Cursed Body",
+          8.4
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Raichu": 0.0,
+        "Incineroar": 0.0,
+        "Farigiraf": 0.0,
+        "Sneasler": 0.0,
+        "Sinistcha": 0.0,
+        "Metagross": 0.0,
+        "Kingambit": 0.0,
+        "Basculegion": 0.0,
+        "Primarina": 0.0
+      },
+      "spreads": []
+    },
+    "Mimikyu": {
+      "name": "Mimikyu",
+      "usage": 3.002885890336167,
+      "winrate": 48.506,
+      "moves": [
+        [
+          "Play Rough",
+          88.8
+        ],
+        [
+          "Shadow Sneak",
+          81.3
+        ],
+        [
+          "Trick Room",
+          54.4
+        ],
+        [
+          "Shadow Claw",
+          42.5
+        ],
+        [
+          "Swords Dance",
+          30.0
+        ],
+        [
+          "Protect",
+          26.9
+        ],
+        [
+          "Will-O-Wisp",
+          26.3
+        ],
+        [
+          "Wood Hammer",
+          12.5
+        ],
+        [
+          "Drain Punch",
+          8.8
+        ],
+        [
+          "Curse",
+          8.1
+        ]
+      ],
+      "items": [
+        [
+          "Life Orb",
+          49.4
+        ],
+        [
+          "Mental Herb",
+          22.5
+        ],
+        [
+          "Spell Tag",
+          14.4
+        ],
+        [
+          "Lum Berry",
+          5.0
+        ],
+        [
+          "Quick Claw",
+          3.1
+        ],
+        [
+          "White Herb",
+          1.9
+        ],
+        [
+          "Fairy Feather",
+          1.9
+        ],
+        [
+          "Leftovers",
+          1.3
+        ],
+        [
+          "Bright Powder",
+          0.6
+        ]
+      ],
+      "abilities": [
+        [
+          "Disguise",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Dragonite": 0.0,
+        "Torkoal": 0.0,
+        "Tyranitar": 0.0,
+        "Mawile": 0.0,
+        "Sylveon": 0.0,
+        "Kingambit": 0.0,
+        "Pelipper": 0.0,
+        "Rotom-Wash": 0.0,
+        "Sneasler": 0.0,
+        "Basculegion": 0.0
+      },
+      "spreads": []
+    },
+    "Azumarill": {
+      "name": "Azumarill",
+      "usage": 1.7354340535059667,
+      "winrate": 46.067,
+      "moves": [
+        [
+          "Play Rough",
+          100.0
+        ],
+        [
+          "Aqua Jet",
+          96.9
+        ],
+        [
+          "Protect",
+          80.9
+        ],
+        [
+          "Belly Drum",
+          50.6
+        ],
+        [
+          "Liquidation",
+          27.8
+        ],
+        [
+          "Perish Song",
+          16.7
+        ],
+        [
+          "Superpower",
+          8.0
+        ],
+        [
+          "Trailblaze",
+          7.4
+        ],
+        [
+          "Knock Off",
+          3.7
+        ],
+        [
+          "Ice Punch",
+          3.1
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          71.6
+        ],
+        [
+          "Mystic Water",
+          9.3
+        ],
+        [
+          "Leftovers",
+          8.0
+        ],
+        [
+          "Muscle Band",
+          4.9
+        ],
+        [
+          "Never-Melt Ice",
+          3.1
+        ],
+        [
+          "Life Orb",
+          1.9
+        ],
+        [
+          "Quick Claw",
+          1.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Huge Power",
+          83.3
+        ],
+        [
+          "Sap Sipper",
+          16.7
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Farigiraf": 0.0,
+        "Incineroar": 0.0,
+        "Sableye": 0.0,
+        "Sylveon": 0.0,
+        "Garchomp": 0.0,
+        "Kingambit": 0.0,
+        "Lucario": 0.0,
+        "Victreebel": 0.0
+      },
+      "spreads": []
+    },
+    "Chandelure": {
+      "name": "Chandelure",
+      "usage": 1.2362530223851493,
+      "winrate": 47.95,
+      "moves": [
+        [
+          "Shadow Ball",
+          95.2
+        ],
+        [
+          "Heat Wave",
+          91.8
+        ],
+        [
+          "Protect",
+          89.7
+        ],
+        [
+          "Trick Room",
+          64.4
+        ],
+        [
+          "Calm Mind",
+          14.4
+        ],
+        [
+          "Energy Ball",
+          14.4
+        ],
+        [
+          "Imprison",
+          7.5
+        ],
+        [
+          "Overheat",
+          5.5
+        ],
+        [
+          "Fire Blast",
+          4.1
+        ],
+        [
+          "Flamethrower",
+          4.1
+        ]
+      ],
+      "items": [
+        [
+          "Chandelurite",
+          43.8
+        ],
+        [
+          "Focus Sash",
+          19.2
+        ],
+        [
+          "Charcoal",
+          18.5
+        ],
+        [
+          "Life Orb",
+          11.0
+        ],
+        [
+          "Quick Claw",
+          4.1
+        ],
+        [
+          "Colbur Berry",
+          1.4
+        ],
+        [
+          "Bright Powder",
+          0.7
+        ],
+        [
+          "Choice Scarf",
+          0.7
+        ]
+      ],
+      "abilities": [
+        [
+          "Flash Fire",
+          96.6
+        ],
+        [
+          "Flame Body",
+          2.1
+        ],
+        [
+          "Infiltrator",
+          1.4
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Farigiraf": 0.0,
+        "Whimsicott": 0.0,
+        "Garchomp": 0.0,
+        "Staraptor": 0.0,
+        "Mawile": 0.0,
+        "Sylveon": 0.0,
+        "Incineroar": 0.0,
+        "Kingambit": 0.0,
+        "Grimmsnarl": 0.0
+      },
+      "spreads": []
+    },
+    "Araquanid": {
+      "name": "Araquanid",
+      "usage": 1.1192574682162078,
+      "winrate": 47.038,
+      "moves": [
+        [
+          "Liquidation",
+          93.3
+        ],
+        [
+          "Wide Guard",
+          86.7
+        ],
+        [
+          "Protect",
+          62.7
+        ],
+        [
+          "Leech Life",
+          29.3
+        ],
+        [
+          "Lunge",
+          18.7
+        ],
+        [
+          "Entrainment",
+          18.0
+        ],
+        [
+          "Icy Wind",
+          14.0
+        ],
+        [
+          "Infestation",
+          13.3
+        ],
+        [
+          "Skitter Smack",
+          10.0
+        ],
+        [
+          "Reflect",
+          8.0
+        ]
+      ],
+      "items": [
+        [
+          "Mystic Water",
+          64.0
+        ],
+        [
+          "Sitrus Berry",
+          14.7
+        ],
+        [
+          "Life Orb",
+          8.0
+        ],
+        [
+          "Leftovers",
+          7.3
+        ],
+        [
+          "White Herb",
+          6.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Water Bubble",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Mawile": 0.0,
+        "Kingambit": 0.0,
+        "Sinistcha": 0.0,
+        "Archaludon": 0.0,
+        "Swampert": 0.0,
+        "Pelipper": 0.0,
+        "Torkoal": 0.0,
+        "Hatterene": 0.0,
+        "Garchomp": 0.0
+      },
+      "spreads": []
+    },
+    "Meowstic": {
+      "name": "Meowstic",
+      "usage": 0.8345682864051166,
+      "winrate": 42.991,
+      "moves": [
+        [
+          "Fake Out",
+          70.4
+        ],
+        [
+          "Reflect",
+          39.4
+        ],
+        [
+          "Light Screen",
+          35.9
+        ],
+        [
+          "Charm",
+          28.2
+        ],
+        [
+          "Psychic Terrain",
+          26.1
+        ],
+        [
+          "Expanding Force",
+          26.1
+        ],
+        [
+          "Fake Tears",
+          24.6
+        ],
+        [
+          "Psychic",
+          19.0
+        ],
+        [
+          "Skill Swap",
+          14.8
+        ],
+        [
+          "Thunder Wave",
+          13.4
+        ]
+      ],
+      "items": [
+        [
+          "Light Clay",
+          21.1
+        ],
+        [
+          "Mental Herb",
+          19.0
+        ],
+        [
+          "Focus Sash",
+          18.3
+        ],
+        [
+          "Kasib Berry",
+          12.0
+        ],
+        [
+          "Twisted Spoon",
+          8.5
+        ],
+        [
+          "Bright Powder",
+          7.7
+        ],
+        [
+          "Sitrus Berry",
+          3.5
+        ],
+        [
+          "Colbur Berry",
+          3.5
+        ],
+        [
+          "Meowsticite",
+          3.5
+        ],
+        [
+          "Chesto Berry",
+          2.8
+        ]
+      ],
+      "abilities": [
+        [
+          "Prankster",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Staraptor": 0.0,
+        "Sinistcha": 0.0,
+        "Incineroar": 0.0,
+        "Raichu": 0.0,
+        "Sylveon": 0.0,
+        "Basculegion": 0.0,
+        "Metagross": 0.0,
+        "Maushold": 0.0,
+        "Grimmsnarl": 0.0,
+        "Kingambit": 0.0
+      },
+      "spreads": []
+    },
+    "Klefki": {
+      "name": "Klefki",
+      "usage": 0.6044770298728648,
+      "winrate": 42.581,
+      "moves": [
+        [
+          "Light Screen",
+          83.7
+        ],
+        [
+          "Reflect",
+          83.7
+        ],
+        [
+          "Rain Dance",
+          82.9
+        ],
+        [
+          "Foul Play",
+          37.4
+        ],
+        [
+          "Dazzling Gleam",
+          35.8
+        ],
+        [
+          "Thunder Wave",
+          23.6
+        ],
+        [
+          "Trick Room",
+          22.8
+        ],
+        [
+          "Metal Sound",
+          13.0
+        ],
+        [
+          "Flash Cannon",
+          8.1
+        ],
+        [
+          "Imprison",
+          2.4
+        ]
+      ],
+      "items": [
+        [
+          "Light Clay",
+          70.7
+        ],
+        [
+          "Mental Herb",
+          13.8
+        ],
+        [
+          "Wide Lens",
+          11.4
+        ],
+        [
+          "Bright Powder",
+          1.6
+        ],
+        [
+          "Sitrus Berry",
+          0.8
+        ],
+        [
+          "Leftovers",
+          0.8
+        ],
+        [
+          "Focus Sash",
+          0.8
+        ]
+      ],
+      "abilities": [
+        [
+          "Prankster",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Archaludon": 0.0,
+        "Pelipper": 0.0,
+        "Swampert": 0.0,
+        "Sinistcha": 0.0,
+        "Annihilape": 0.0,
+        "Maushold": 0.0,
+        "Basculegion": 0.0,
+        "Venusaur": 0.0,
+        "Sableye": 0.0,
+        "Weavile": 0.0
+      },
+      "spreads": []
+    },
+    "Crabominable": {
+      "name": "Crabominable",
+      "usage": 2.417908119491459,
+      "winrate": 46.129,
+      "moves": [
+        [
+          "Protect",
+          70.1
+        ],
+        [
+          "Drain Punch",
+          66.9
+        ],
+        [
+          "Ice Hammer",
+          66.1
+        ],
+        [
+          "Mach Punch",
+          58.3
+        ],
+        [
+          "Ice Punch",
+          33.9
+        ],
+        [
+          "Crabhammer",
+          30.7
+        ],
+        [
+          "Close Combat",
+          26.8
+        ],
+        [
+          "Wide Guard",
+          25.2
+        ],
+        [
+          "Thunder Punch",
+          11.0
+        ],
+        [
+          "Brick Break",
+          3.9
+        ]
+      ],
+      "items": [
+        [
+          "Crabominite",
+          100.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Hyper Cutter",
+          89.0
+        ],
+        [
+          "Iron Fist",
+          8.7
+        ],
+        [
+          "Anger Point",
+          2.4
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Torkoal": 0.0,
+        "Sinistcha": 0.0,
+        "Kingambit": 0.0,
+        "Incineroar": 0.0,
+        "Sylveon": 0.0,
+        "Camerupt": 0.0,
+        "Reuniclus": 0.0,
+        "Oranguru": 0.0,
+        "Gallade": 0.0
+      },
+      "spreads": []
+    },
+    "Greninja": {
+      "name": "Greninja",
+      "usage": 0.7604711020981203,
+      "winrate": 33.333,
+      "moves": [
+        [
+          "Ice Beam",
+          73.8
+        ],
+        [
+          "Dark Pulse",
+          57.9
+        ],
+        [
+          "Protect",
+          56.3
+        ],
+        [
+          "Grass Knot",
+          26.2
+        ],
+        [
+          "Taunt",
+          25.4
+        ],
+        [
+          "Extrasensory",
+          25.4
+        ],
+        [
+          "Water Shuriken",
+          23.0
+        ],
+        [
+          "Rock Tomb",
+          19.8
+        ],
+        [
+          "Hydro Pump",
+          18.3
+        ],
+        [
+          "Rock Slide",
+          15.1
+        ]
+      ],
+      "items": [
+        [
+          "Greninjite",
+          59.5
+        ],
+        [
+          "Life Orb",
+          22.2
+        ],
+        [
+          "Focus Sash",
+          11.1
+        ],
+        [
+          "Choice Scarf",
+          2.4
+        ],
+        [
+          "King's Rock",
+          0.8
+        ],
+        [
+          "Expert Belt",
+          0.8
+        ]
+      ],
+      "abilities": [
+        [
+          "Protean",
+          89.7
+        ],
+        [
+          "Torrent",
+          10.3
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Raichu": 0.0,
+        "Kingambit": 0.0,
+        "Scizor": 0.0,
+        "Garchomp": 0.0,
+        "Aerodactyl": 0.0,
+        "Liepard": 0.0,
+        "Blaziken": 0.0,
+        "Kleavor": 0.0,
+        "Zoroark-Hisui": 0.0
+      },
+      "spreads": []
+    },
+    "Drampa": {
+      "name": "Drampa",
+      "usage": 1.2635519850245691,
+      "winrate": 41.358,
+      "moves": [
+        [
+          "Hyper Voice",
+          93.2
+        ],
+        [
+          "Protect",
+          84.7
+        ],
+        [
+          "Earth Power",
+          60.2
+        ],
+        [
+          "Calm Mind",
+          47.5
+        ],
+        [
+          "Draco Meteor",
+          28.8
+        ],
+        [
+          "Dragon Pulse",
+          25.4
+        ],
+        [
+          "Energy Ball",
+          21.2
+        ],
+        [
+          "Thunderbolt",
+          15.3
+        ],
+        [
+          "Flamethrower",
+          10.2
+        ],
+        [
+          "Round",
+          5.1
+        ]
+      ],
+      "items": [
+        [
+          "Drampanite",
+          80.5
+        ],
+        [
+          "Silk Scarf",
+          5.1
+        ],
+        [
+          "Focus Sash",
+          5.1
+        ],
+        [
+          "Life Orb",
+          4.2
+        ],
+        [
+          "Wise Glasses",
+          1.7
+        ],
+        [
+          "White Herb",
+          0.8
+        ],
+        [
+          "Quick Claw",
+          0.8
+        ],
+        [
+          "Charcoal",
+          0.8
+        ],
+        [
+          "Roseli Berry",
+          0.8
+        ]
+      ],
+      "abilities": [
+        [
+          "Cloud Nine",
+          81.4
+        ],
+        [
+          "Berserk",
+          18.6
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Torkoal": 0.0,
+        "Sylveon": 0.0,
+        "Sinistcha": 0.0,
+        "Oranguru": 0.0,
+        "Mawile": 0.0,
+        "Kingambit": 0.0,
+        "Incineroar": 0.0,
+        "Lucario": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Snorlax": {
+      "name": "Snorlax",
+      "usage": 1.7705327197566492,
+      "winrate": 49.78,
+      "moves": [
+        [
+          "Protect",
+          71.6
+        ],
+        [
+          "Fissure",
+          67.9
+        ],
+        [
+          "Yawn",
+          49.5
+        ],
+        [
+          "Stockpile",
+          28.4
+        ],
+        [
+          "Heat Crash",
+          24.8
+        ],
+        [
+          "Ice Punch",
+          24.8
+        ],
+        [
+          "Heavy Slam",
+          22.9
+        ],
+        [
+          "High Horsepower",
+          22.0
+        ],
+        [
+          "Double-Edge",
+          18.3
+        ],
+        [
+          "Body Slam",
+          14.7
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          40.4
+        ],
+        [
+          "Chople Berry",
+          31.2
+        ],
+        [
+          "Sitrus Berry",
+          17.4
+        ],
+        [
+          "Expert Belt",
+          10.1
+        ],
+        [
+          "Life Orb",
+          0.9
+        ]
+      ],
+      "abilities": [
+        [
+          "Thick Fat",
+          99.1
+        ],
+        [
+          "Immunity",
+          0.9
+        ]
+      ],
+      "teammates": {
+        "Hawlucha": 0.0,
+        "Sinistcha": 0.0,
+        "Basculegion": 0.0,
+        "Whimsicott": 0.0,
+        "Scovillain": 0.0,
+        "Raichu": 0.0,
+        "Incineroar": 0.0,
+        "Mudsdale": 0.0,
+        "Corviknight": 0.0,
+        "Gengar": 0.0
+      },
+      "spreads": []
+    },
+    "Arcanine": {
+      "name": "Arcanine",
+      "usage": 0.9047656189064816,
+      "winrate": 39.655,
+      "moves": [
+        [
+          "Protect",
+          92.5
+        ],
+        [
+          "Will-O-Wisp",
+          85.8
+        ],
+        [
+          "Flare Blitz",
+          60.0
+        ],
+        [
+          "Snarl",
+          53.3
+        ],
+        [
+          "Heat Wave",
+          36.7
+        ],
+        [
+          "Extreme Speed",
+          20.8
+        ],
+        [
+          "Psychic Fangs",
+          19.2
+        ],
+        [
+          "Helping Hand",
+          14.2
+        ],
+        [
+          "Wild Charge",
+          5.0
+        ],
+        [
+          "Close Combat",
+          4.2
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          46.7
+        ],
+        [
+          "Charcoal",
+          36.7
+        ],
+        [
+          "Wide Lens",
+          5.8
+        ],
+        [
+          "Choice Scarf",
+          3.3
+        ],
+        [
+          "White Herb",
+          1.7
+        ],
+        [
+          "Lum Berry",
+          0.8
+        ],
+        [
+          "Leftovers",
+          0.8
+        ],
+        [
+          "Life Orb",
+          0.8
+        ],
+        [
+          "Focus Sash",
+          0.8
+        ]
+      ],
+      "abilities": [
+        [
+          "Intimidate",
+          89.2
+        ],
+        [
+          "Flash Fire",
+          10.8
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Sneasler": 0.0,
+        "Gardevoir": 0.0,
+        "Staraptor": 0.0,
+        "Samurott-Hisui": 0.0,
+        "Talonflame": 0.0,
+        "Sylveon": 0.0,
+        "Whimsicott": 0.0,
+        "Goodra-Hisui": 0.0,
+        "Meowscarada": 0.0
+      },
+      "spreads": []
+    },
+    "Serperior": {
+      "name": "Serperior",
+      "usage": 0.6590749551517042,
+      "winrate": 50.296,
+      "moves": [
+        [
+          "Leaf Storm",
+          100.0
+        ],
+        [
+          "Protect",
+          75.2
+        ],
+        [
+          "Glare",
+          56.9
+        ],
+        [
+          "Dragon Pulse",
+          30.3
+        ],
+        [
+          "Taunt",
+          29.4
+        ],
+        [
+          "Light Screen",
+          26.6
+        ],
+        [
+          "Reflect",
+          25.7
+        ],
+        [
+          "Giga Drain",
+          10.1
+        ],
+        [
+          "Solar Beam",
+          7.3
+        ],
+        [
+          "Helping Hand",
+          6.4
+        ]
+      ],
+      "items": [
+        [
+          "Focus Sash",
+          26.6
+        ],
+        [
+          "Sitrus Berry",
+          20.2
+        ],
+        [
+          "Wide Lens",
+          11.9
+        ],
+        [
+          "Light Clay",
+          11.9
+        ],
+        [
+          "Leftovers",
+          10.1
+        ],
+        [
+          "Life Orb",
+          7.3
+        ],
+        [
+          "Expert Belt",
+          4.6
+        ],
+        [
+          "Miracle Seed",
+          3.7
+        ],
+        [
+          "Occa Berry",
+          2.8
+        ],
+        [
+          "Coba Berry",
+          0.9
+        ]
+      ],
+      "abilities": [
+        [
+          "Contrary",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Sinistcha": 0.0,
+        "Swampert": 0.0,
+        "Grimmsnarl": 0.0,
+        "Staraptor": 0.0,
+        "Raichu": 0.0,
+        "Sableye": 0.0,
+        "Pelipper": 0.0,
+        "Corviknight": 0.0
+      },
+      "spreads": []
+    },
+    "Conkeldurr": {
+      "name": "Conkeldurr",
+      "usage": 0.7955697683488028,
+      "winrate": 48.529,
+      "moves": [
+        [
+          "Mach Punch",
+          81.8
+        ],
+        [
+          "Drain Punch",
+          75.8
+        ],
+        [
+          "Thunder Punch",
+          71.7
+        ],
+        [
+          "Detect",
+          34.3
+        ],
+        [
+          "Ice Punch",
+          33.3
+        ],
+        [
+          "Poison Jab",
+          23.2
+        ],
+        [
+          "Wide Guard",
+          23.2
+        ],
+        [
+          "Knock Off",
+          16.2
+        ],
+        [
+          "Close Combat",
+          16.2
+        ],
+        [
+          "Fire Punch",
+          7.1
+        ]
+      ],
+      "items": [
+        [
+          "Life Orb",
+          58.6
+        ],
+        [
+          "Black Belt",
+          32.3
+        ],
+        [
+          "Expert Belt",
+          3.0
+        ],
+        [
+          "Muscle Band",
+          2.0
+        ],
+        [
+          "Focus Sash",
+          2.0
+        ],
+        [
+          "Lum Berry",
+          1.0
+        ],
+        [
+          "Leftovers",
+          1.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Iron Fist",
+          69.7
+        ],
+        [
+          "Sheer Force",
+          30.3
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Incineroar": 0.0,
+        "Mawile": 0.0,
+        "Kangaskhan": 0.0,
+        "Dragalge": 0.0,
+        "Sylveon": 0.0,
+        "Camerupt": 0.0,
+        "Sinistcha": 0.0,
+        "Tinkaton": 0.0,
+        "Eelektross": 0.0
+      },
+      "spreads": []
+    },
+    "Orthworm": {
+      "name": "Orthworm",
+      "usage": 0.6239762889010217,
+      "winrate": 48.125,
+      "moves": [
+        [
+          "Body Press",
+          93.5
+        ],
+        [
+          "Shed Tail",
+          93.5
+        ],
+        [
+          "Heavy Slam",
+          77.6
+        ],
+        [
+          "Protect",
+          72.0
+        ],
+        [
+          "Iron Head",
+          21.5
+        ],
+        [
+          "Iron Defense",
+          19.6
+        ],
+        [
+          "Helping Hand",
+          9.3
+        ],
+        [
+          "Coil",
+          6.5
+        ],
+        [
+          "Stealth Rock",
+          5.6
+        ],
+        [
+          "Bulldoze",
+          0.9
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          92.5
+        ],
+        [
+          "Leftovers",
+          6.5
+        ],
+        [
+          "Choice Scarf",
+          0.9
+        ]
+      ],
+      "abilities": [
+        [
+          "Earth Eater",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Blastoise": 0.0,
+        "Sableye": 0.0,
+        "Maushold": 0.0,
+        "Vivillon": 0.0,
+        "Sylveon": 0.0,
+        "Pelipper": 0.0,
+        "Garchomp": 0.0,
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Golurk": {
+      "name": "Golurk",
+      "usage": 1.6301380547539193,
+      "winrate": 38.038,
+      "moves": [
+        [
+          "Protect",
+          99.0
+        ],
+        [
+          "Headlong Rush",
+          97.0
+        ],
+        [
+          "Poltergeist",
+          90.9
+        ],
+        [
+          "Ice Punch",
+          54.5
+        ],
+        [
+          "Close Combat",
+          12.1
+        ],
+        [
+          "Drain Punch",
+          12.1
+        ],
+        [
+          "Thunder Punch",
+          10.1
+        ],
+        [
+          "Rock Slide",
+          9.1
+        ],
+        [
+          "Phantom Force",
+          9.1
+        ],
+        [
+          "High Horsepower",
+          3.0
+        ]
+      ],
+      "items": [
+        [
+          "Golurkite",
+          99.0
+        ],
+        [
+          "White Herb",
+          1.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Iron Fist",
+          70.7
+        ],
+        [
+          "No Guard",
+          17.2
+        ],
+        [
+          "Klutz",
+          12.1
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Torkoal": 0.0,
+        "Staraptor": 0.0,
+        "Sylveon": 0.0,
+        "Incineroar": 0.0,
+        "Hatterene": 0.0,
+        "Maushold": 0.0,
+        "Grimmsnarl": 0.0,
+        "Kangaskhan": 0.0,
+        "Mawile": 0.0
+      },
+      "spreads": []
+    },
+    "Starmie": {
+      "name": "Starmie",
+      "usage": 1.4819436861399267,
+      "winrate": 44.474,
+      "moves": [
+        [
+          "Liquidation",
+          80.6
+        ],
+        [
+          "Aqua Jet",
+          66.3
+        ],
+        [
+          "Protect",
+          61.2
+        ],
+        [
+          "Psycho Cut",
+          40.8
+        ],
+        [
+          "Ice Spinner",
+          35.7
+        ],
+        [
+          "Flip Turn",
+          27.6
+        ],
+        [
+          "Zen Headbutt",
+          16.3
+        ],
+        [
+          "Scald",
+          16.3
+        ],
+        [
+          "Icy Wind",
+          12.2
+        ],
+        [
+          "Psychic",
+          12.2
+        ]
+      ],
+      "items": [
+        [
+          "Starminite",
+          83.7
+        ],
+        [
+          "Choice Scarf",
+          12.2
+        ],
+        [
+          "Leftovers",
+          4.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Natural Cure",
+          86.7
+        ],
+        [
+          "Illuminate",
+          12.2
+        ],
+        [
+          "Analytic",
+          1.0
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Kingambit": 0.0,
+        "Raichu": 0.0,
+        "Zoroark-Hisui": 0.0,
+        "Kleavor": 0.0,
+        "Decidueye-Hisui": 0.0,
+        "Sinistcha": 0.0,
+        "Basculegion": 0.0,
+        "Farigiraf": 0.0,
+        "Charizard": 0.0
+      },
+      "spreads": []
+    },
+    "Empoleon": {
+      "name": "Empoleon",
+      "usage": 0.6044770298728648,
+      "winrate": 46.452,
+      "moves": [
+        [
+          "Protect",
+          97.6
+        ],
+        [
+          "Flash Cannon",
+          94.0
+        ],
+        [
+          "Ice Beam",
+          53.0
+        ],
+        [
+          "Hydro Pump",
+          41.0
+        ],
+        [
+          "Surf",
+          39.8
+        ],
+        [
+          "Roar",
+          20.5
+        ],
+        [
+          "Icy Wind",
+          14.5
+        ],
+        [
+          "Weather Ball",
+          13.3
+        ],
+        [
+          "Iron Defense",
+          13.3
+        ],
+        [
+          "Water Pulse",
+          4.8
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          39.8
+        ],
+        [
+          "Mystic Water",
+          27.7
+        ],
+        [
+          "Sitrus Berry",
+          15.7
+        ],
+        [
+          "Life Orb",
+          9.6
+        ],
+        [
+          "Shuca Berry",
+          3.6
+        ],
+        [
+          "Chople Berry",
+          1.2
+        ],
+        [
+          "Quick Claw",
+          1.2
+        ],
+        [
+          "Wise Glasses",
+          1.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Competitive",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Raichu": 0.0,
+        "Glimmora": 0.0,
+        "Mawile": 0.0,
+        "Toxicroak": 0.0,
+        "Musharna": 0.0,
+        "Whimsicott": 0.0,
+        "Tsareena": 0.0,
+        "Ninetales-Alola": 0.0,
+        "Sylveon": 0.0,
+        "Staraptor": 0.0
+      },
+      "spreads": []
+    },
+    "Hawlucha": {
+      "name": "Hawlucha",
+      "usage": 1.1465564308556275,
+      "winrate": 44.218,
+      "moves": [
+        [
+          "Entrainment",
+          65.4
+        ],
+        [
+          "Detect",
+          56.4
+        ],
+        [
+          "Close Combat",
+          55.1
+        ],
+        [
+          "Dual Wingbeat",
+          53.8
+        ],
+        [
+          "Cross Chop",
+          34.6
+        ],
+        [
+          "Stone Edge",
+          32.1
+        ],
+        [
+          "Feint",
+          25.6
+        ],
+        [
+          "Coaching",
+          24.4
+        ],
+        [
+          "Brave Bird",
+          20.5
+        ],
+        [
+          "Protect",
+          17.9
+        ]
+      ],
+      "items": [
+        [
+          "Hawluchanite",
+          97.4
+        ],
+        [
+          "White Herb",
+          1.3
+        ],
+        [
+          "Focus Sash",
+          1.3
+        ]
+      ],
+      "abilities": [
+        [
+          "Mold Breaker",
+          56.4
+        ],
+        [
+          "Unburden",
+          30.8
+        ],
+        [
+          "Limber",
+          12.8
+        ]
+      ],
+      "teammates": {
+        "Snorlax": 0.0,
+        "Raichu": 0.0,
+        "Whimsicott": 0.0,
+        "Mudsdale": 0.0,
+        "Corviknight": 0.0,
+        "Sinistcha": 0.0,
+        "Scovillain": 0.0,
+        "Incineroar": 0.0,
+        "Gengar": 0.0,
+        "Basculegion": 0.0
+      },
+      "spreads": []
+    },
+    "Feraligatr": {
+      "name": "Feraligatr",
+      "usage": 1.0841588019655253,
+      "winrate": 46.403,
+      "moves": [
+        [
+          "Liquidation",
+          89.4
+        ],
+        [
+          "Protect",
+          85.9
+        ],
+        [
+          "Dragon Dance",
+          69.4
+        ],
+        [
+          "Ice Punch",
+          47.1
+        ],
+        [
+          "Double-Edge",
+          38.8
+        ],
+        [
+          "Aqua Jet",
+          15.3
+        ],
+        [
+          "Body Slam",
+          14.1
+        ],
+        [
+          "Swords Dance",
+          11.8
+        ],
+        [
+          "Crunch",
+          11.8
+        ],
+        [
+          "Facade",
+          10.6
+        ]
+      ],
+      "items": [
+        [
+          "Feraligite",
+          65.9
+        ],
+        [
+          "Life Orb",
+          34.1
+        ]
+      ],
+      "abilities": [
+        [
+          "Sheer Force",
+          96.5
+        ],
+        [
+          "Torrent",
+          3.5
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Raichu": 0.0,
+        "Whimsicott": 0.0,
+        "Kingambit": 0.0,
+        "Charizard": 0.0,
+        "Sneasler": 0.0,
+        "Incineroar": 0.0,
+        "Gholdengo": 0.0,
+        "Ninetales-Alola": 0.0,
+        "Floette-Eternal": 0.0
+      },
+      "spreads": []
+    },
+    "Manectric": {
+      "name": "Manectric",
+      "usage": 1.4624444271117698,
+      "winrate": 45.067,
+      "moves": [
+        [
+          "Volt Switch",
+          98.8
+        ],
+        [
+          "Thunderbolt",
+          68.2
+        ],
+        [
+          "Protect",
+          62.4
+        ],
+        [
+          "Overheat",
+          42.4
+        ],
+        [
+          "Light Screen",
+          37.6
+        ],
+        [
+          "Snarl",
+          29.4
+        ],
+        [
+          "Thunder",
+          29.4
+        ],
+        [
+          "Eerie Impulse",
+          22.4
+        ],
+        [
+          "Flamethrower",
+          7.1
+        ],
+        [
+          "Discharge",
+          1.2
+        ]
+      ],
+      "items": [
+        [
+          "Manectite",
+          84.7
+        ],
+        [
+          "Focus Sash",
+          11.8
+        ],
+        [
+          "White Herb",
+          2.4
+        ],
+        [
+          "Magnet",
+          1.2
+        ]
+      ],
+      "abilities": [
+        [
+          "Lightning Rod",
+          61.2
+        ],
+        [
+          "Minus",
+          37.6
+        ],
+        [
+          "Static",
+          1.2
+        ]
+      ],
+      "teammates": {
+        "Pelipper": 0.0,
+        "Farigiraf": 0.0,
+        "Archaludon": 0.0,
+        "Swampert": 0.0,
+        "Sinistcha": 0.0,
+        "Annihilape": 0.0,
+        "Grimmsnarl": 0.0,
+        "Maushold": 0.0,
+        "Blastoise": 0.0,
+        "Aerodactyl": 0.0
+      },
+      "spreads": []
+    },
+    "Rotom-Mow": {
+      "name": "Rotom-Mow",
+      "usage": 0.7136728804305437,
+      "winrate": 40.437,
+      "moves": [
+        [
+          "Leaf Storm",
+          100.0
+        ],
+        [
+          "Thunderbolt",
+          84.4
+        ],
+        [
+          "Volt Switch",
+          58.4
+        ],
+        [
+          "Will-O-Wisp",
+          51.9
+        ],
+        [
+          "Protect",
+          46.8
+        ],
+        [
+          "Electroweb",
+          28.6
+        ],
+        [
+          "Eerie Impulse",
+          19.5
+        ],
+        [
+          "Nasty Plot",
+          5.2
+        ],
+        [
+          "Shadow Ball",
+          3.9
+        ],
+        [
+          "Pain Split",
+          1.3
+        ]
+      ],
+      "items": [
+        [
+          "Sitrus Berry",
+          37.7
+        ],
+        [
+          "Expert Belt",
+          19.5
+        ],
+        [
+          "Choice Scarf",
+          14.3
+        ],
+        [
+          "Yache Berry",
+          11.7
+        ],
+        [
+          "Wide Lens",
+          10.4
+        ],
+        [
+          "Leftovers",
+          6.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Levitate",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Garchomp": 0.0,
+        "Whimsicott": 0.0,
+        "Staraptor": 0.0,
+        "Gholdengo": 0.0,
+        "Grimmsnarl": 0.0,
+        "Annihilape": 0.0,
+        "Aerodactyl": 0.0,
+        "Sinistcha": 0.0,
+        "Dragonite": 0.0,
+        "Mawile": 0.0
+      },
+      "spreads": []
+    },
+    "Altaria": {
+      "name": "Altaria",
+      "usage": 0.5264799937602371,
+      "winrate": 32.963,
+      "moves": [
+        [
+          "Tailwind",
+          88.9
+        ],
+        [
+          "Hyper Voice",
+          69.8
+        ],
+        [
+          "Protect",
+          54.0
+        ],
+        [
+          "Will-O-Wisp",
+          41.3
+        ],
+        [
+          "Roost",
+          30.2
+        ],
+        [
+          "Hurricane",
+          23.8
+        ],
+        [
+          "Helping Hand",
+          19.0
+        ],
+        [
+          "Defog",
+          19.0
+        ],
+        [
+          "Breaking Swipe",
+          17.5
+        ],
+        [
+          "Draco Meteor",
+          14.3
+        ]
+      ],
+      "items": [
+        [
+          "Altarianite",
+          69.8
+        ],
+        [
+          "Sitrus Berry",
+          27.0
+        ],
+        [
+          "Bright Powder",
+          1.6
+        ],
+        [
+          "Leftovers",
+          1.6
+        ]
+      ],
+      "abilities": [
+        [
+          "Cloud Nine",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Archaludon": 0.0,
+        "Pelipper": 0.0,
+        "Sneasler": 0.0,
+        "Gyarados": 0.0,
+        "Garchomp": 0.0,
+        "Vanilluxe": 0.0,
+        "Basculegion": 0.0,
+        "Meowscarada": 0.0,
+        "Maushold": 0.0,
+        "Farigiraf": 0.0
+      },
+      "spreads": []
+    },
+    "Ampharos": {
+      "name": "Ampharos",
+      "usage": 0.78777006473754,
+      "winrate": 43.564,
+      "moves": [
+        [
+          "Dragon Pulse",
+          100.0
+        ],
+        [
+          "Protect",
+          97.1
+        ],
+        [
+          "Thunderbolt",
+          97.1
+        ],
+        [
+          "Cotton Guard",
+          79.7
+        ],
+        [
+          "Volt Switch",
+          18.8
+        ],
+        [
+          "Charge",
+          2.9
+        ],
+        [
+          "Parabolic Charge",
+          2.9
+        ],
+        [
+          "Rising Voltage",
+          1.4
+        ]
+      ],
+      "items": [
+        [
+          "Ampharosite",
+          98.6
+        ],
+        [
+          "Leftovers",
+          1.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Static",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Farigiraf": 0.0,
+        "Torkoal": 0.0,
+        "Armarouge": 0.0,
+        "Dragonite": 0.0,
+        "Swampert": 0.0,
+        "Sableye": 0.0,
+        "Tsareena": 0.0,
+        "Kangaskhan": 0.0,
+        "Kingambit": 0.0,
+        "Mawile": 0.0
+      },
+      "spreads": []
+    },
+    "Bellibolt": {
+      "name": "Bellibolt",
+      "usage": 0.6473753997348101,
+      "winrate": 52.711,
+      "moves": [
+        [
+          "Parabolic Charge",
+          96.1
+        ],
+        [
+          "Protect",
+          79.2
+        ],
+        [
+          "Thunderbolt",
+          71.4
+        ],
+        [
+          "Soak",
+          39.0
+        ],
+        [
+          "Slack Off",
+          31.2
+        ],
+        [
+          "Volt Switch",
+          15.6
+        ],
+        [
+          "Charge",
+          11.7
+        ],
+        [
+          "Weather Ball",
+          11.7
+        ],
+        [
+          "Acid Spray",
+          11.7
+        ],
+        [
+          "Chilling Water",
+          7.8
+        ]
+      ],
+      "items": [
+        [
+          "Magnet",
+          45.5
+        ],
+        [
+          "Leftovers",
+          15.6
+        ],
+        [
+          "Sitrus Berry",
+          14.3
+        ],
+        [
+          "Shuca Berry",
+          11.7
+        ],
+        [
+          "Big Root",
+          6.5
+        ],
+        [
+          "Quick Claw",
+          3.9
+        ],
+        [
+          "Bright Powder",
+          2.6
+        ]
+      ],
+      "abilities": [
+        [
+          "Electromorphosis",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Scrafty": 0.0,
+        "Sinistcha": 0.0,
+        "Farigiraf": 0.0,
+        "Camerupt": 0.0,
+        "Metagross": 0.0,
+        "Staraptor": 0.0,
+        "Garchomp": 0.0,
+        "Kingambit": 0.0,
+        "Whimsicott": 0.0,
+        "Raichu": 0.0
+      },
+      "spreads": []
+    },
+    "Skarmory": {
+      "name": "Skarmory",
+      "usage": 3.373371811871149,
+      "winrate": 50.751,
+      "moves": [
+        [
+          "Iron Head",
+          95.1
+        ],
+        [
+          "Brave Bird",
+          88.5
+        ],
+        [
+          "Protect",
+          78.7
+        ],
+        [
+          "Swords Dance",
+          47.5
+        ],
+        [
+          "Rock Slide",
+          26.2
+        ],
+        [
+          "Rock Tomb",
+          19.7
+        ],
+        [
+          "Tailwind",
+          9.8
+        ],
+        [
+          "Whirlwind",
+          8.2
+        ],
+        [
+          "Taunt",
+          6.6
+        ],
+        [
+          "Drill Run",
+          4.9
+        ]
+      ],
+      "items": [
+        [
+          "Skarmorite",
+          100.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Sturdy",
+          91.8
+        ],
+        [
+          "Weak Armor",
+          8.2
+        ]
+      ],
+      "teammates": {
+        "Grimmsnarl": 0.0,
+        "Pelipper": 0.0,
+        "Archaludon": 0.0,
+        "Swampert": 0.0,
+        "Sinistcha": 0.0,
+        "Garchomp": 0.0,
+        "Sylveon": 0.0,
+        "Whimsicott": 0.0,
+        "Charizard": 0.0,
+        "Arcanine-Hisui": 0.0
+      },
+      "spreads": []
+    },
+    "Heracross": {
+      "name": "Heracross",
+      "usage": 0.6941736214023867,
+      "winrate": 38.764,
+      "moves": [
+        [
+          "Rock Blast",
+          100.0
+        ],
+        [
+          "Pin Missile",
+          100.0
+        ],
+        [
+          "Close Combat",
+          73.7
+        ],
+        [
+          "Detect",
+          68.4
+        ],
+        [
+          "Protect",
+          21.1
+        ],
+        [
+          "Brick Break",
+          18.4
+        ],
+        [
+          "Bullet Seed",
+          15.8
+        ],
+        [
+          "Earthquake",
+          2.6
+        ]
+      ],
+      "items": [
+        [
+          "Heracronite",
+          100.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Guts",
+          52.6
+        ],
+        [
+          "Moxie",
+          47.4
+        ]
+      ],
+      "teammates": {
+        "Whimsicott": 0.0,
+        "Basculegion": 0.0,
+        "Archaludon": 0.0,
+        "Staraptor": 0.0,
+        "Sylveon": 0.0,
+        "Garchomp": 0.0,
+        "Primarina": 0.0,
+        "Farigiraf": 0.0,
+        "Raichu": 0.0,
+        "Metagross": 0.0
+      },
+      "spreads": []
+    },
+    "Aggron": {
+      "name": "Aggron",
+      "usage": 0.9008657671008502,
+      "winrate": 42.857,
+      "moves": [
+        [
+          "Body Press",
+          100.0
+        ],
+        [
+          "Heavy Slam",
+          98.6
+        ],
+        [
+          "Protect",
+          97.1
+        ],
+        [
+          "Iron Defense",
+          72.9
+        ],
+        [
+          "Shadow Claw",
+          17.1
+        ],
+        [
+          "Curse",
+          10.0
+        ],
+        [
+          "Crunch",
+          1.4
+        ],
+        [
+          "Iron Head",
+          1.4
+        ],
+        [
+          "Head Smash",
+          1.4
+        ]
+      ],
+      "items": [
+        [
+          "Aggronite",
+          98.6
+        ],
+        [
+          "Sitrus Berry",
+          1.4
+        ]
+      ],
+      "abilities": [
+        [
+          "Sturdy",
+          81.4
+        ],
+        [
+          "Heavy Metal",
+          17.1
+        ],
+        [
+          "Rock Head",
+          1.4
+        ]
+      ],
+      "teammates": {
+        "Pelipper": 0.0,
+        "Incineroar": 0.0,
+        "Basculegion": 0.0,
+        "Sinistcha": 0.0,
+        "Swampert": 0.0,
+        "Milotic": 0.0,
+        "Sylveon": 0.0,
+        "Farigiraf": 0.0,
+        "Spiritomb": 0.0,
+        "Hatterene": 0.0
+      },
+      "spreads": []
+    },
+    "Chesnaught": {
+      "name": "Chesnaught",
+      "usage": 0.7955697683488028,
+      "winrate": 52.451,
+      "moves": [
+        [
+          "Spiky Shield",
+          97.6
+        ],
+        [
+          "Body Press",
+          92.9
+        ],
+        [
+          "Iron Defense",
+          64.3
+        ],
+        [
+          "Leech Seed",
+          59.5
+        ],
+        [
+          "Wide Guard",
+          54.8
+        ],
+        [
+          "Wood Hammer",
+          16.7
+        ],
+        [
+          "Drain Punch",
+          7.1
+        ],
+        [
+          "Iron Head",
+          7.1
+        ]
+      ],
+      "items": [
+        [
+          "Leftovers",
+          59.5
+        ],
+        [
+          "Chesnaughtite",
+          40.5
+        ]
+      ],
+      "abilities": [
+        [
+          "Bulletproof",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Maushold": 0.0,
+        "Sinistcha": 0.0,
+        "Swampert": 0.0,
+        "Pelipper": 0.0,
+        "Grimmsnarl": 0.0,
+        "Archaludon": 0.0,
+        "Staraptor": 0.0,
+        "Garchomp": 0.0,
+        "Reuniclus": 0.0,
+        "Chandelure": 0.0
+      },
+      "spreads": []
+    },
+    "Alakazam": {
+      "name": "Alakazam",
+      "usage": 0.5498791045940254,
+      "winrate": 33.333,
+      "moves": [
+        [
+          "Shadow Ball",
+          62.5
+        ],
+        [
+          "Psychic",
+          56.3
+        ],
+        [
+          "Speed Swap",
+          43.8
+        ],
+        [
+          "Trick",
+          31.3
+        ],
+        [
+          "Skill Swap",
+          31.3
+        ],
+        [
+          "Protect",
+          25.0
+        ],
+        [
+          "Encore",
+          25.0
+        ],
+        [
+          "Ally Switch",
+          25.0
+        ],
+        [
+          "Expanding Force",
+          25.0
+        ],
+        [
+          "Energy Ball",
+          18.8
+        ]
+      ],
+      "items": [
+        [
+          "Choice Scarf",
+          43.8
+        ],
+        [
+          "Focus Sash",
+          31.3
+        ],
+        [
+          "Alakazite",
+          25.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Inner Focus",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Swampert": 0.0,
+        "Pelipper": 0.0,
+        "Basculegion": 0.0,
+        "Sneasler": 0.0,
+        "Kingambit": 0.0,
+        "Sinistcha": 0.0,
+        "Archaludon": 0.0,
+        "Garchomp": 0.0,
+        "Heliolisk": 0.0,
+        "Metagross": 0.0
+      },
+      "spreads": []
+    },
+    "Chimecho": {
+      "name": "Chimecho",
+      "usage": 0.5108805865377115,
+      "winrate": 44.275,
+      "moves": [
+        [
+          "Psychic",
+          80.0
+        ],
+        [
+          "Trick Room",
+          68.6
+        ],
+        [
+          "Protect",
+          62.9
+        ],
+        [
+          "Flash Cannon",
+          62.9
+        ],
+        [
+          "Recover",
+          37.1
+        ],
+        [
+          "Fake Tears",
+          37.1
+        ],
+        [
+          "Calm Mind",
+          31.4
+        ],
+        [
+          "Psychic Noise",
+          20.0
+        ]
+      ],
+      "items": [
+        [
+          "Chimechite",
+          100.0
+        ]
+      ],
+      "abilities": [
+        [
+          "Levitate",
+          100.0
+        ]
+      ],
+      "teammates": {
+        "Tyranitar": 0.0,
+        "Rotom-Wash": 0.0,
+        "Excadrill": 0.0,
+        "Vanilluxe": 0.0,
+        "Mimikyu": 0.0,
+        "Raichu": 0.0,
+        "Sylveon": 0.0,
+        "Incineroar": 0.0,
+        "Farigiraf": 0.0,
+        "Aurorus": 0.0
+      },
+      "spreads": []
+    },
+    "Steelix": {
+      "name": "Steelix",
+      "usage": 1.384447390999142,
+      "winrate": 47.042,
+      "moves": [
+        [
+          "Heavy Slam",
+          83.3
+        ],
+        [
+          "Protect",
+          77.8
+        ],
+        [
+          "Wide Guard",
+          55.6
+        ],
+        [
+          "High Horsepower",
+          50.0
+        ],
+        [
+          "Crunch",
+          27.8
+        ],
+        [
+          "Body Press",
+          22.2
+        ],
+        [
+          "Earthquake",
+          22.2
+        ],
+        [
+          "Ice Fang",
+          16.7
+        ],
+        [
+          "Iron Head",
+          16.7
+        ],
+        [
+          "Thunder Fang",
+          11.1
+        ]
+      ],
+      "items": [
+        [
+          "Steelixite",
+          77.8
+        ],
+        [
+          "Life Orb",
+          16.7
+        ],
+        [
+          "Sitrus Berry",
+          5.6
+        ]
+      ],
+      "abilities": [
+        [
+          "Sturdy",
+          83.3
+        ],
+        [
+          "Sheer Force",
+          16.7
+        ]
+      ],
+      "teammates": {
+        "Sinistcha": 0.0,
+        "Tyranitar": 0.0,
+        "Rotom-Wash": 0.0,
+        "Sneasler": 0.0,
+        "Talonflame": 0.0,
+        "Charizard": 0.0,
+        "Archaludon": 0.0,
+        "Raichu": 0.0,
+        "Azumarill": 0.0,
+        "Swampert": 0.0
+      },
+      "spreads": []
+    }
+  }
+}

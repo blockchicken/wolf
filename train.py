@@ -23,6 +23,7 @@ Output files::
 from __future__ import annotations
 
 import argparse
+import pickle
 import random
 from pathlib import Path
 
@@ -79,11 +80,23 @@ _PROTECT_MOVE_NAMES = frozenset({
 })
 
 
+_DEFAULT_OUTCOME_WEIGHTS = {"win": 1.0, "loss": 0.5, "tie": 0.25}
+
+
 class BattleDataset(Dataset):
-    def __init__(self, examples: list[TurnExample], vocab: BattleVocab) -> None:
+    def __init__(
+        self,
+        examples: list[TurnExample],
+        vocab: BattleVocab,
+        outcome_weights: dict[str, float] = _DEFAULT_OUTCOME_WEIGHTS,
+        weight_mults: "list[float] | None" = None,
+    ) -> None:
         self._items: list[dict] = []
         oov = 0
         dp_downweighted = 0
+
+        if weight_mults is None:
+            weight_mults = [1.0] * len(examples)
 
         # Pre-build the set of protecting-move action indices for fast lookup.
         protect_idxs: set[int] = {
@@ -91,7 +104,7 @@ class BattleDataset(Dataset):
             if (idx := vocab.action_idx("move", name)) is not None
         }
 
-        for ex in examples:
+        for ex, extra_mult in zip(examples, weight_mults):
             sf = encode_state(ex.state, vocab)
             tensors = _sf_to_tensors(sf)
 
@@ -107,7 +120,7 @@ class BattleDataset(Dataset):
 
             # Down-weight examples where a slot chose to protect after protecting
             # last turn (double-protect).  Index 0 = my slot A, 1 = my slot B.
-            weight = ex.outcome_weight
+            weight = outcome_weights.get(ex.outcome, ex.outcome_weight) * extra_mult
             for slot_i, target in ((0, target_a), (1, target_b)):
                 if (
                     target is not None
@@ -186,18 +199,24 @@ def _batch_loss(
 # ---------------------------------------------------------------------------
 
 def train(
-    log_dir:    str | Path,
-    model_out:  str | Path,
-    vocab_dir:  str | Path,
+    log_dir:     "str | Path | None",
+    model_out:   str | Path,
+    vocab_dir:   str | Path,
     *,
-    epochs:     int   = 30,
-    batch_size: int   = 512,
-    lr:         float = 1e-3,
-    embed_dim:  int   = 32,
-    hidden_dim: int   = 256,
-    device_str: str   = "auto",
-    seed:       int   = 42,
+    epochs:             int   = 30,
+    batch_size:         int   = 512,
+    lr:                 float = 1e-3,
+    embed_dim:          int   = 32,
+    hidden_dim:         int   = 256,
+    device_str:         str   = "auto",
+    seed:               int   = 42,
+    win_weight:         float = 1.0,
+    loss_weight:        float = 0.5,
+    tie_weight:         float = 0.25,
+    selfplay_paths:     "list[str | Path]" = (),
+    selfplay_weight_mult: float = 1.0,
 ) -> None:
+    outcome_weights = {"win": win_weight, "loss": loss_weight, "tie": tie_weight}
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -212,11 +231,28 @@ def train(
     else:
         device = torch.device(device_str)
     print(f"Device:  {device}")
+    print(f"Outcome weights: win={win_weight}  loss={loss_weight}  tie={tie_weight}")
 
     # --- Load examples ---
-    print(f"\nLoading battle logs from {log_dir} …")
-    examples = extract_examples_from_dir(log_dir, recursive=True, verbose=False)
-    print(f"  {len(examples):,} training examples extracted.")
+    examples: list[TurnExample] = []
+    weight_mults: list[float] = []
+
+    if log_dir:
+        print(f"\nLoading battle logs from {log_dir} …")
+        human_examples = extract_examples_from_dir(log_dir, recursive=True, verbose=False)
+        print(f"  {len(human_examples):,} human training examples extracted.")
+        examples.extend(human_examples)
+        weight_mults.extend([1.0] * len(human_examples))
+
+    for sp_path in selfplay_paths:
+        print(f"\nLoading self-play data from {sp_path} …")
+        with open(sp_path, "rb") as f:
+            sp_examples = pickle.load(f)
+        print(f"  {len(sp_examples):,} self-play examples loaded (weight x{selfplay_weight_mult}).")
+        examples.extend(sp_examples)
+        weight_mults.extend([selfplay_weight_mult] * len(sp_examples))
+
+    print(f"\nTotal: {len(examples):,} training examples (human + self-play combined).")
 
     if not examples:
         print("No training data — exiting.")
@@ -231,7 +267,7 @@ def train(
 
     # --- Dataset ---
     print(f"\nEncoding dataset …")
-    dataset = BattleDataset(examples, vocab)
+    dataset = BattleDataset(examples, vocab, outcome_weights=outcome_weights, weight_mults=weight_mults)
     print(f"  {len(dataset):,} usable examples.")
 
     if not dataset:
@@ -297,9 +333,10 @@ def train(
             model.save(
                 model_out,
                 metadata={
-                    "epoch":     epoch,
-                    "val_loss":  val_loss,
-                    "vocab_dir": str(vocab_dir),
+                    "epoch":           epoch,
+                    "val_loss":        val_loss,
+                    "vocab_dir":       str(vocab_dir),
+                    "outcome_weights": outcome_weights,
                 },
             )
 
@@ -330,7 +367,25 @@ def _main() -> None:
     parser.add_argument("--hidden-dim", type=int,   default=256)
     parser.add_argument("--device",     default="auto")
     parser.add_argument("--seed",       type=int,   default=42)
+    parser.add_argument("--win-weight",  type=float, default=1.0,
+                        help="Loss weight for examples from the winning side")
+    parser.add_argument("--loss-weight", type=float, default=0.5,
+                        help="Loss weight for examples from the losing side")
+    parser.add_argument("--tie-weight",  type=float, default=0.25,
+                        help="Loss weight for examples from tied battles")
+    parser.add_argument(
+        "--selfplay", default=None,
+        help="Comma-separated paths to pickled self-play TurnExample data (selfplay_data.py output), "
+             "blended in alongside --logs",
+    )
+    parser.add_argument(
+        "--selfplay-weight-mult", type=float, default=1.0,
+        help="Extra multiplier applied to self-play examples' outcome weight, on top of "
+             "--win/--loss/--tie-weight",
+    )
     args = parser.parse_args()
+
+    selfplay_paths = args.selfplay.split(",") if args.selfplay else []
 
     train(
         log_dir=args.logs,
@@ -343,6 +398,11 @@ def _main() -> None:
         hidden_dim=args.hidden_dim,
         device_str=args.device,
         seed=args.seed,
+        win_weight=args.win_weight,
+        loss_weight=args.loss_weight,
+        tie_weight=args.tie_weight,
+        selfplay_paths=selfplay_paths,
+        selfplay_weight_mult=args.selfplay_weight_mult,
     )
 
 

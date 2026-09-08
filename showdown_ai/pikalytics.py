@@ -53,6 +53,75 @@ logger = logging.getLogger(__name__)
 
 _BASE = "https://www.pikalytics.com"
 
+# Form suffixes stripped for species-clause duplicate detection.
+# Sorted longest-first so multi-word suffixes match before their substrings.
+_FORME_SUFFIXES: tuple[str, ...] = tuple(sorted((
+    # Mega evolutions
+    "-Mega-X", "-Mega-Y", "-Mega",
+    # Regional forms
+    "-Alola", "-Galar", "-Hisui", "-Paldea",
+    # Tauros Paldean sub-forms (end in -Combat/-Blaze/-Aqua, not -Paldea)
+    "-Paldea-Combat", "-Paldea-Blaze", "-Paldea-Aqua",
+    # Gender forms (Basculegion-M/F, Indeedee-M/F)
+    "-M", "-F",
+    # Ogerpon masks
+    "-Wellspring", "-Hearthflame", "-Cornerstone",
+    # Terapagos
+    "-Terastal", "-Stellar",
+    # Time/cycle forms (Lycanroc, Necrozma, Shaymin partial overlap handled by ordering)
+    "-Dawn", "-Dusk", "-Midnight", "-Midday",
+    # Rotom appliance formes (all share Dex #479)
+    "-Heat", "-Wash", "-Frost", "-Fan", "-Mow",
+    # Urshifu (Dex #892)
+    "-Rapid-Strike", "-Single-Strike",
+    # Necrozma fusions (must precede "-Dawn" / "-Dusk")
+    "-Dusk-Mane", "-Dawn-Wings", "-Ultra",
+    # Forces of Nature therian formes (Tornadus/Thundurus/Landorus/Enamorus)
+    "-Therian",
+    # Kyurem formes (Dex #646)
+    "-Black", "-White",
+    # Calyrex riders (Dex #898)
+    "-Ice", "-Shadow",
+    # Giratina (Dex #487)
+    "-Origin",
+    # Shaymin (Dex #492)
+    "-Sky",
+    # Palafin (Dex #964)
+    "-Hero",
+    # Toxtricity (Dex #849)
+    "-Low-Key",
+    # Zygarde (Dex #718)
+    "-Complete",
+    # Eiscue (Dex #875)
+    "-Noice",
+), key=len, reverse=True))
+
+
+def _base_species(name: str) -> str:
+    """Canonical base species for species-clause duplicate detection.
+
+    Strips forme suffixes so that e.g. Rotom-Heat and Rotom-Wash both reduce
+    to 'Rotom' and are treated as the same species slot.
+    """
+    for suf in _FORME_SUFFIXES:
+        if name.endswith(suf):
+            return name[: -len(suf)]
+    return name
+
+# Moves excluded from random team generation because they create degenerate
+# training states that don't generalize well:
+#   Imprison — disables opponent moves shared with the user, which depends on
+#              hidden team knowledge and produces unpredictable disabled-move errors.
+# Pikalytics placeholder strings that appear across moves, items, and abilities
+# when usage is too spread across rare options to track individually.
+_PIKALYTICS_PLACEHOLDERS: frozenset[str] = frozenset({"Other", "None", "Nothing", ""})
+
+_EXCLUDED_MOVES: frozenset[str] = _PIKALYTICS_PLACEHOLDERS | frozenset({
+    # Imprison disables opponent moves shared with the user — depends on hidden
+    # team knowledge and produces unpredictable disabled-move errors.
+    "Imprison",
+})
+
 _USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -147,15 +216,17 @@ def _parse_entry(raw: dict) -> Optional[PokemonStat]:
         key=lambda x: -x[1],
     )
     items = sorted(
-        [(i["item"], _parse_pct(i["percent"])) for i in raw.get("items", [])],
+        [(i["item"], _parse_pct(i["percent"])) for i in raw.get("items", [])
+         if i.get("item") and i["item"] not in _PIKALYTICS_PLACEHOLDERS],
         key=lambda x: -x[1],
     )
     abilities = sorted(
-        [(a["ability"], _parse_pct(a["percent"])) for a in raw.get("abilities", [])],
+        [(a["ability"], _parse_pct(a["percent"])) for a in raw.get("abilities", [])
+         if a.get("ability") and a["ability"] not in _PIKALYTICS_PLACEHOLDERS],
         key=lambda x: -x[1],
     )
     teammates = {
-        t["pokemon"]: _parse_pct(t["percent"])
+        t["pokemon"]: _parse_pct(t.get("percent", 0))
         for t in raw.get("team", [])
         if t.get("pokemon")
     }
@@ -285,12 +356,14 @@ def _fetch_detail(
     )
     # Items
     base_stat.items = sorted(
-        [(i["item"], _parse_pct(i["percent"])) for i in raw.get("items", [])],
+        [(i["item"], _parse_pct(i["percent"])) for i in raw.get("items", [])
+         if i.get("item") and i["item"] not in _PIKALYTICS_PLACEHOLDERS],
         key=lambda x: -x[1],
     )
     # Abilities
     base_stat.abilities = sorted(
-        [(a["ability"], _parse_pct(a["percent"])) for a in raw.get("abilities", [])],
+        [(a["ability"], _parse_pct(a["percent"])) for a in raw.get("abilities", [])
+         if a.get("ability") and a["ability"] not in _PIKALYTICS_PLACEHOLDERS],
         key=lambda x: -x[1],
     )
     # Spreads
@@ -304,7 +377,7 @@ def _fetch_detail(
     )
     # Teammates (may be more complete in the detail endpoint)
     detail_teammates = {
-        t["pokemon"]: _parse_pct(t["percent"])
+        t["pokemon"]: _parse_pct(t.get("percent", 0))
         for t in raw.get("team", [])
         if t.get("pokemon")
     }
@@ -385,12 +458,26 @@ def scrape_metagame(
         )
 
     # Build initial PokemonStat objects from list data (usage + partial teammates)
-    initial: dict[str, PokemonStat] = {}
+    parsed: list[tuple[dict, PokemonStat]] = []
     for raw in raw_list:
         stat = _parse_entry(raw)
-        if stat is None or stat.usage < min_usage:
-            continue
-        initial[stat.name] = stat
+        if stat is not None:
+            parsed.append((raw, stat))
+
+    # Some formats (newly tracked / lower-volume ladders) don't report a
+    # usage "percent" field at all, only raw "games" counts.  Fall back to a
+    # games-normalized proxy (relative to the most-played Pokemon) so usage
+    # stays on a comparable 0-100 scale for downstream weighted sampling.
+    # Only triggers when the field is absent across the whole list, so it
+    # never changes behaviour for formats that already report percent.
+    if parsed and all("percent" not in raw for raw, _ in parsed):
+        max_games = max(raw.get("games", 0) for raw, _ in parsed) or 1
+        for raw, stat in parsed:
+            stat.usage = 100.0 * raw.get("games", 0) / max_games
+
+    initial: dict[str, PokemonStat] = {
+        stat.name: stat for raw, stat in parsed if stat.usage >= min_usage
+    }
 
     if verbose:
         print(f"  {len(initial)} Pokémon above {min_usage}% usage threshold.")
@@ -591,13 +678,6 @@ def generate_team(
     pokemon = metagame.pokemon
     all_names = list(pokemon.keys())
 
-    def _base_species(name: str) -> str:
-        """Strip Mega/regional suffixes for duplicate detection."""
-        for suffix in ("-Mega-X", "-Mega-Y", "-Mega"):
-            if name.endswith(suffix):
-                return name[: -len(suffix)]
-        return name
-
     # --- Step 1: build the team composition ---
     team_names: list[str] = []
     for _ in range(size):
@@ -618,25 +698,27 @@ def generate_team(
         stat = pokemon[name]
 
         # Item
-        if stat.items:
-            item_names, item_weights = zip(*stat.items)
+        item_pool = [(it, w) for it, w in stat.items if it not in _PIKALYTICS_PLACEHOLDERS]
+        if item_pool:
+            item_names, item_weights = zip(*item_pool)
             item = _weighted_pick(list(item_names), list(item_weights), rng)
         else:
             item = ""
 
         # Ability
-        if stat.abilities:
-            ab_names, ab_weights = zip(*stat.abilities)
+        ab_pool = [(ab, w) for ab, w in stat.abilities if ab not in _PIKALYTICS_PLACEHOLDERS]
+        if ab_pool:
+            ab_names, ab_weights = zip(*ab_pool)
             ability = _weighted_pick(list(ab_names), list(ab_weights), rng)
         else:
             ability = ""
 
         # Moves: sample 4 from the top-N most used.
-        # Exclude pikalytics's "Other" catch-all and any non-move placeholders.
-        _NON_MOVES = {"Other", "None", "Nothing", ""}
+        # Exclude pikalytics's "Other" catch-all, non-move placeholders, and
+        # moves that create degenerate training states.
         move_pool = [
             (m, w) for m, w in stat.moves[:top_moves]
-            if w >= min_move_pct and m not in _NON_MOVES
+            if w >= min_move_pct and m not in _EXCLUDED_MOVES
         ]
         if len(move_pool) < 4:
             move_pool = stat.moves[:max(4, len(move_pool))]
@@ -678,6 +760,15 @@ def generate_team(
 # Packed team format
 # ---------------------------------------------------------------------------
 
+# Pikalytics labels these as "-Mega" but they don't actually mega-evolve in
+# battle — they're alternate forms whose item is a signature held item, not a
+# Mega Stone.  Map to the correct Showdown species name and preserve their
+# abilities (don't blank them like we do for real Megas).
+_PIKALYTICS_MEGA_OVERRIDES: dict[str, str] = {
+    "Floette-Mega": "Floette-Eternal",  # Floettite is a signature item, not a Mega Stone
+}
+
+
 def _species_for_packed(name: str) -> str:
     """Map a pikalytics Pokémon name to its Showdown species ID.
 
@@ -690,8 +781,11 @@ def _species_for_packed(name: str) -> str:
     'Incineroar'      → 'Incineroar'      (unchanged)
     'Kangaskhan-Mega' → 'Kangaskhan'
     'Charizard-Mega-Y'→ 'Charizard'
+    'Floette-Mega'    → 'Floette-Eternal' (pseudo-mega; signature item, no evolution)
     'Ninetales-Alola' → 'Ninetales-Alola' (unchanged — regional form)
     """
+    if name in _PIKALYTICS_MEGA_OVERRIDES:
+        return _PIKALYTICS_MEGA_OVERRIDES[name]
     if "-Mega" in name:
         return name.split("-Mega")[0]
     return name
@@ -730,11 +824,20 @@ def team_to_packed(specs: list[TeamSpec]) -> str:
         species_id = _species_for_packed(spec.species)
         moves_str  = ",".join(m for m in spec.moves if m)
         ev_field   = _ev_str_to_showdown(spec.ev_str)
+        # Mega-evolution abilities (e.g. Pixilate on Gardevoir-Mega) only apply
+        # after the Pokemon mega-evolves in battle.  Sending the mega ability in
+        # the packed string causes Showdown to apply it from turn 1 on the base
+        # form.  Leave the ability blank for real mega species so Showdown assigns
+        # the correct pre-mega ability automatically.
+        # Pseudo-megas (e.g. Floette-Mega → Floette-Eternal) have a custom ability
+        # that must be preserved — they never actually mega-evolve.
+        is_mega    = "-Mega" in spec.species and spec.species not in _PIKALYTICS_MEGA_OVERRIDES
+        ability    = "" if is_mega else spec.ability
         packed = (
             f"{species_id}|"        # NAME (nickname = base species)
             f"|"                    # SPECIES (blank = same as nickname)
             f"{spec.item}|"         # ITEM
-            f"{spec.ability}|"      # ABILITY
+            f"{ability}|"           # ABILITY (blank for megas → Showdown picks base ability)
             f"{moves_str}|"         # MOVES
             f"{spec.nature}|"       # NATURE
             f"{ev_field}|"          # EVS (Champions SP in hp/atk/def/spa/spd/spe order)

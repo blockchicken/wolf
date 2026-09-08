@@ -207,10 +207,19 @@ def main() -> None:
         choices=["1250", "1500", "all"],
         help="Rating bucket to analyze (default: 1500)",
     )
+    parser.add_argument(
+        "--path",
+        default=None,
+        help="Override the log directory (e.g. logs/ai/1500_ppo_v13). "
+             "Skips the bucket lookup entirely.",
+    )
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
 
-    log_dir = Path("downloaded_logs/gen9championsvgc2026regma") / args.bucket
+    if args.path:
+        log_dir = Path(args.path)
+    else:
+        log_dir = Path("downloaded_logs/gen9championsvgc2026regma") / args.bucket
     if not log_dir.exists():
         print(f"Log directory not found: {log_dir}")
         return
